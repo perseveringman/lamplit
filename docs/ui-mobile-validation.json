@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "checks": [
+    "375px graph replaced by grouped neighbourhood",
+    "phone KP opens full detail",
+    "phone neighbour changes focus and reveals detail",
+    "all 25 paths accessible on phone",
+    "phone learn no horizontal overflow",
+    "phone single-column reading",
+    "phone reader no horizontal overflow",
+    "phone visible highlights",
+    "phone sentence detail is modal, not a third column",
+    "phone saves current sentence",
+    "return-to-sentence closes sheet",
+    "exact sentence remains selected",
+    "phone capsule navigation returns to text",
+    "orientation change keeps card state",
+    "landscape reading no overflow",
+    "phone rating targets at least 60px",
+    "phone review no horizontal overflow",
+    "phone review completes",
+    "tablet two-column reader",
+    "tablet reader no overflow",
+    "tablet graph available",
+    "tablet SVG fallback pinch scales viewport",
+    "no mobile/tablet runtime errors"
+  ],
+  "errors": [],
+  "environment": "Chromium touch-emulated local DOM: fixture fetch, in-memory storage adapter, SVG graph. Not real iOS/iPadOS Safari, G6 pinch, or native IndexedDB testing."
+}

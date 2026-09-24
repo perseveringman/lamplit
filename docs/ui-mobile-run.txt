@@ -1,0 +1,53 @@
+PASS 375px graph replaced by grouped neighbourhood
+PASS phone KP opens full detail
+PASS phone neighbour changes focus and reveals detail
+PASS all 25 paths accessible on phone
+PASS phone learn no horizontal overflow
+PASS phone single-column reading
+PASS phone reader no horizontal overflow
+PASS phone visible highlights
+PASS phone sentence detail is modal, not a third column
+PASS phone saves current sentence
+PASS return-to-sentence closes sheet
+PASS exact sentence remains selected
+PASS phone capsule navigation returns to text
+PASS orientation change keeps card state
+PASS landscape reading no overflow
+PASS phone rating targets at least 60px
+PASS phone review no horizontal overflow
+PASS phone review completes
+PASS tablet two-column reader
+PASS tablet reader no overflow
+PASS tablet graph available
+PASS tablet SVG fallback pinch scales viewport
+PASS no mobile/tablet runtime errors
+{
+  "passed": true,
+  "checks": [
+    "375px graph replaced by grouped neighbourhood",
+    "phone KP opens full detail",
+    "phone neighbour changes focus and reveals detail",
+    "all 25 paths accessible on phone",
+    "phone learn no horizontal overflow",
+    "phone single-column reading",
+    "phone reader no horizontal overflow",
+    "phone visible highlights",
+    "phone sentence detail is modal, not a third column",
+    "phone saves current sentence",
+    "return-to-sentence closes sheet",
+    "exact sentence remains selected",
+    "phone capsule navigation returns to text",
+    "orientation change keeps card state",
+    "landscape reading no overflow",
+    "phone rating targets at least 60px",
+    "phone review no horizontal overflow",
+    "phone review completes",
+    "tablet two-column reader",
+    "tablet reader no overflow",
+    "tablet graph available",
+    "tablet SVG fallback pinch scales viewport",
+    "no mobile/tablet runtime errors"
+  ],
+  "errors": [],
+  "environment": "Chromium touch-emulated local DOM: fixture fetch, in-memory storage adapter, SVG graph. Not real iOS/iPadOS Safari, G6 pinch, or native IndexedDB testing."
+}

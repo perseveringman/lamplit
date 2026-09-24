@@ -1,0 +1,1454 @@
+
+> lamplit-reading-atlas@1.0.0 build
+> tsc -b && vite build
+
+src/App.tsx(1,74): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/App.tsx(4,390): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(4,390): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/App.tsx(4,468): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/App.tsx(4,478): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(4,503): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(4,532): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(4,561): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(4,569): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(4,576): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(4,611): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(7,120): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/App.tsx(12,148): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/App.tsx(15,49): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(15,135): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(15,190): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/App.tsx(15,271): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,33): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,134): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,166): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,173): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,204): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,224): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,232): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,239): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,248): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,281): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,287): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,323): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,700): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,745): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,752): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,796): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,829): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,873): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,881): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,892): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,898): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,930): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,961): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,968): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,975): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,985): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,997): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,1001): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,1005): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,1011): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,1113): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,1123): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,1130): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,1139): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,1172): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,1208): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,1214): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(16,1220): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,28): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,59): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,92): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,127): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,134): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,177): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,184): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,240): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,247): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,253): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,389): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,405): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,412): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,420): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,426): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,435): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,474): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,535): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,575): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,585): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,625): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,755): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(17,761): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(18,23): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(18,137): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(19,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(19,209): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(19,216): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(20,280): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/App.tsx(22,107): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,135): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,144): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,152): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,159): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,164): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,177): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,182): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,214): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,218): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,224): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,234): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,243): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,251): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,258): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,263): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,273): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,278): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,331): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,335): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,341): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,351): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,360): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,368): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,375): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,380): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,392): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,397): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,448): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,452): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,458): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,468): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,474): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,506): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,512): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,527): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,538): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,545): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,551): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,561): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,570): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,577): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,583): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,591): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,602): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,609): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,615): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(22,672): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(23,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(23,83): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/App.tsx(23,86): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(23,202): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(23,210): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/App.tsx(24,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(1,30): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/components/Common.tsx(10,66): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(10,66): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/components/Common.tsx(10,111): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(10,138): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(10,151): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(10,158): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(11,83): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(11,144): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(11,154): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(11,227): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(12,108): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(12,137): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(12,196): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(12,202): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(12,213): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(12,225): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(12,234): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(12,247): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(13,190): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(13,366): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(13,443): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(14,131): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(15,198): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(15,264): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/Common.tsx(19,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(20,200): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(21,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(21,36): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(21,82): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(21,149): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(21,171): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(21,178): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(21,198): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(21,267): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(22,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(22,73): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(22,91): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(22,113): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(22,154): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(22,159): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(22,201): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(22,205): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(22,248): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(22,252): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(23,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(23,125): error TS2322: Type '{ key: string; kp: KP; onClick: () => void; compact: true; }' is not assignable to type '{ kp: KP; onClick: () => void; selected?: boolean | undefined; compact?: boolean | undefined; }'.
+  Property 'key' does not exist on type '{ kp: KP; onClick: () => void; selected?: boolean | undefined; compact?: boolean | undefined; }'.
+src/components/Common.tsx(23,179): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(24,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(24,38): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(24,117): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(24,124): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(24,245): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(24,254): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(25,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(26,151): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(26,199): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(26,258): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(26,266): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(26,400): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(26,439): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(26,580): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(26,586): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(27,114): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(27,171): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(27,266): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(27,296): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/components/Common.tsx(27,299): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(27,420): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(27,431): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(28,336): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(28,377): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(28,405): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(28,443): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(28,450): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(28,455): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(28,543): error TS2322: Type '{ kp: KP; key: string; onClick: () => void; }' is not assignable to type '{ kp: KP; onClick: () => void; selected?: boolean | undefined; compact?: boolean | undefined; }'.
+  Property 'key' does not exist on type '{ kp: KP; onClick: () => void; selected?: boolean | undefined; compact?: boolean | undefined; }'.
+src/components/Common.tsx(28,582): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Common.tsx(28,588): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(1,48): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/components/Details.tsx(12,170): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/components/Details.tsx(12,180): error TS2322: Type '{ key: string; id: string; onOpen: ((e: Entity) => void) | undefined; context: { lessonId: string; sentenceId: string; } | undefined; }' is not assignable to type '{ id: string; onOpen?: ((e: Entity) => void) | undefined; context?: { lessonId: string; sentenceId: string; } | undefined; }'.
+  Property 'key' does not exist on type '{ id: string; onOpen?: ((e: Entity) => void) | undefined; context?: { lessonId: string; sentenceId: string; } | undefined; }'.
+src/components/Details.tsx(12,294): error TS2322: Type '{ key: string; id: string; onOpen: ((e: Entity) => void) | undefined; }' is not assignable to type '{ id: string; onOpen?: ((e: Entity) => void) | undefined; }'.
+  Property 'key' does not exist on type '{ id: string; onOpen?: ((e: Entity) => void) | undefined; }'.
+src/components/Details.tsx(12,366): error TS2322: Type '{ key: string; id: string; onOpen: ((e: Entity) => void) | undefined; }' is not assignable to type '{ id: string; onOpen?: ((e: Entity) => void) | undefined; }'.
+  Property 'key' does not exist on type '{ id: string; onOpen?: ((e: Entity) => void) | undefined; }'.
+src/components/Details.tsx(17,20): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(19,40): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/components/Details.tsx(19,85): error TS7031: Binding element 'id' implicitly has an 'any' type.
+src/components/Details.tsx(19,128): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/components/Details.tsx(19,145): error TS7031: Binding element 'id' implicitly has an 'any' type.
+src/components/Details.tsx(21,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(21,41): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(21,71): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(21,78): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(21,154): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(21,158): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(21,299): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(21,308): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(26,56): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/components/Details.tsx(27,71): error TS7006: Parameter 'id' implicitly has an 'any' type.
+src/components/Details.tsx(30,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(30,79): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(30,133): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(30,153): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/components/Details.tsx(30,200): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(30,290): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(30,341): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(30,348): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(30,417): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(30,451): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(30,542): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(36,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(37,3): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(37,61): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(37,126): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(37,133): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(38,3): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(38,85): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(39,3): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(39,76): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(43,3): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(43,146): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(43,282): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(43,293): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(44,23): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(44,99): error TS7006: Parameter 'lid' implicitly has an 'any' type.
+src/components/Details.tsx(44,142): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(44,203): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(44,235): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(44,242): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(44,257): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(44,296): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(44,309): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(46,23): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(46,66): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(46,74): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(46,151): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(46,160): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(46,188): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(46,194): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(46,220): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(46,235): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(46,240): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(46,246): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(46,297): error TS2322: Type '{ key: string; kp: KP; onClick: () => any; }' is not assignable to type '{ kp: KP; onClick: () => void; selected?: boolean | undefined; compact?: boolean | undefined; }'.
+  Property 'key' does not exist on type '{ kp: KP; onClick: () => void; selected?: boolean | undefined; compact?: boolean | undefined; }'.
+src/components/Details.tsx(46,358): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(46,364): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(46,411): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(47,3): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(47,36): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(47,49): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(47,59): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(47,252): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(47,256): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(48,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(53,40): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/components/Details.tsx(54,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(55,3): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(55,60): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(55,97): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(55,104): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(56,3): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(56,85): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(56,107): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(56,148): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(57,3): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(57,32): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(57,52): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(57,59): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(57,78): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(57,85): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(57,118): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(57,125): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(58,3): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(58,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(58,71): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(58,78): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(58,96): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(58,101): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(58,118): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(58,122): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(61,3): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(61,39): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(61,73): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(61,78): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(61,162): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(61,166): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(62,3): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(62,57): error TS7006: Parameter 'cid' implicitly has an 'any' type.
+src/components/Details.tsx(62,96): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/components/Details.tsx(62,119): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(62,248): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(62,261): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(63,3): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(63,39): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(63,49): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(63,128): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(64,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(64,62): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(64,77): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(64,108): error TS7006: Parameter 'q' implicitly has an 'any' type.
+src/components/Details.tsx(64,110): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/components/Details.tsx(64,114): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(64,128): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(64,166): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(64,204): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(64,209): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(65,3): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(65,61): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(65,138): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(65,163): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(65,170): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(65,217): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(65,226): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(65,237): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(66,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(71,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(71,56): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(71,87): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(71,165): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(71,172): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(71,241): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(71,248): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(72,3): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(72,40): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(72,53): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(72,82): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(72,102): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(72,109): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(72,130): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(72,137): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(72,167): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(72,174): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(74,3): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(74,49): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(74,59): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(74,64): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(74,72): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(74,76): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(75,62): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(75,147): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(76,3): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(76,39): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(76,48): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(76,150): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Details.tsx(78,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/HighlightedText.tsx(1,29): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/components/HighlightedText.tsx(9,9): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/components/HighlightedText.tsx(9,25): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/components/HighlightedText.tsx(9,250): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/HighlightedText.tsx(9,427): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/HighlightedText.tsx(9,484): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/HighlightedText.tsx(9,591): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/HighlightedText.tsx(9,606): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/HighlightedText.tsx(9,654): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(1,19): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/components/Icon.tsx(4,7): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/components/Icon.tsx(4,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(5,10): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(5,58): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(6,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(6,48): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(7,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(8,12): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(8,43): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(8,72): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(8,102): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(8,132): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(8,163): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(9,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(10,10): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(10,39): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(10,70): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(11,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(12,10): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(12,59): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(13,8): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(13,47): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(13,88): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(13,119): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(13,158): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(13,190): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(13,225): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(13,254): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(13,302): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(13,346): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,40): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,116): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,147): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,247): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,273): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,312): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,343): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,379): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,420): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,456): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,492): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,542): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,617): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,687): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,741): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,783): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,814): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,901): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,956): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,1012): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(14,1054): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(16,149): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/Icon.tsx(16,351): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type 'Record<IconName, React.ReactNode>'.
+src/components/Icon.tsx(16,363): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(1,55): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/components/KnowledgeGraph.tsx(13,625): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/components/KnowledgeGraph.tsx(13,684): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/components/KnowledgeGraph.tsx(13,732): error TS7006: Parameter 'id' implicitly has an 'any' type.
+src/components/KnowledgeGraph.tsx(17,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,9): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/components/KnowledgeGraph.tsx(17,48): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,85): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,138): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,169): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,176): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,189): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,194): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,209): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,327): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,381): error TS7006: Parameter 'n' implicitly has an 'any' type.
+src/components/KnowledgeGraph.tsx(17,433): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,453): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,475): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,480): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,518): error TS7006: Parameter 'n' implicitly has an 'any' type.
+src/components/KnowledgeGraph.tsx(17,521): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,608): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,676): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,687): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,693): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,707): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,716): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,728): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,747): error TS7006: Parameter 'n' implicitly has an 'any' type.
+src/components/KnowledgeGraph.tsx(17,773): error TS7006: Parameter 'n' implicitly has an 'any' type.
+src/components/KnowledgeGraph.tsx(17,776): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,894): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,905): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(17,915): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(18,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(18,77): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(18,119): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(18,183): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(18,192): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(18,219): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(18,230): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(18,237): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(18,271): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(18,279): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(18,286): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(18,292): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(21,69): error TS2307: Cannot find module '@antv/g6' or its corresponding type declarations.
+src/components/KnowledgeGraph.tsx(23,89): error TS2307: Cannot find module '@antv/g6' or its corresponding type declarations.
+src/components/KnowledgeGraph.tsx(23,191): error TS2307: Cannot find module '@antv/g6' or its corresponding type declarations.
+src/components/KnowledgeGraph.tsx(25,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(25,56): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/KnowledgeGraph.tsx(25,189): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/KnowledgeGraph.tsx(26,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(26,39): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(26,104): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(26,111): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(27,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(29,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(29,450): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(30,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(30,42): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(31,21): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(31,82): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(31,142): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(31,153): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(32,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(38,38): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/components/KnowledgeGraph.tsx(39,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(39,98): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/KnowledgeGraph.tsx(39,143): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/KnowledgeGraph.tsx(39,374): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/KnowledgeGraph.tsx(39,849): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/components/KnowledgeGraph.tsx(39,959): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/KnowledgeGraph.tsx(40,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(40,8): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(40,84): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(40,143): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(40,153): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(40,160): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(40,214): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(41,20): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(42,102): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(43,16): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(43,146): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/KnowledgeGraph.tsx(43,228): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/KnowledgeGraph.tsx(43,307): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(43,354): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(43,499): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(43,572): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(43,772): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(43,779): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(43,785): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(43,789): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(44,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/KnowledgeGraph.tsx(44,368): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(1,55): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/components/SearchDialog.tsx(20,9): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/components/SearchDialog.tsx(20,93): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(20,411): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/SearchDialog.tsx(20,451): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/SearchDialog.tsx(20,508): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/components/SearchDialog.tsx(20,595): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/components/SearchDialog.tsx(20,701): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(21,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(21,125): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(21,230): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(21,241): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(22,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(22,41): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(22,73): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(22,80): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(22,123): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(22,225): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(22,236): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(22,242): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(22,259): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(22,263): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(23,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(23,101): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/components/SearchDialog.tsx(23,103): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/components/SearchDialog.tsx(23,107): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(23,289): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(23,418): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(23,425): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(23,431): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(23,447): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(23,456): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(23,475): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(23,483): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(23,490): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(23,615): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(23,653): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(23,664): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(24,27): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(24,62): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(24,78): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(24,82): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(24,108): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(24,115): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(25,10): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(25,57): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(26,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(26,31): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(26,43): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(26,50): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(26,64): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(26,71): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(26,83): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/SearchDialog.tsx(26,90): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/badge.tsx(1,19): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/components/ui/badge.tsx(3,90): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/components/ui/badge.tsx(3,90): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/button.tsx(1,19): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/components/ui/button.tsx(6,71): error TS7031: Binding element 'className' implicitly has an 'any' type.
+src/components/ui/button.tsx(6,81): error TS7031: Binding element 'variant' implicitly has an 'any' type.
+src/components/ui/button.tsx(6,89): error TS7031: Binding element 'size' implicitly has an 'any' type.
+src/components/ui/button.tsx(6,118): error TS7006: Parameter 'ref' implicitly has an 'any' type.
+src/components/ui/button.tsx(6,124): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/components/ui/button.tsx(6,124): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/card.tsx(1,19): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/components/ui/card.tsx(3,88): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/components/ui/card.tsx(3,88): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/card.tsx(4,94): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/card.tsx(5,97): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/card.tsx(6,105): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/card.tsx(7,95): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/card.tsx(8,94): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/dialog.tsx(1,38): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/components/ui/dialog.tsx(10,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/dialog.tsx(10,9): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/components/ui/dialog.tsx(10,113): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/components/ui/dialog.tsx(10,175): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/ui/dialog.tsx(11,12): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/dialog.tsx(11,43): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/dialog.tsx(11,48): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/dialog.tsx(11,59): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/dialog.tsx(11,78): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/dialog.tsx(11,94): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/dialog.tsx(11,99): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/dialog.tsx(11,204): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/dialog.tsx(11,210): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/dialog.tsx(11,249): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/dialog.tsx(12,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/components/ui/input.tsx(1,19): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/components/ui/input.tsx(3,101): error TS7031: Binding element 'className' implicitly has an 'any' type.
+src/components/ui/input.tsx(3,133): error TS7006: Parameter 'ref' implicitly has an 'any' type.
+src/components/ui/input.tsx(3,139): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/components/ui/input.tsx(3,139): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/lib/data.ts(1,64): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/lib/data.ts(36,38): error TS7006: Parameter 'n' implicitly has an 'any' type.
+src/lib/navigation.ts(1,40): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/lib/router.ts(1,37): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/lib/store.tsx(1,92): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/lib/store.tsx(24,99): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/lib/store.tsx(24,161): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/lib/store.tsx(24,173): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/lib/store.tsx(26,192): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/lib/store.tsx(29,159): error TS7006: Parameter 'previous' implicitly has an 'any' type.
+src/lib/store.tsx(30,36): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/lib/store.tsx(32,73): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/lib/store.tsx(33,73): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/lib/store.tsx(34,73): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/lib/store.tsx(35,62): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/lib/store.tsx(36,77): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/lib/store.tsx(37,133): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/lib/store.tsx(38,53): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/lib/store.tsx(39,46): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/lib/store.tsx(40,102): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/lib/store.tsx(40,561): error TS7006: Parameter 'id' implicitly has an 'any' type.
+src/lib/store.tsx(41,74): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/lib/store.tsx(46,36): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/lib/store.tsx(47,56): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/lib/store.tsx(54,42): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/lib/store.tsx(56,9): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/main.tsx(1,19): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/main.tsx(2,26): error TS2307: Cannot find module 'react-dom/client' or its corresponding type declarations.
+src/main.tsx(5,224): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/main.tsx(5,224): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/main.tsx(5,253): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/main.tsx(5,265): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/main.tsx(5,270): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/main.tsx(5,288): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/main.tsx(5,292): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/main.tsx(5,377): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/main.tsx(5,386): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/main.tsx(5,419): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/main.tsx(5,432): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/main.tsx(5,442): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/main.tsx(5,473): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/main.tsx(5,479): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/main.tsx(5,489): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/main.tsx(5,501): error TS2339: Property 'props' does not exist on type 'ErrorBoundary'.
+src/pages/Atlas.tsx(1,19): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/pages/Atlas.tsx(5,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,9): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/pages/Atlas.tsx(5,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,81): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,86): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,111): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,140): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,152): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,158): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,169): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,178): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,183): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,188): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,213): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,217): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,223): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,252): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,285): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,294): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,308): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,315): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(5,321): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,29): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,60): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,88): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,96): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,103): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,111): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,127): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,136): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,140): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,176): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,204): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,212): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,219): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,228): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,243): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,252): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,256): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,292): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,320): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,328): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,335): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,344): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,360): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,369): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,373): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(6,516): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(7,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(7,32): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(7,60): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(7,86): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(7,115): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(7,120): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(7,155): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(7,183): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(7,192): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(7,364): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(7,423): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(8,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(8,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(8,97): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(8,103): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(8,108): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(8,168): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(8,175): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(8,193): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(8,198): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(8,201): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(8,238): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(8,262): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(8,266): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(8,429): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(8,439): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(9,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(9,102): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(9,110): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Atlas.tsx(9,116): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(1,48): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/pages/Cards.tsx(4,162): error TS18046: 'k' is of type 'unknown'.
+src/pages/Cards.tsx(4,214): error TS7006: Parameter 'list' implicitly has an 'any' type.
+src/pages/Cards.tsx(4,250): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/Cards.tsx(5,93): error TS18046: 'x' is of type 'unknown'.
+src/pages/Cards.tsx(5,171): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/Cards.tsx(5,230): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/Cards.tsx(5,340): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/Cards.tsx(5,442): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/Cards.tsx(6,52): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'MemoryCard'.
+src/pages/Cards.tsx(6,105): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(6,134): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(6,147): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(6,161): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(6,218): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'MemoryCard'.
+src/pages/Cards.tsx(6,277): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'MemoryCard'.
+src/pages/Cards.tsx(6,288): error TS7006: Parameter 'id' implicitly has an 'any' type.
+src/pages/Cards.tsx(6,364): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'MemoryCard'.
+src/pages/Cards.tsx(6,427): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(6,457): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(6,512): error TS18046: 'a' is of type 'unknown'.
+src/pages/Cards.tsx(6,523): error TS18046: 'b' is of type 'unknown'.
+src/pages/Cards.tsx(6,532): error TS18046: 'a' is of type 'unknown'.
+src/pages/Cards.tsx(6,538): error TS18046: 'b' is of type 'unknown'.
+src/pages/Cards.tsx(6,551): error TS18046: 'a' is of type 'unknown'.
+src/pages/Cards.tsx(6,568): error TS18046: 'b' is of type 'unknown'.
+src/pages/Cards.tsx(7,128): error TS2345: Argument of type '(card: MemoryCard) => any' is not assignable to parameter of type '(this: undefined, value: unknown, index: number, array: unknown[]) => any'.
+  Types of parameters 'card' and 'value' are incompatible.
+    Type 'unknown' is not assignable to type 'MemoryCard'.
+src/pages/Cards.tsx(8,116): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'MemoryCard'.
+src/pages/Cards.tsx(8,322): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/pages/Cards.tsx(9,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(9,9): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/pages/Cards.tsx(9,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(9,81): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(9,86): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(9,115): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(9,121): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(9,131): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(9,141): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(9,146): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(9,151): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(9,170): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(9,174): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(9,318): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,36): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,63): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,68): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,100): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,107): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,127): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,137): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,145): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,154): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,235): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,239): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,463): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,469): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,497): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,502): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,512): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,519): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,539): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,548): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,576): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,584): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,590): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,595): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,605): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,612): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,638): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,647): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,659): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,667): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,673): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,678): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,688): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,695): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,711): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,715): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,719): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,728): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,742): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,750): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,756): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,761): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,772): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,779): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,835): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,844): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,901): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,909): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,915): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(10,921): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,17): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,49): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,77): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,108): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,115): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,226): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,243): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,262): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,269): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,349): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,365): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,373): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,381): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,387): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,393): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,428): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,459): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,466): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,507): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,553): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,673): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,690): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,699): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,708): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,714): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(11,720): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(12,223): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(12,257): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(12,290): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(12,298): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(12,316): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(12,323): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(12,328): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(12,440): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/Cards.tsx(12,491): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(12,658): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,15): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,45): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,54): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,85): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/Cards.tsx(13,113): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,137): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,161): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,292): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,303): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,312): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,320): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,331): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,365): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/Cards.tsx(13,396): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,420): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,429): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,453): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,504): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,533): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,544): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,570): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,579): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,588): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,596): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,607): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,646): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/Cards.tsx(13,682): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,706): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,737): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,794): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,805): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,814): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,822): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,833): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,867): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/Cards.tsx(13,898): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,922): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,955): error TS7006: Parameter 'cl' implicitly has an 'any' type.
+src/pages/Cards.tsx(13,959): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,1002): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,1013): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,1022): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(13,1030): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(14,22): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(14,52): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(14,80): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(14,629): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,15): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,48): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,78): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,109): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,214): error TS18046: 'x' is of type 'unknown'.
+src/pages/Cards.tsx(15,232): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/Cards.tsx(15,307): error TS18046: 'x' is of type 'unknown'.
+src/pages/Cards.tsx(15,332): error TS7006: Parameter 'id' implicitly has an 'any' type.
+src/pages/Cards.tsx(15,353): error TS18046: 'x' is of type 'unknown'.
+src/pages/Cards.tsx(15,372): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,380): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,401): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,408): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,433): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,468): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(15,499): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(15,508): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,541): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,578): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'MemoryCard'.
+src/pages/Cards.tsx(15,640): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(15,660): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/Cards.tsx(15,675): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/Cards.tsx(15,701): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(15,719): error TS7006: Parameter 'id' implicitly has an 'any' type.
+src/pages/Cards.tsx(15,728): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(15,740): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,748): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,815): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(15,853): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'MemoryCard'.
+src/pages/Cards.tsx(15,904): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,923): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'MemoryCard'.
+src/pages/Cards.tsx(15,941): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,950): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,958): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(15,987): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(15,1022): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'MemoryCard'.
+src/pages/Cards.tsx(15,1032): error TS7006: Parameter 'id' implicitly has an 'any' type.
+src/pages/Cards.tsx(15,1076): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,1084): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,1093): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,1124): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,1131): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(15,1149): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(15,1178): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(15,1246): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,1253): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,1261): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type 'Record<MemoryState, string>'.
+src/pages/Cards.tsx(15,1273): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(15,1289): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(15,1301): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,1309): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,1363): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(15,1424): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(15,1433): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(15,1477): error TS18046: 'card' is of type 'unknown'.
+src/pages/Cards.tsx(15,1525): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,1533): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(15,1821): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,108): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,143): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,154): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,161): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,196): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,204): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,212): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,221): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,331): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/Cards.tsx(16,377): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,382): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,397): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,404): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,419): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,426): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,432): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,466): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,470): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,537): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(16,657): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(17,200): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(17,513): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Cards.tsx(18,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(1,30): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/pages/Connections.tsx(2,241): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/pages/Connections.tsx(2,397): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(2,397): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/pages/Connections.tsx(2,431): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(2,461): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(2,490): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(2,496): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(2,505): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(2,518): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(2,523): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(2,528): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(2,562): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(2,566): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(2,572): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(2,674): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(2,705): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(2,754): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/Connections.tsx(2,806): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(2,814): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(2,902): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(2,968): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/pages/Connections.tsx(2,970): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/pages/Connections.tsx(2,984): error TS2322: Type '{ key: any; pair: any; index: any; }' is not assignable to type '{ pair: Pair; index: number; }'.
+  Property 'key' does not exist on type '{ pair: Pair; index: number; }'.
+src/pages/Connections.tsx(2,1032): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(2,1304): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,150): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,181): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,207): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,275): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,282): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,411): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,473): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,493): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,502): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,512): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,520): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,527): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,610): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,643): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,657): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,661): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,668): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,681): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,686): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,709): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,713): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,778): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,785): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,815): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,821): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,827): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,855): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,889): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,998): error TS2322: Type '{ kp: any; key: any; compact: true; onClick: () => any; }' is not assignable to type '{ kp: KP; onClick: () => void; selected?: boolean | undefined; compact?: boolean | undefined; }'.
+  Property 'key' does not exist on type '{ kp: KP; onClick: () => void; selected?: boolean | undefined; compact?: boolean | undefined; }'.
+src/pages/Connections.tsx(3,1203): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Connections.tsx(3,1209): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(1,48): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/pages/IndexPage.tsx(6,77): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/pages/IndexPage.tsx(6,181): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/pages/IndexPage.tsx(7,85): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/pages/IndexPage.tsx(7,199): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/pages/IndexPage.tsx(8,30): error TS7006: Parameter 'k' implicitly has an 'any' type.
+src/pages/IndexPage.tsx(8,89): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/pages/IndexPage.tsx(8,181): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/pages/IndexPage.tsx(8,183): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/pages/IndexPage.tsx(8,400): error TS7006: Parameter 'k' implicitly has an 'any' type.
+src/pages/IndexPage.tsx(10,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,9): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/pages/IndexPage.tsx(10,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,67): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,96): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,102): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,113): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,123): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,128): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,133): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,158): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,162): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,168): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,197): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,272): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,385): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,396): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,402): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,433): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,568): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/IndexPage.tsx(10,727): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,733): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,856): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/IndexPage.tsx(10,884): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,911): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,920): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,949): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,958): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,982): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,991): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1015): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1024): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1033): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1039): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1118): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1180): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1187): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1359): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1392): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1420): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1431): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1438): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1446): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1453): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1461): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1468): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1476): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1483): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1526): error TS7006: Parameter 'row' implicitly has an 'any' type.
+src/pages/IndexPage.tsx(10,1531): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1598): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1702): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1707): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1787): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1810): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1826): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1831): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1837): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1846): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1934): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1943): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,1994): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,2018): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,2026): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,2077): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,2085): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,2383): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/IndexPage.tsx(10,2389): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(1,48): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/pages/Learn.tsx(3,188): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/Learn.tsx(3,501): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/pages/Learn.tsx(4,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,9): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/pages/Learn.tsx(4,37): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,67): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,105): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,111): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,120): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,129): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,134): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,139): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,166): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,170): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,176): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,212): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,250): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,258): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,310): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/Learn.tsx(4,384): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,416): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,444): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,525): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,594): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,605): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,618): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,627): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,633): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,663): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,695): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,827): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,853): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,860): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,888): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,909): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,920): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,970): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1088): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1103): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1110): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1138): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1146): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1157): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1169): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1177): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1208): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1236): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1241): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1312): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1319): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1351): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1356): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1407): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1411): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1417): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1462): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1472): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1480): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1487): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1554): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,1624): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/pages/Learn.tsx(4,1626): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/pages/Learn.tsx(4,1642): error TS2322: Type '{ key: any; lesson: any; sequence: any; onLesson: (id: string) => any; onKP: (id: string) => any; }' is not assignable to type '{ lesson: LessonSummary; onLesson: (id: string) => void; onKP: (id: string) => void; sequence?: number | undefined; }'.
+  Property 'key' does not exist on type '{ lesson: LessonSummary; onLesson: (id: string) => void; onKP: (id: string) => void; sequence?: number | undefined; }'.
+src/pages/Learn.tsx(4,1811): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,2115): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,2122): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Learn.tsx(4,2128): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(1,59): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/pages/Reader.tsx(3,311): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/pages/Reader.tsx(3,447): error TS2322: Type '{ key: any; lesson: any; sid: string | undefined; kid: string | undefined; fromReview: boolean; }' is not assignable to type '{ lesson: Lesson; sid?: string | undefined; kid?: string | undefined; fromReview: boolean; }'.
+  Property 'key' does not exist on type '{ lesson: Lesson; sid?: string | undefined; kid?: string | undefined; fromReview: boolean; }'.
+src/pages/Reader.tsx(9,120): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/pages/Reader.tsx(12,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,46): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,76): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,106): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,113): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,157): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,164): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,314): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,360): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,364): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,423): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,461): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,468): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,473): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,578): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,691): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,925): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,934): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,942): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,984): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,1046): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/Reader.tsx(12,1075): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/pages/Reader.tsx(12,1208): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,1218): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(12,1232): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(13,23): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(13,124): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(15,55): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(15,84): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(15,112): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(15,142): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(15,233): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(15,242): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(15,279): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(15,286): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(15,335): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(15,342): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(15,348): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(15,788): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(15,974): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(15,983): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(15,999): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(15,1005): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(16,14): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(16,43): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(16,224): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(16,302): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(16,364): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/Reader.tsx(16,416): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(16,429): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(16,494): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(16,504): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(16,510): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(16,539): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(16,547): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(16,874): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(16,880): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(17,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(17,144): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(17,188): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(17,330): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,31): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,68): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,76): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,107): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,141): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,188): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/pages/Reader.tsx(18,216): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,276): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,283): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,289): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,343): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,365): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,413): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,440): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,470): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,490): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,497): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,515): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,522): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,552): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,601): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,670): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(18,676): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(19,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(19,44): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(19,101): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(19,175): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(19,184): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(19,228): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(19,747): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(20,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(20,134): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(20,405): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(20,625): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(20,634): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(20,833): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/Reader.tsx(20,1182): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(20,1186): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(20,1194): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(21,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(21,31): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(21,59): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(21,66): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(21,84): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(21,89): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(21,137): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(21,141): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(21,351): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(21,357): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(22,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(22,49): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(22,65): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(22,75): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(22,123): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(22,154): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(22,168): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(22,174): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(22,205): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(22,209): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(22,297): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(22,301): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(22,311): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(23,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(23,47): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(23,55): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Reader.tsx(25,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(1,40): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/pages/Review.tsx(6,21): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/pages/Review.tsx(7,229): error TS18046: 'x' is of type 'unknown'.
+src/pages/Review.tsx(7,246): error TS18046: 'x' is of type 'unknown'.
+src/pages/Review.tsx(7,261): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,293): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,354): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,360): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,395): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,402): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,434): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,439): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,505): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,509): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,556): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,575): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,607): error TS7006: Parameter 'x' implicitly has an 'any' type.
+src/pages/Review.tsx(7,630): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,639): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,654): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,661): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,669): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,685): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,749): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/pages/Review.tsx(7,751): error TS7006: Parameter 'b' implicitly has an 'any' type.
+src/pages/Review.tsx(7,883): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,888): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,1086): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(7,1092): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,62): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,91): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,229): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,262): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,304): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,331): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,335): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,342): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,347): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,414): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,420): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,426): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,488): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,495): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,504): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,633): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,700): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,718): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,725): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(8,796): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(9,2): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(9,54): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(9,66): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(9,70): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(9,116): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(9,237): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(9,243): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(9,257): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(9,272): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(9,279): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(9,332): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(9,340): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(9,351): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(9,466): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(9,495): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(9,505): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(9,514): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(9,522): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(10,108): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(10,265): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(10,399): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(12,796): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(12,853): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(12,882): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(12,889): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(12,970): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(12,991): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(12,1041): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(12,1046): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(12,1091): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/pages/Review.tsx(12,1095): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+error TS2688: Cannot find type definition file for 'node'.
+  The file is in the program because:
+    Entry point of type library 'node' specified in compilerOptions
+exit=1

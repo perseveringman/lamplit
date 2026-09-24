@@ -1,0 +1,6 @@
+{
+  "compiler": "5.8.3",
+  "files": 29,
+  "diagnostics": [],
+  "mode": "Syntax/transpilation check only; not a full dependency-backed tsc check."
+}

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": 212612,
+  "lessons": 288,
+  "sentences": 4606,
+  "knowledgePoints": 8088,
+  "matchedSpans": 44452,
+  "paths": 25,
+  "pairs": 100,
+  "gzipFiles": 40,
+  "scope": "Exact-source spans, IDs, counts, relationships, context links and source hashes. Does not assert linguistic annotation accuracy."
+}

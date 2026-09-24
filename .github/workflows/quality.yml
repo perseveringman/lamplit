@@ -1,0 +1,18 @@
+name: Quality checks
+on: [push, pull_request]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      # No fabricated lockfile is included. After the first successful install,
+      # commit package-lock.json and replace this step with npm ci.
+      - run: npm install
+      - run: npm run data:check
+      - run: npm test
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e

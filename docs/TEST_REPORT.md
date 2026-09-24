@@ -1,0 +1,46 @@
+# 验证报告
+
+验证日期：2026-09-22。请按下面的边界理解“通过”。此报告没有把源码转译、SVG 降级测试或内存存储模拟冒充正式构建验收。
+
+## 已执行且通过
+
+| 验证 | 结果 | 实际覆盖 |
+| --- | --- | --- |
+| 数据结构断言 | 212,612 项通过 | 288 课、4,606 句段、8,088 索引项、44,452 命中，正反出处、原始文件哈希、25 路径、100 共点对、40 gzip 文件 |
+| Node 领域测试 | 15 / 15 通过 | FSRS 状态与间隔、弱项初值、到期过滤、保留率单调性、2,000 次混合复习稳定性、中文搜索、分层高亮文本不丢失 |
+| 源码转译 | 29 个 TS / TSX 文件，语法诊断为 0 | TypeScript 5.8.3 transpileModule；不是完整类型检查 |
+| 桌面交互断言 | 21 项通过 | SVG 节点切换、中文搜索、三栏阅读、三类默认标记、句详情联动、胶囊定位、保存、弱项、复习回溯、评分、暂停 / 恢复 / 重置 |
+| 手机 / 平板交互断言 | 23 项通过 | 375×667 单栏、邻域列表、25 路径入口、详情关闭、原句定位、横竖屏切换、70px 评级按钮、复习提交、768×1024 双栏、SVG 双指缩放 |
+
+交互断言共 44 项；不是 44 个独立的生产环境 E2E 场景。通过测试的最终运行中未记录到页面运行时错误。常用页面在 1280×800、375×667、667×375、768×1024 的相关检查中未出现横向溢出。每一张截图都来自实际页面渲染，非设计图；截图中的保存和评分来自测试中实际点击，不是预置业务演示数据。
+
+## 测试环境和限制
+
+环境中的 Chromium 管理策略禁止浏览器 URL 导航；npm registry DNS 请求返回 EAI_AGAIN，安装也超时。本项目没有修改或规避这些策略。
+
+UI 检查通过 `page.set_content` 加载本地 DOM、真实缓存 React / ReactDOM 和相同 TSX 的预转译包。读取内容由本地 JSON fixture 返回，IndexedDB 在测试页面中替换成内存形态的接口适配器。图引擎走源码里提供的 SVG 降级路径；双指缩放使用 Chromium CDP 触摸事件模拟。
+
+因此 UI 测试证明了 React 交互、状态流转和布局，而**不证明**真实 IndexedDB 的关闭浏览器 / 刷新持久性、实际 G6 引擎和 Safari 行为、生产打包、跨标签页原生事务竞争或真实 4G 性能。本地预览在普通浏览器中运行时不注入这些测试适配器，会调用真实同源 fetch 和 IndexedDB。
+
+## 已尝试但没有通过的构建环节
+
+`npm install` 因依赖访问受限未能完成。`npm ping` 返回 DNS EAI_AGAIN。`npm run build` 已执行，TypeScript 在缺失 React、Vite、G6 及类型依赖的阶段失败，Vite 阶段未执行。不能据此声称正式严格类型检查已通过，也不能保证首次在完整依赖环境构建时不存在额外类型问题。
+
+源码配置了正式依赖和构建流程，但包内没有 `node_modules`、没有伪造 lockfile，也没有假冒的 `dist`。`preview/` 是专门标注的免安装本地预览。
+
+## 仍须在完整环境执行的验收
+
+- 安装依赖并运行 `npm run build`；确认实际 G6 显示而不是 SVG 回退。
+- 运行 `npm run test:e2e`，检查真实 IndexedDB 刷新保存、评级后的重载及全局搜索。
+- 两个同源标签页同时评分 / 保存，检查事务与 BroadcastChannel 的实际行为。
+- iPhone / iPad Safari 实机检查字体、软键盘、模态焦点、触摸和安全区。
+- 限速 4G 的首次加载与翻课性能；屏幕阅读器 / 对比度审计。
+- 课文版本校对与语法、词义、能力路径的语言教学审核。
+
+以上未执行项不标记为完成。`tests/e2e/product.spec.ts` 和 CI 工作流已经提供，作为可重复的正式验收入口，而不是已跑过的证明。
+
+## 证据文件
+
+`data-validation.json`、`domain-test.txt`、`transpile-report.json`、`ui-desktop-validation.json`、`ui-mobile-validation.json`、`registry-check.txt`、`dependency-install.txt`、`build-attempt.txt`。
+
+对应截图在 `screenshots/`。`ui-instrumented.py` / `ui-mobile-instrumented.py` 与 `browser-harness.py` 仅用于受限环境检查，不属于生产应用代码。

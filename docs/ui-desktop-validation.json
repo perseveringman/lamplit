@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "checks": [
+    "desktop atlas opens at useful hub",
+    "SVG neighbour click changes focus",
+    "Chinese global search selects true KP",
+    "desktop three reading columns",
+    "desktop no horizontal overflow",
+    "default grammar, chunk and model layers",
+    "sentence panel follows selection",
+    "star atomically saves sentence card",
+    "capsule locates all actual occurrences",
+    "weak flag preserved",
+    "two source entities saved without duplicates",
+    "review front starts without answers",
+    "Space reveals context",
+    "review context jump preserves return route",
+    "unfinished review resumes flipped card",
+    "rating is committed once",
+    "session completes with two real ratings",
+    "batch pause",
+    "batch resume",
+    "reset keeps history and returns to new",
+    "no runtime errors desktop"
+  ],
+  "errors": [],
+  "environment": "Chromium local DOM instrumentation: real React, fixture fetch, in-memory IndexedDB adapter, SVG graph fallback. Not production Vite/G6/native persistence testing."
+}
