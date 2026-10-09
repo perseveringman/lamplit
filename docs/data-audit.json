@@ -1292,7 +1292,7 @@
     "glossedWords": 3573,
     "contextWords": 4168,
     "pairs": 100,
-    "hits": 48378,
+    "hits": 48322,
     "senseResolved": 31636,
     "senseSkipped": 140,
     "llmSenses": 8553,
@@ -1305,7 +1305,7 @@
     "kpWithLevel": 24
   },
   "catalogSize": {
-    "bytes": 8619198,
-    "gzip": 1330890
+    "bytes": 8619948,
+    "gzip": 1331058
   }
 }

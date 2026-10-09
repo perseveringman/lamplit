@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "checks": 230245,
+  "checks": 230021,
   "teachingPoints": 28,
   "offCorpusPatterns": 9,
   "patternCoverage": 95.5,
@@ -54,7 +54,7 @@
   "lessons": 288,
   "sentences": 4606,
   "knowledgePoints": 8715,
-  "matchedSpans": 48378,
+  "matchedSpans": 48322,
   "paths": 25,
   "pairs": 100,
   "gzipFiles": 40,

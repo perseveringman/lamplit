@@ -16,13 +16,23 @@ const rule = (id, type, name, meaning, regex, parent, opts) => ({
 // 原先这里是一份 ~50 个词的手写白名单，"have" 的过去分词 "had" 根本不在里面，
 // 导致 "I've already had lunch." 这种最典型的现在完成时识别不出来。
 const PAST_PARTICIPLES = (() => {
- const JUNK = new Set(['of','i','it','my','we','they','its','goods','bads','best','worse','worst','further','furthest','fars','ins','ats','mores','bes','haves','ones','one-which']);
+ // ECDICT 的 exchange 字段对**所有词性**都给屈折形式，所以动词表里混进了 18 个功能词表头：
+ // a, and, as, at, here, i, in, it, no, one, or, other, so, you ……
+ // 它们贡献了 your / ands / ass / heres / noes 这类"分词"，会让 "is your" 被判成被动语态。
+ // 处理办法是按**表头**过滤，而不是逐个往黑名单里加形式 —— 黑名单补不完。
+ const NOT_VERB = new Set(['a','an','and','as','at','here','i','in','it','no','one','or','other','so','you','they','we','my','of','to','the','this','that','these','those','some','any','every','all','both','either','neither','such','then','now','only','own','very','just','too','out','up','down','off','over',
+  // 形容词也在这张表里（ECDICT 给比较级/最高级），它们的屈折不是分词
+  'good','bad','far','little','much','many','old','ill']);
+ const OK_HEAD = new Set(['be','do','have']);
+ // be / do / have 是动词，但只有这几个形式是过去分词
+ const OK_FORM = new Set(['been','done','had']);
  const out = new Set();
  for (const [base, joined] of Object.entries(VERB_FORMS)) {
+  if (NOT_VERB.has(base) && !OK_HEAD.has(base)) continue;
   for (const f of String(joined).split('|')) {
-   if (f === base || f.endsWith('ing') || !/^[a-z]+$/.test(f) || f.length < 2 || JUNK.has(f)) continue;
-   // 滤掉三单：base+s / base+es / y→ies
+   if (f === base || f.endsWith('ing') || !/^[a-z]+$/.test(f) || f.length < 2) continue;
    if (f === base + 's' || f === base + 'es' || f === base.slice(0, -1) + 'ies') continue;
+   if (OK_HEAD.has(base) && !OK_FORM.has(f)) continue;
    out.add(f);
   }
  }

@@ -439,3 +439,61 @@ chunk.regex = new RegExp('(?<![A-Za-z])(?:' + alt + ')' + gap + tail + '(?![A-Za
 已合并为单处构造。
 
 **错误的前提也能撞出真问题，但不能因此把错误的前提说成对的。**
+
+---
+
+## 原则 15 · 从外部表构建集合时，要按「来源」过滤，不要按「结果」补黑名单
+
+做 hit 载荷测量时，顺手看了一眼语法命中 span 里到底是什么，撞到：
+
+```
+g-passive      匹配到 «is an»、«is your»、«are better»
+g-past-perfect 匹配到 «had an»
+```
+
+追下去发现 `PAST_PARTICIPLES`（过去分词集）的构建方式有结构性问题：
+
+```js
+// 从 VERB_FORMS 反推：去掉原形、-ing、三单，剩下的当过去分词
+for (const [base, joined] of Object.entries(VERB_FORMS)) { ... }
+```
+
+**而 `VERB_FORMS` 是从 ECDICT 的 `exchange` 字段生成的，那个字段对所有词性都给屈折形式。**
+所以这张「动词表」里混进了 **18 个根本不是动词的表头**：
+
+```
+a · and · as · at · here · i · in · it · no · one · or · other · so · you · they · we · my · of
+以及形容词 good · bad · far · much · many · old
+```
+
+它们贡献了 `your`/`ands`/`ass`/`heres`/`noes`/`better`/`worse` 这类「分词」。
+
+### 两次修法的区别
+
+**第一版（错的）**：往黑名单里加具体形式 —— `an`, `are`, `did`, `has`, `is`, `was`。
+结果 `is your`（来自 `you`）、`are better`（来自 `good`）还在。
+
+**第二版（对的）**：按**表头**过滤。
+
+```js
+if (NOT_VERB.has(base) && !OK_HEAD.has(base)) continue;   // 表头不是动词，整张表跳过
+if (OK_HEAD.has(base) && !OK_FORM.has(f)) continue;       // be/do/have 只取 been/done/had
+```
+
+**黑名单是按"结果"补，补不完；按"来源"过滤才收敛。** 这和 B6 那条「正向枚举 vs 反向约束」
+是同一个形状：**当一个集合来自不可靠的外部表时，要在入口处过滤来源，而不是在出口处逐个挑错。**
+
+### 效果
+
+```
+g-passive  738 → 717 次（清掉 21 个假阳性）
+g-past-perfect / g-present-perfect 同步下降
+```
+
+### 顺带说明：这个 bug 是"为别的目的做测量"时撞到的
+
+本轮原计划是做 hit 载荷，第一步按自己定的纪律"从实测开始"——
+打印几个语法规则的命中 span 看它们长什么样。**假阳性就在那一眼里。**
+
+如果直接开始写载荷代码，会给这些 `is an` / `is your` 生成"成分拆解"，
+**把一个假阳性包装成一个看起来很专业的数据结构**。
