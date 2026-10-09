@@ -44,3 +44,51 @@ UI 检查通过 `page.set_content` 加载本地 DOM、真实缓存 React / React
 `data-validation.json`、`domain-test.txt`、`transpile-report.json`、`ui-desktop-validation.json`、`ui-mobile-validation.json`、`registry-check.txt`、`dependency-install.txt`、`build-attempt.txt`。
 
 对应截图在 `screenshots/`。`ui-instrumented.py` / `ui-mobile-instrumented.py` 与 `browser-harness.py` 仅用于受限环境检查，不属于生产应用代码。
+
+---
+
+## 补记（本次会话）
+
+上面这份报告是一次时点验收，保留原样。此后应用结构与数据规模都变了，这里记录差异，
+**不覆盖原报告**——时点报告的价值正在于它记录的是当时的事实。
+
+### 结构变化
+
+| 项 | 原报告时 | 现在 |
+|---|---|---|
+| 默认视图 | 知识星图 | **今日页**（`/today`）|
+| 主导航 | 6 项（星图/索引/连学/共点/精读/卡片） | **3 项**（今天/课程/卡片）|
+| 星图 / 索引 / 共点 | 一级 tab | 二级入口（从今日页、搜索、课文详情进入）|
+| 共点 | 独立页 | 折进课文详情当「相关课文」|
+
+**路由全部保留**，旧 URL 照常工作。为此改了一条 E2E 用例：
+`real G6 engine renders the initial neighbourhood` 原先靠 `goto('/')` 打开星图，
+现在改为显式 `goto('/#/atlas/g-past')`。
+
+### 数据变化
+
+```
+语块        806 → 832      语法规则  40 → 50       句型规则  32 → 92
+原文命中   46,402 → 48,378  知识点   8,619 → 8,715
+结构分析     815 → 3,825 句（83.0%）
+data:check  212,612 → 230,245 项
+```
+
+新增层：教学点 28 · 课文导读 288 · 测验题库 1,720（覆盖全部 288 课）。
+
+### 本次会话的验收方式
+
+```
+npm run data:check   230,245 项结构断言
+npm test             33/33（新增 tests/progress.test.ts 5 条）
+npx tsc -b           零错误
+npm run build        ✓
+npm run test:e2e     4/4（真实 G6 + 真实 IndexedDB）
+真实浏览器抽查        今日页 / 课文详情 / 语法详情 / 测验 / 相关课文，零页面错误
+```
+
+### 仍未做的
+
+- **真机移动端验收**：原报告的 44 项交互断言包含手机/平板断点，本次会话**没有重跑**。
+  新增页面（今日页、测验页）只在 1280px 下人工看过。
+- 原报告的 SVG 降级、内存存储模拟等边界说明仍然适用。
