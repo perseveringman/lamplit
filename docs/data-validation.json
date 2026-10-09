@@ -1,10 +1,60 @@
 {
   "passed": true,
-  "checks": 212612,
+  "checks": 230245,
+  "teachingPoints": 28,
+  "offCorpusPatterns": 9,
+  "patternCoverage": 95.5,
+  "patternEmptyLessons": 13,
+  "lowFrequencyRules": 40,
+  "lowFrequencySample": [
+    "p-rather-than(1)",
+    "p-why-dont(1)",
+    "p-what-about-you(1)",
+    "p-the-same-as(1)",
+    "p-either-or(1)",
+    "p-how-long(1)",
+    "p-could-you-tell(1)",
+    "p-such-a-that(1)"
+  ],
+  "ruleUsage": {
+    "grammarRules": 50,
+    "patternRules": 92,
+    "minGrammarFreq": 2,
+    "minPatternFreq": 1
+  },
+  "kpWithIntroduceBook": 24,
+  "kpWithFormula": 50,
+  "teachingFacts": {
+    "total": 28,
+    "highConfidence": 10,
+    "verified": 10
+  },
+  "teachingCovered": 28,
+  "focusSource": {
+    "editorial": 2,
+    "idf": 259,
+    "textbook+idf": 27
+  },
+  "canDoCollisions": 3,
+  "uniqueSummaries": 288,
+  "summarySource": {
+    "editorial": 5,
+    "derived-focus": 283
+  },
+  "quizItems": 696,
+  "quizLessons": 268,
+  "quizKinds": {
+    "blank": 5,
+    "structure": 691
+  },
+  "book4Aligned": 41,
+  "book4CorpusOnly": 19,
+  "deadChunks": 0,
+  "chunkCoverage": 10.4,
   "lessons": 288,
   "sentences": 4606,
-  "knowledgePoints": 8088,
-  "matchedSpans": 44452,
+  "knowledgePoints": 8715,
+  "matchedSpans": 48378,
   "paths": 25,
   "pairs": 100,
   "gzipFiles": 40,

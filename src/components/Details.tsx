@@ -2,12 +2,16 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { useAsync, useCorpus } from '../lib/data';
 import { useStore } from '../lib/store';
 import { useNavigation } from '../lib/navigation';
-import { TYPE_LABEL, TIER_LABEL, TYPE_ORDER } from '../lib/types';
+import { TYPE_LABEL, TYPE_ORDER } from '../lib/types';
 import type { Entity, KP, LessonSummary, Sentence } from '../lib/types';
 import { readingTime, cn } from '../lib/utils';
+import type { ContextSense } from '../lib/sense';
 import { Button } from './ui/button';
 import { Icon } from './Icon';
 import { EntityActions, ErrorState, KPGroup, KPPill, Loader, Pagination, TypeBadge } from './Common';
+
+/** 考纲标签的中文说法，直接来自 ECDICT 的 tag 字段。 */
+const TAG_LABEL: Record<string, string> = { zk: '中考', gk: '高考', cet4: '四级', cet6: '六级', ky: '考研', toefl: '托福', ielts: '雅思', gre: 'GRE' };
 import { HighlightedText } from './HighlightedText';
 export function EntityDetail({ entity, onOpen, context }: {
     entity: Entity;
@@ -15,6 +19,7 @@ export function EntityDetail({ entity, onOpen, context }: {
     context?: {
         lessonId: string;
         sentenceId: string;
+        sense?: ContextSense | null;
     };
 }) { if (entity.kind === 'kp')
     return <KPDetail key={entity.id} id={entity.id} onOpen={onOpen} context={context}/>; if (entity.kind === 'lesson')
@@ -58,6 +63,7 @@ function KPDetail({ id, onOpen, context }: {
     context?: {
         lessonId: string;
         sentenceId: string;
+        sense?: ContextSense | null;
     };
 }) {
     const c = useCorpus(), nav = useNavigation();
@@ -67,10 +73,33 @@ function KPDetail({ id, onOpen, context }: {
     if (!kp)
         return <ErrorState text="没有找到这个知识点。"/>;
     const related = [...(kp.parent ? [kp.parent] : []), ...kp.contains, ...kp.related].filter((x, i, a) => x !== id && a.indexOf(x) === i).map(x => c.kp(x)).filter((k): k is KP => !!k).sort((a, b) => TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type));
+    const sense = context?.sense || null;
+    const core = kp.coreSense && kp.coreSense !== sense?.gloss ? kp.coreSense : null;
+    const family = (kp.wordFamily || []).filter(Boolean);
+    const tags = kp.examTags || [];
     return <div className="entity-detail kp-detail">
   <div className="detail-kicker"><TypeBadge type={kp.type}/><span className="mono">{kp.lessonIds.length} 篇 · {kp.frequency} 次</span></div>
   <h2 className={kp.type === 'word' || kp.type === 'chunk' ? 'english-heading' : ''}>{kp.name}</h2>
-  <p className="detail-meaning">{kp.meaning || '原文没有附带中文释义，可以先比较它在不同句子中的用法。'}</p>
+
+  {(kp.enName || kp.formula) && <div className="kp-meta">
+    {kp.enName && <span className="kp-en">{kp.enName}</span>}
+    {kp.formula && <span className="kp-formula">{kp.formula}</span>}
+  </div>}
+
+  {sense ? <section className="sense-block sense-context">
+    <div className="sense-head"><span className="sense-tag">语境义</span><span className="sense-source">{sense.source}</span></div>
+    <p className="sense-gloss">{sense.gloss}</p>
+    {sense.fromChunk && <p className="sense-note">这个位置的词义由固定搭配承担。点「原句用法」看它在别处怎么用。</p>}
+  </section> : <p className="detail-meaning">{kp.meaning || '原文没有附带中文释义，可以先比较它在不同句子中的用法。'}</p>}
+
+  {(core || kp.enDefinition || family.length > 0) && <section className="sense-block sense-core">
+    <div className="sense-head"><span className="sense-tag">核心义</span>{kp.collins ? <span className="sense-source">柯林斯 {kp.collins}★</span> : null}</div>
+    {core && <p className="sense-gloss">{core}</p>}
+    {kp.enDefinition && <p className="sense-en" lang="en">{kp.enDefinition}</p>}
+    {family.length > 0 && <p className="sense-family">词伙 <span lang="en">{family.join(' · ')}</span></p>}
+    {tags.length > 0 && <p className="sense-tags">{tags.map(t => <span key={t}>{TAG_LABEL[t] || t}</span>)}</p>}
+  </section>}
+
   <EntityActions entity={{ kind: 'kp', id }}/>
   <UseQuote kp={kp} context={context}/>
   <Button className="full" onClick={() => nav.read(context && kp.lessonIds.includes(context.lessonId) ? context.lessonId : kp.lessonIds.includes(c.catalog.defaultLesson) ? c.catalog.defaultLesson : kp.lessonIds[0], context?.sentenceId, kp.id)}>在课文中理解<Icon name="arrow" size={17}/></Button>
@@ -93,7 +122,10 @@ function LessonDetail({ id, onOpen }: {
   <div className="detail-kicker"><TypeBadge type="lesson"/><span className="mono">{lesson.label}</span></div>
   <h2 className="english-heading" lang={lesson.book === 4 ? 'zh-CN' : 'en'}>{lesson.title}</h2>{lesson.titleZh && <p className="lesson-zh">{lesson.titleZh}</p>}
   <div className="detail-meta"><span>{lesson.genre}</span><span>{lesson.wc} 词</span><span>{readingTime(lesson.wc)} 分钟</span></div>
+  {lesson.summary && <p className="lesson-summary">{lesson.summary}</p>}
+  {c.quizOf(lesson.id).length > 0 && <button className="lesson-quiz-entry" onClick={() => nav.navigate('quiz', lesson.id)}><Icon name="check" size={15}/><span>读完练一练</span><em className="muted">{c.quizOf(lesson.id).length} 题</em></button>}
   <div className="lesson-intention"><span className="eyebrow">这一课，你会练习</span><h3>{lesson.scene}</h3><p>{lesson.canDo}</p></div>
+  {(() => { const tps = c.teachingPointsOf(lesson.id); return tps.length ? <section className="lesson-tps"><span className="eyebrow">教材教学点</span><ul>{tps.map(tp => <li key={tp.id}>{tp.covered && tp.refs[0] ? <button onClick={() => open({ kind: 'kp', id: tp.refs[0]! })}>{tp.title}</button> : <><span>{tp.title}</span><em className="muted">本工具未覆盖</em></>}</li>)}</ul></section> : null; })()}
   <Button className="full" size="lg" onClick={() => nav.read(id, store.data.bookmarks[id])}><Icon name="book"/>{store.data.bookmarks[id] ? '继续精读' : '开始精读'}<Icon name="arrow" size={17}/></Button>
   <EntityActions entity={{ kind: 'lesson', id }}/>
   <section className="detail-section"><h4>{lesson.summary ? '课文导读' : '内容一瞥'}</h4><p className={!lesson.summary ? 'english-excerpt' : ''}>{lesson.summary || lesson.excerpt}</p></section>
@@ -110,11 +142,18 @@ export function SentenceDetailsBody({ sentence, onOpen }: {
     const c = useCorpus(), nav = useNavigation();
     const lesson = c.lessonSummary(sentence.lessonId)!;
     const open = onOpen || nav.openEntity;
-    const why = { model: '适合整句记忆。抓住表达结构，再替换人物、动作或场景。', complex: '先抓主干，再逐层看修饰。顺着句中的语法提示，找到信息之间的关系。', example: '把它作为语境来读。理解词和语块在这里的作用，不必逐句背诵。' }[sentence.tier];
-    return <div className="entity-detail sentence-detail"><div className="detail-kicker"><span className={'tier-label tier-' + sentence.tier}>{TIER_LABEL[sentence.tier]}</span><span className="mono">第 {String(sentence.index + 1).padStart(2, '0')} 句</span></div>
+    const analysis = sentence.analysis;
+    return <div className="entity-detail sentence-detail"><div className="detail-kicker"><span className="mono">第 {String(sentence.index + 1).padStart(2, '0')} 句</span></div>
   <blockquote lang="en">{sentence.text}</blockquote><div className="detail-meta"><span>{lesson.label}</span><span>{sentence.wc} 词</span><span>{sentence.clauses} 处从句线索</span></div>
   <EntityActions entity={{ kind: 'sentence', id: sentence.id }}/>
-  <section className="detail-section why-learn"><h4>怎样读这一句</h4><p>{why}</p></section>
+  {analysis ? <>
+    <section className="detail-section why-learn"><h4>这一句在讲什么</h4><p>{analysis.gloss}</p></section>
+    <section className="detail-section"><h4>主干与修饰</h4>
+      <p className="skeleton-line" lang="en">{analysis.skeleton}</p>
+      {analysis.modifiers.length > 0 && <ul className="modifier-list">{analysis.modifiers.map((m, i) => <li key={i}><span className="modifier-role">{m.role}</span><span lang="en">{m.text}</span></li>)}</ul>}
+    </section>
+    <section className="detail-section why-learn"><h4>怎样读这一句</h4><p>{analysis.whyLearn}</p></section>
+  </> : null}
   {sentence.sourceKind === 'heading' && lesson.quality.length > 0 && <p className="subtle-warning"><Icon name="warning" size={14}/>本句保留了原文件标题中的可见文字，可能不完整。</p>}
   <section className="detail-section"><h4>句中知识点</h4><KPGroup ids={[...new Set(sentence.hits.map(x => x[0]))]} onKP={id => open({ kind: 'kp', id })} max={5}/></section>
   <Button variant="outline" className="full" onClick={() => nav.read(sentence.lessonId, sentence.id)}><Icon name="return" size={16}/>回到这一句</Button>

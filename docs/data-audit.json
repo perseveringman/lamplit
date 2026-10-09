@@ -1281,26 +1281,31 @@
   "stats": {
     "lessons": 288,
     "sentences": 4606,
-    "kps": 8088,
+    "kps": 8715,
     "clusters": 25,
     "byType": {
-      "grammar": 40,
-      "pattern": 32,
-      "chunk": 275,
+      "grammar": 50,
+      "pattern": 92,
+      "chunk": 832,
       "word": 7741
-    },
-    "tiers": {
-      "model": 415,
-      "complex": 401,
-      "example": 3790
     },
     "glossedWords": 3573,
     "contextWords": 4168,
     "pairs": 100,
-    "hits": 44452
+    "hits": 48378,
+    "senseResolved": 31636,
+    "senseSkipped": 140,
+    "llmSenses": 8553,
+    "llmAnalyses": 1313,
+    "book4Aligned": 41,
+    "book4CorpusOnly": 19,
+    "kpWithIntroduceBook": 24,
+    "kpWithFormula": 50,
+    "quizItems": 696,
+    "kpWithLevel": 24
   },
   "catalogSize": {
-    "bytes": 4658316,
-    "gzip": 615829
+    "bytes": 8175042,
+    "gzip": 1256820
   }
 }

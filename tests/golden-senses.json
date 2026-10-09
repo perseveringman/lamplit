@@ -1,0 +1,188 @@
+{
+  "_readme": [
+    "金标集：手工判定过的「这个词在这一句里应该是什么意思」。",
+    "它是这套释义管线唯一能防止退化的东西——重跑词典、换词典、重跑 LLM 之后，",
+    "这些条目必须仍然判对，否则就是退化。",
+    "",
+    "expect 是判定标准，用「必须包含」匹配（避免纠结措辞），notExpect 是必须排除的错法。",
+    "新增条目请只写你亲自读过原句、能负责的判断。"
+  ],
+  "cases": [
+    {
+      "id": "left-in-on-the-left",
+      "sentenceId": "b1-013-s008",
+      "kpId": "w-left",
+      "surface": "left",
+      "text": "It is on the left.",
+      "expect": [
+        "左"
+      ],
+      "notExpect": [
+        "离开",
+        "留下"
+      ],
+      "note": "旧实现给的是「leave 的过去式；离开；留下」——完全不属于这个语境。这个位置的词义由语块 on the left 承担。"
+    },
+    {
+      "id": "excuse-in-excuse-me",
+      "sentenceId": "b1-001-s001",
+      "kpId": "w-excuse",
+      "surface": "Excuse",
+      "text": "Excuse me!",
+      "expect": [
+        "劳驾",
+        "打扰"
+      ],
+      "notExpect": [
+        "原谅",
+        "借口"
+      ],
+      "note": "语块 excuse me 的整体意思，不是 excuse 的词义。"
+    },
+    {
+      "id": "course-in-of-course",
+      "sentenceId": "b1-022-s002",
+      "kpId": "w-course",
+      "surface": "course",
+      "text": "Yes, of course I can, Penny.",
+      "expect": [
+        "当然"
+      ],
+      "notExpect": [
+        "路线",
+        "课程"
+      ],
+      "note": "语块 of course；词典里 course 本身没有「当然」这个义项，只能靠语块层。"
+    },
+    {
+      "id": "play-in-theatre-context",
+      "sentenceId": "b2-001-s003",
+      "kpId": "w-play",
+      "surface": "play",
+      "text": "The play was very interesting.",
+      "expect": [
+        "戏剧",
+        "剧本",
+        "表演",
+        "戏"
+      ],
+      "notExpect": [
+        "玩耍",
+        "演奏"
+      ],
+      "note": "ECDICT 把一个词性下的 9 个义项打包成一行，机械层切不开（首义是「游戏」）。LLM 语境义层（Step 5）把它判成了「戏剧」。",
+      "gapNote": "ECDICT 把一个词性下的 9 个义项打包成一行，机械层切不开，首义是「游戏」。这是 LLM 语境义层（Step 5）的靶子。"
+    },
+    {
+      "id": "theatre-noun",
+      "sentenceId": "b2-001-s001",
+      "kpId": "w-theatre",
+      "surface": "theatre",
+      "text": "Last week I went to the theatre.",
+      "expect": [
+        "剧院",
+        "戏院",
+        "剧场"
+      ],
+      "notExpect": []
+    },
+    {
+      "id": "went-is-go-past",
+      "sentenceId": "b2-001-s001",
+      "kpId": "w-went",
+      "surface": "went",
+      "text": "Last week I went to the theatre.",
+      "expect": [
+        "去",
+        "走"
+      ],
+      "notExpect": [
+        "离开"
+      ],
+      "note": "屈折形式自身词条没有中文义项，必须回退到原形 go。"
+    },
+    {
+      "id": "good-in-good-morning-is-not-noun",
+      "sentenceId": "b1-003-s001",
+      "kpId": "w-good",
+      "surface": "Good",
+      "text": "Good morning.",
+      "expect": [
+        "好"
+      ],
+      "notExpect": [
+        "善行",
+        "好处",
+        "利益"
+      ],
+      "note": "ECDICT 的 posRatio 是 other:94/n:4，据此选词性会把 good 判成名词「善行」。"
+    },
+    {
+      "id": "please-is-politeness",
+      "sentenceId": "b1-002-s001",
+      "kpId": "w-please",
+      "surface": "please",
+      "text": "My coat and my umbrella please.",
+      "expect": [
+        "请"
+      ],
+      "notExpect": [
+        "使高兴",
+        "取悦"
+      ],
+      "note": "句末的 please 是礼貌标记，不是动词「使高兴」。"
+    },
+    {
+      "id": "pictures-not-cinema",
+      "sentenceId": "b1-014-s013",
+      "kpId": "w-pictures",
+      "surface": "pictures",
+      "expect": [],
+      "notExpect": [
+        "电影院"
+      ],
+      "note": "pictures 在 ECDICT 里另有独立词条意为「电影院」，只有靠词频排名判断它在这里是 picture 的复数。",
+      "text": "There are some pictures in the room."
+    },
+    {
+      "id": "however-conjunction",
+      "sentenceId": "b2-016-s003",
+      "kpId": "w-however",
+      "surface": "However",
+      "text": "However, this does not always happen.",
+      "expect": [
+        "然而",
+        "可是",
+        "不过"
+      ],
+      "notExpect": [
+        "究竟"
+      ],
+      "note": "however 在句首作转折连词。ECDICT 的 adv. 组把「然而/无论如何/究竟怎样」打包在一起，UI 会把整组显示出来。"
+    },
+    {
+      "id": "out-is-collocation-bound",
+      "sentenceId": "b1-018-s014",
+      "kpId": "w-out",
+      "surface": "out",
+      "expect": [],
+      "notExpect": [
+        "外面的"
+      ],
+      "note": "out 的义项高度依赖搭配，不该单独给一个词义。这条只验证不出现离谱答案。",
+      "text": "Some children are coming out of the building."
+    },
+    {
+      "id": "thank-you-chunk",
+      "sentenceId": "b1-008-s018",
+      "kpId": "w-thank",
+      "surface": "Thank",
+      "text": "Thank you very much.",
+      "expect": [
+        "感谢",
+        "谢"
+      ],
+      "notExpect": []
+    }
+  ]
+}

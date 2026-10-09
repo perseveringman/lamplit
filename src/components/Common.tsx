@@ -48,11 +48,17 @@ export function LessonCard({ lesson, onLesson, onKP, sequence }: {
     sequence?: number;
 }) {
     const corpus = useCorpus(), store = useStore();
-    return <article className={cn('lesson-card', 'book-' + lesson.book)}>
+    // 进度来自 E 组的 lessons 记录。用累计可见句数而不是"读到第几句"——
+    // 读者会回看、会跳读，只记最后一句会低估覆盖。
+    const prog = store.data.lessons?.[lesson.id];
+    const visited = Math.min(prog?.visited?.length || 0, lesson.sentenceCount || 0);
+    const pct = lesson.sentenceCount ? Math.round((100 * visited) / lesson.sentenceCount) : 0;
+    return <article className={cn('lesson-card', 'book-' + lesson.book, prog && 'has-progress')}>
  <div className="lesson-card-meta"><span className="mono">{sequence !== undefined && <span className="route-number">{String(sequence + 1).padStart(2, '0')}</span>}{lesson.label}</span><span>{lesson.genre}</span><EntityActions entity={{ kind: 'lesson', id: lesson.id }} compact/></div>
  <button className="lesson-card-main" onClick={() => onLesson(lesson.id)}><h3>{lesson.title}</h3>{lesson.titleZh && <p className="lesson-zh">{lesson.titleZh}</p>}<p className="lesson-scene">{lesson.scene}</p><p className="lesson-can-do">{lesson.canDo}</p></button>
  <div className="lesson-card-pills">{lesson.focus.slice(0, 4).map(id => corpus.kp(id)).filter((k): k is KP => !!k).map(k => <KPPill key={k.id} kp={k} onClick={() => onKP(k.id)} compact/>)}</div>
- <div className="lesson-card-footer"><span><Icon name="clock" size={14}/>{readingTime(lesson.wc)} 分钟 · {lesson.wc} 词</span><button onClick={() => onLesson(lesson.id)}>{store.data.bookmarks[lesson.id] ? '继续这一课' : '看看这一课'}<Icon name="arrow" size={16}/></button></div>
+ {visited > 0 && <div className="lesson-card-progress" title={`已读 ${visited} / ${lesson.sentenceCount} 句`}><i style={{ width: pct + '%' }}/></div>}
+ <div className="lesson-card-footer"><span><Icon name="clock" size={14}/>{visited > 0 ? `${visited}/${lesson.sentenceCount} 句 · ` : ''}{readingTime(lesson.wc)} 分钟 · {lesson.wc} 词</span><button onClick={() => onLesson(lesson.id)}>{prog ? '继续这一课' : '看看这一课'}<Icon name="arrow" size={16}/></button></div>
  </article>;
 }
 export function Pagination({ page, pages, onPage, total }: {

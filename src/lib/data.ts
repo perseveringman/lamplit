@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import type { Catalog, KP, Lesson, LessonSummary, Pair, Sentence, SentenceSummary } from './types';
+import type { QuizItem, TeachingPoint, Catalog, KP, Lesson, LessonSummary, Pair, Sentence, SentenceSummary } from './types';
 import { lessonFromSentence, sourceBook } from './utils';
 const BASE = './data/';
 const requests = new Map<string, Promise<unknown>>();
@@ -27,11 +27,36 @@ export function loadJSON<T>(name: string): Promise<T> {
     return promise;
 }
 export class Corpus {
+    private tpIndex?: Map<string, TeachingPoint[]>;
+    private quizIndex?: Map<string, QuizItem[]>;
     readonly kpMap: Map<string, KP>;
     readonly lessonMap: Map<string, LessonSummary>;
     constructor(readonly catalog: Catalog) { this.kpMap = new Map(catalog.kps.map(k => [k.id, k])); this.lessonMap = new Map(catalog.lessons.map(l => [l.id, l])); }
     kp(id: string) { return this.kpMap.get(id); }
     lessonSummary(id: string) { return this.lessonMap.get(id); }
+    /** 某一课的测验题。题目在构建期已过五条机械校验。 */
+    quizOf(id: string) {
+        if (!this.quizIndex) {
+            this.quizIndex = new Map();
+            for (const q of (this.catalog.quiz || [])) {
+                const arr = this.quizIndex.get(q.lessonId) || [];
+                arr.push(q); this.quizIndex.set(q.lessonId, arr);
+            }
+        }
+        return this.quizIndex.get(id) || [];
+    }
+    /** 某一课的教学点。空数组表示：要么这一课没有教材事实，要么教材教的点本架构接不住。 */
+    teachingPointsOf(id: string) {
+        if (!this.tpIndex) {
+            this.tpIndex = new Map();
+            for (const tp of (this.catalog.teachingPoints || [])) {
+                if (!tp.lessonId) continue;
+                const arr = this.tpIndex.get(tp.lessonId) || [];
+                arr.push(tp); this.tpIndex.set(tp.lessonId, arr);
+            }
+        }
+        return this.tpIndex.get(id) || [];
+    }
     async book(book: number) { return loadJSON<Lesson[]>(`books/${book}.json`); }
     async lesson(id: string): Promise<Lesson> { const result = (await this.book(sourceBook(id))).find(l => l.id === id); if (!result)
         throw new Error('没有找到这篇课文。'); return result; }

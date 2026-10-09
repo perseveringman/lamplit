@@ -19,7 +19,7 @@ with sync_playwright() as pw:
   old=p.evaluate('location.hash');node.click();wait(p);record('SVG neighbour click changes focus',p.evaluate('location.hash')!=old)
   p.get_by_role('button',name='打开全局搜索',exact=True).click();p.get_by_role('combobox').fill('一般过去时');wait(p);p.get_by_role('combobox').press('Enter');wait(p);record('Chinese global search selects true KP','g-past' in p.evaluate('location.hash'))
   h.navigate(p,'read/b2-001');p.wait_for_selector('.sentence-row');record('desktop three reading columns',all(p.locator(c).is_visible() for c in ['.reader-left','.reading-main','.reader-right']))
-  record('desktop no horizontal overflow',no_overflow(p));record('default grammar, chunk and model layers',p.locator('.sentence-model').count()>0 and p.locator('.hl-grammar').count()>0 and p.locator('.hl-chunk').count()>0)
+  record('desktop no horizontal overflow',no_overflow(p));record('default grammar, chunk and pattern layers',p.locator('.hl-pattern').count()>0 and p.locator('.hl-grammar').count()>0 and p.locator('.hl-chunk').count()>0)
   p.get_by_role('button',name='查看第 6 句详情',exact=True).click();wait(p);record('sentence panel follows selection',p.locator('.reader-right').inner_text().find('They were talking loudly.')>=0)
   p.locator('.reader-right').get_by_role('button',name='重点学',exact=True).click();wait(p);record('star atomically saves sentence card',len(state(p)['cards'])==1)
   p.locator('.reader-left .kp-pill').filter(has_text='一般过去时').first.click();wait(p);record('capsule locates all actual occurrences',p.locator('.kp-located').count()>1)

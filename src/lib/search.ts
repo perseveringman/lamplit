@@ -63,7 +63,7 @@ export function searchCatalog(catalog: Catalog, sentences: SentenceSummary[], qu
         for (const s of sentences) {
             const score = matchScore(s.text, '', query);
             if (score)
-                out.push({ kind: 'sentence', id: s.id, name: s.text, subtitle: s.tier === 'model' ? '范句' : s.tier === 'complex' ? '长难句' : '原文例句', type: 'sentence', score: score === 100 ? 100 : score - 5 });
+                out.push({ kind: 'sentence', id: s.id, name: s.text, subtitle: `${s.wc} 词`, type: 'sentence', score: score === 100 ? 100 : score - 5 });
         }
     return out.sort((a, b) => b.score - a.score || ({ kp: 0, lesson: 1, sentence: 2 }[a.kind] - { kp: 0, lesson: 1, sentence: 2 }[b.kind]) || a.name.length - b.name.length).slice(0, limit);
 }

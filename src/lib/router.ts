@@ -11,7 +11,7 @@ const safeDecode = (value: string) => { try {
 catch {
     return value;
 } };
-export function parseRoute(hash: string): Route { const value = hash.replace(/^#/, '') || '/atlas/g-past'; const [pathname, query] = value.split('?'); const [, view = 'atlas', id = ''] = pathname.split('/'); return { view, id: safeDecode(id), params: new URLSearchParams(query || ''), key: value }; }
+export function parseRoute(hash: string): Route { const value = hash.replace(/^#/, '') || '/today'; const [pathname, query] = value.split('?'); const [, view = 'atlas', id = ''] = pathname.split('/'); return { view, id: safeDecode(id), params: new URLSearchParams(query || ''), key: value }; }
 export function go(view: string, id = '', params: Record<string, string | undefined> = {}, replace = false) { const query = new URLSearchParams(Object.entries(params).filter(([, v]) => v !== undefined) as [
     string,
     string

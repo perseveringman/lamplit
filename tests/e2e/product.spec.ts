@@ -2,7 +2,8 @@ import {test,expect} from '@playwright/test';
 // These are production-dependency acceptance tests. They were supplied but not
 // executed here: registry DNS and browser URL navigation are unavailable here.
 test('real G6 engine renders the initial neighbourhood',async({page})=>{
- await page.goto('/');
+ // 默认视图已从星图改为今日页，这条用例要显式进入星图
+ await page.goto('/#/atlas/g-past');
  await expect(page.locator('.antv-mount')).toBeVisible();
  await expect(page.locator('.svg-map')).toHaveCount(0);
  await page.getByRole('button',{name:'放大星图',exact:true}).click();

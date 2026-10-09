@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { streakOf } from '../lib/progress';
 import { useCorpus } from '../lib/data';
 import { useStore, swallow } from '../lib/store';
 import { useNavigation } from '../lib/navigation';
@@ -23,11 +24,8 @@ export default function Cards() {
     const todayLogs = logs.filter(x => localDay(x.at) === today);
     const retentionLogs = logs.filter(x => x.previousState === 'review');
     const actualRetention = retentionLogs.length ? Math.round(100 * retentionLogs.filter(x => x.grade > 1).length / retentionLogs.length) : null;
-    const streak = useMemo(() => { const days = new Set(logs.map(x => localDay(x.at))); let n = 0, d = new Date(now); if (!days.has(localDay(+d)))
-        d.setDate(d.getDate() - 1); while (days.has(localDay(+d))) {
-        n++;
-        d.setDate(d.getDate() - 1);
-    } return n; }, [logs, today]);
+    // 旧实现只统计 reviews 的日期——只读课文不复习的日子不算数。streakOf 把阅读记录一并计入。
+    const streak = useMemo(() => streakOf(s.data, now), [s.data, now]);
     const kindOf = (card: MemoryCard) => card.entity.kind === 'kp' ? c.kp(card.entity.id)?.type || 'word' : card.entity.kind;
     const lessonIds = (card: MemoryCard) => card.entity.kind === 'kp' ? c.kp(card.entity.id)?.lessonIds || [] : card.entity.kind === 'lesson' ? [card.entity.id] : [card.entity.id.split('-s')[0]];
     const list = all.filter(card => (type === 'all' || kindOf(card) === type) && (mastery === 'all' || (mastery === 'paused' ? card.paused : mastery === 'due' ? !card.paused && card.due <= now : card.state === mastery)) && (lessonFilter === 'all' || lessonIds(card).includes(lessonFilter)) && (cluster === 'all' || lessonIds(card).some(id => c.lessonSummary(id)?.clusterIds.includes(cluster))) && (!query || cardTitle(card, c, sentences).toLowerCase().includes(query.toLowerCase()) || card.entity.kind === 'kp' && c.kp(card.entity.id)?.meaning.includes(query))).sort((a, b) => a.paused === b.paused ? a.due - b.due : Number(a.paused) - Number(b.paused));

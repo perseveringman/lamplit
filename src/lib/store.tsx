@@ -4,14 +4,24 @@ import { entityKey } from './types';
 import { uniqueId } from './utils';
 import { createCard, dueCards, scheduleOptions, DAY } from './fsrs';
 const DATABASE = 'lamplit-reader-v1';
-const fresh = (): UserData => ({ version: 1, revision: 0, cards: {}, flags: {}, reviews: [], retention: 0.9, reading: null, bookmarks: {}, layers: { pattern: true, grammar: true, chunk: true, word: false, connective: false, genre: true }, welcomeDismissed: false, session: null, readerSize: 20 });
+const fresh = (): UserData => ({ version: 2, lessons: {}, revision: 0, cards: {}, flags: {}, reviews: [], retention: 0.9, reading: null, bookmarks: {}, layers: { pattern: true, grammar: true, chunk: true, word: false, connective: false, genre: true }, welcomeDismissed: false, session: null, readerSize: 20 });
 function normalize(data: unknown): UserData {
     if (!data)
         return fresh();
-    const d = data as UserData;
-    if (d.version !== 1 || typeof d.cards !== 'object' || !Array.isArray(d.reviews))
+    const d = data as Omit<UserData, 'version'> & { version: number };
+    // 注意 typeof null === 'object'：不加 null 检查的话，cards:null 会通过结构校验
+    const structural = typeof d.cards === 'object' && d.cards !== null && Array.isArray(d.reviews);
+    // v1 → v2：只补字段，不伪造历史。
+    // lessons 从空开始；firstReadAt 一律为 0，表示"迁移前就在读，具体时间未知"。
+    // 拿 lastReadAt 或当前时间冒充 firstReadAt 会让"连续天数"和"开始日期"当天就错。
+    if (d.version === 1) {
+        if (!structural)
+            throw new Error('本地记录的版本暂时无法读取，原数据未被覆盖。');
+        return { ...fresh(), ...d, version: 2, migratedFrom: 1, lessons: {}, layers: { ...fresh().layers, ...d.layers }, bookmarks: d.bookmarks || {} } as UserData;
+    }
+    if (d.version !== 2 || !structural || typeof d.lessons !== 'object' || d.lessons === null)
         throw new Error('本地记录的版本暂时无法读取，原数据未被覆盖。');
-    return { ...fresh(), ...d, layers: { ...fresh().layers, ...d.layers }, bookmarks: d.bookmarks || {} };
+    return { ...fresh(), ...d, version: 2, layers: { ...fresh().layers, ...d.layers }, bookmarks: d.bookmarks || {}, lessons: d.lessons || {} } as UserData;
 }
 function openDB(): Promise<IDBDatabase> { return new Promise((resolve, reject) => { const request = indexedDB.open(DATABASE, 1); request.onupgradeneeded = () => { if (!request.result.objectStoreNames.contains('state'))
     request.result.createObjectStore('state'); }; request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error); request.onblocked = () => reject(new Error('请关闭另一个旧版本页面后重试。')); }); }
@@ -110,7 +120,27 @@ export function StoreProvider({ children }: {
         card.due = Math.min(card.due, Date.now() - 60000);
     } }); notify(marked ? '已标记为不熟悉' : '已取消不熟悉标记'); }, [update, notify]);
     const setLayers = useCallback((patch: Partial<Layers>) => update(d => { d.layers = { ...d.layers, ...patch }; }), [update]);
-    const readPosition = useCallback((lessonId: string, sentenceId: string) => update(d => { d.reading = { lessonId, sentenceId, at: Date.now() }; d.bookmarks[lessonId] = sentenceId; }), [update]);
+    // 记录阅读位置的同时累计**课程进度**。
+    // visited 用累计集合而不是"读到第几句"：读者会回看、会跳读，只记最后一句会低估覆盖。
+    // readCount 只在换课时 +1，避免每翻一句就加一次。
+    const readPosition = useCallback((lessonId: string, sentenceId: string) => update(d => {
+        const at = Date.now();
+        const switching = d.reading?.lessonId !== lessonId;
+        d.reading = { lessonId, sentenceId, at };
+        d.bookmarks[lessonId] = sentenceId;
+        const cur = d.lessons[lessonId] || { state: 'reading', firstReadAt: at, lastReadAt: at, readCount: 0, visited: [] };
+        const visited = cur.visited || [];
+        if (!visited.includes(sentenceId)) visited.push(sentenceId);
+        d.lessons[lessonId] = {
+            ...cur,
+            state: cur.state === 'read' ? 'read' : 'reading',
+            // 迁移来的记录 firstReadAt 是 0（不清楚何时开始），首次真正阅读时补上
+            firstReadAt: cur.firstReadAt || at,
+            lastReadAt: at,
+            readCount: cur.readCount + (switching ? 1 : 0),
+            visited,
+        };
+    }), [update]);
     const setRetention = useCallback(async (n: number) => { if (n < 0.75 || n > 0.97 || !Number.isFinite(n))
         throw new Error('保留率不在允许范围内'); await update(d => { d.retention = n; }); notify('复习频率已更新，将用于下一次评分'); }, [update, notify]);
     const setReaderSize = useCallback((n: number) => update(d => { d.readerSize = Math.min(26, Math.max(16, n)); }), [update]);

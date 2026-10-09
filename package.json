@@ -12,12 +12,20 @@
     "preview": "vite preview --host 0.0.0.0",
     "data:build": "node scripts/build-data.mjs",
     "data:check": "node scripts/check-data.mjs",
-    "test": "node --experimental-strip-types --test tests/domain.test.ts",
+    "test": "node --experimental-strip-types --test tests/domain.test.ts tests/sense.test.ts tests/sense-quality.test.ts tests/progress.test.ts",
     "check": "npm run data:check && npm test && npm run build",
     "test:e2e": "playwright test",
     "preview:local": "node scripts/serve.mjs",
     "preview:rebuild": "node scripts/build-local-preview.mjs",
-    "typecheck": "tsc -b"
+    "typecheck": "tsc -b",
+    "dict:fetch": "node scripts/fetch-dict.mjs",
+    "dict:cache": "node scripts/build-dict-cache.mjs",
+    "chunks:verify": "node scripts/verify-chunks.mjs",
+    "chunks:forms": "node scripts/build-verb-forms.mjs",
+    "report:senses": "node scripts/report-senses.mjs",
+    "llm:prepare": "node scripts/llm-prepare.mjs",
+    "llm:merge": "node scripts/llm-merge.mjs",
+    "test:golden": "node --experimental-strip-types --test tests/sense-quality.test.ts"
   },
   "dependencies": {
     "@antv/g6": "5.1.1",

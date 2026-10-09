@@ -1,0 +1,416 @@
+{
+ "_readme": [
+  "教材教学事实表。只记录「哪一课教哪个点」这一事实，不收录任何材料原文（PRINCIPLES 原则 11）。",
+  "",
+  "这份表同时是**回归夹具**：每一条都要求对应课文里能检出该规则。",
+  "首轮核对立刻抓出 g-present-perfect 的三个缺陷（分词白名单只有 50 词、问句漏配、原形即分词的动词被删），",
+  "说明「教材事实 → 语料证据」这条核对本身就是最好的规则测试集。",
+  "",
+  "confidence 规则：≥2 套独立材料一致 = high；单一来源 = medium；未核 = low。"
+ ],
+ "version": 1,
+ "points": [
+  {
+   "book": 1,
+   "officialLesson": 31,
+   "corpusLesson": "b1-016",
+   "kpId": "g-present-continuous",
+   "label": "现在进行时",
+   "sources": [
+    "xdf-b1",
+    "protogenesis-nce1"
+   ],
+   "confidence": "high"
+  },
+  {
+   "book": 1,
+   "officialLesson": 37,
+   "corpusLesson": "b1-019",
+   "kpId": "g-going-to",
+   "label": "be going to 表计划",
+   "sources": [
+    "xdf-b1",
+    "protogenesis-nce1"
+   ],
+   "confidence": "high"
+  },
+  {
+   "book": 1,
+   "officialLesson": 51,
+   "corpusLesson": "b1-026",
+   "kpId": "g-present",
+   "label": "一般现在时",
+   "sources": [
+    "xdf-b1",
+    "protogenesis-nce1"
+   ],
+   "confidence": "high"
+  },
+  {
+   "book": 1,
+   "officialLesson": 67,
+   "corpusLesson": "b1-034",
+   "kpId": "g-past",
+   "label": "一般过去时",
+   "sources": [
+    "xdf-b1",
+    "protogenesis-nce1"
+   ],
+   "confidence": "high"
+  },
+  {
+   "book": 1,
+   "officialLesson": 83,
+   "corpusLesson": "b1-042",
+   "kpId": "g-present-perfect",
+   "label": "现在完成时",
+   "sources": [
+    "xdf-b1",
+    "protogenesis-nce1"
+   ],
+   "confidence": "high"
+  },
+  {
+   "book": 1,
+   "officialLesson": 91,
+   "corpusLesson": "b1-046",
+   "kpId": "g-future",
+   "label": "一般将来时",
+   "sources": [
+    "xdf-b1",
+    "protogenesis-nce1"
+   ],
+   "confidence": "high"
+  },
+  {
+   "book": 1,
+   "officialLesson": 117,
+   "corpusLesson": "b1-059",
+   "kpId": "g-past-continuous",
+   "label": "过去进行时",
+   "sources": [
+    "xdf-b1",
+    "protogenesis-nce1"
+   ],
+   "confidence": "high"
+  },
+  {
+   "book": 1,
+   "officialLesson": 119,
+   "corpusLesson": "b1-060",
+   "kpId": "g-past-perfect",
+   "label": "过去完成时",
+   "sources": [
+    "xdf-b1",
+    "protogenesis-nce1"
+   ],
+   "confidence": "high"
+  },
+  {
+   "book": 1,
+   "officialLesson": 121,
+   "corpusLesson": "b1-061",
+   "kpId": "g-relative",
+   "label": "定语从句",
+   "sources": [
+    "xdf-b1",
+    "protogenesis-nce1"
+   ],
+   "confidence": "high"
+  },
+  {
+   "book": 1,
+   "officialLesson": 141,
+   "corpusLesson": "b1-071",
+   "kpId": "g-passive",
+   "label": "被动语态",
+   "sources": [
+    "xdf-b1",
+    "protogenesis-nce1"
+   ],
+   "confidence": "high"
+  },
+  {
+   "book": 2,
+   "officialLesson": 2,
+   "corpusLesson": "b2-002",
+   "kpId": "g-present",
+   "label": "现在和经常发生的动作",
+   "sources": [
+    "21cnjy-b2"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "book": 2,
+   "officialLesson": 3,
+   "corpusLesson": "b2-003",
+   "kpId": "g-past",
+   "label": "一般过去时",
+   "sources": [
+    "21cnjy-b2"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "book": 2,
+   "officialLesson": 4,
+   "corpusLesson": "b2-004",
+   "kpId": "g-present-perfect",
+   "label": "现在完成时",
+   "sources": [
+    "21cnjy-b2"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "book": 2,
+   "officialLesson": 5,
+   "corpusLesson": "b2-005",
+   "kpId": "g-present-perfect",
+   "label": "一般过去时与现在完成时",
+   "sources": [
+    "21cnjy-b2"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "book": 2,
+   "officialLesson": 7,
+   "corpusLesson": "b2-007",
+   "kpId": "g-past-continuous",
+   "label": "过去进行时",
+   "sources": [
+    "21cnjy-b2"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "book": 2,
+   "officialLesson": 8,
+   "corpusLesson": "b2-008",
+   "kpId": "g-comparative",
+   "label": "比较级与最高级",
+   "sources": [
+    "21cnjy-b2"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "book": 3,
+   "officialLesson": 1,
+   "corpusLesson": "b3-001",
+   "kpId": "g-appositive-clause",
+   "label": "同位语从句",
+   "sources": [
+    "xdf-ty-b3"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "book": 3,
+   "officialLesson": 2,
+   "corpusLesson": "b3-002",
+   "kpId": "g-participle",
+   "label": "分词作状语",
+   "sources": [
+    "xdf-ty-b3"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "book": 3,
+   "officialLesson": 5,
+   "corpusLesson": "b3-005",
+   "kpId": "g-inversion-negative",
+   "label": "not only 置句首的部分倒装",
+   "sources": [
+    "xdf-ty-b3"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "book": 3,
+   "officialLesson": 5,
+   "corpusLesson": "b3-005",
+   "kpId": "g-relative",
+   "label": "介词+关系代词的定语从句",
+   "sources": [
+    "xdf-ty-b3"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "book": 3,
+   "officialLesson": 6,
+   "corpusLesson": "b3-006",
+   "kpId": "g-absolute-construction",
+   "label": "独立主格",
+   "sources": [
+    "xdf-ty-b3"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "book": 3,
+   "officialLesson": 7,
+   "corpusLesson": "b3-007",
+   "kpId": "g-relative",
+   "label": "定语从句（只能用 that 的情况）",
+   "sources": [
+    "xdf-ty-b3"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "book": 3,
+   "officialLesson": 8,
+   "corpusLesson": "b3-008",
+   "kpId": "g-relative",
+   "label": "非限定性定语从句",
+   "sources": [
+    "xdf-ty-b3"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "book": 3,
+   "officialLesson": 10,
+   "corpusLesson": "b3-010",
+   "kpId": "g-concession",
+   "label": "让步状语从句",
+   "sources": [
+    "xdf-ty-b3"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "book": 3,
+   "officialLesson": 11,
+   "corpusLesson": "b3-011",
+   "kpId": "g-infinitive",
+   "label": "省略 to 的不定式",
+   "sources": [
+    "xdf-ty-b3"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "book": 3,
+   "officialLesson": 12,
+   "corpusLesson": "b3-012",
+   "kpId": "g-wish-clause",
+   "label": "wish 引导的虚拟语气",
+   "sources": [
+    "xdf-ty-b3"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "book": 3,
+   "officialLesson": 18,
+   "corpusLesson": "b3-018",
+   "kpId": "g-deduction",
+   "label": "情态动词 + have done",
+   "sources": [
+    "xdf-ty-b3"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "book": 3,
+   "officialLesson": 20,
+   "corpusLesson": "b3-020",
+   "kpId": "g-infinitive",
+   "label": "不定式修饰名词（序数词 + to do）",
+   "sources": [
+    "xdf-ty-b3"
+   ],
+   "confidence": "medium"
+  }
+ ],
+ "_next": [
+  "第二册：仅核到 L1–L9（21cnjy 页面首次抓取被截断），待补全 96 课",
+  "第三册：核到 L1–L20 + 复习课结构，待补 L21–L60",
+  "第四册：讲义已提取 211 条，其中 62% 我方无对应规则（见 BACKLOG 的 C1 测量）"
+ ],
+ "knownRuleGaps": [
+  {
+   "label": "地点状语 + 全部倒装",
+   "example": "in the midst of which flowed a great river",
+   "lesson": "b3-017",
+   "note": "g-inversion-negative 只覆盖否定词置句首，不覆盖地点状语前置引起的全部倒装"
+  },
+  {
+   "label": "冠词 a / the 的用法",
+   "lesson": "b2-006",
+   "note": "我方无冠词规则"
+  },
+  {
+   "label": "省略 to 的不定式",
+   "lesson": "b3-011",
+   "note": "g-infinitive 匹配的是 to + 动词，无法检出 to 被省略的情况"
+  },
+  {
+   "label": "部分倒装句式",
+   "lesson": "b3-037",
+   "note": "g-inversion-negative 只认否定词置首；教材的「部分倒装」范围更广",
+   "source": "xdf-ty-b3"
+  },
+  {
+   "label": "come / go 的完全倒装",
+   "lesson": "b3-056",
+   "note": "完全倒装（地点/方向副词前置）未覆盖；与 b3-017 同属一类缺口",
+   "source": "xdf-ty-b3"
+  },
+  {
+   "label": "insist / demand / suggest + (should) do 虚拟语气",
+   "lesson": "b3-022",
+   "note": "g-subjunctive-past 只认 if + were/had，不认这类 that 从句虚拟",
+   "source": "xdf-ty-b3"
+  },
+  {
+   "label": "比较级表示最高级",
+   "lesson": "b3-023",
+   "note": "无对应规则",
+   "source": "xdf-ty-b3"
+  },
+  {
+   "label": "as 引导的让步状语从句（含倒装）",
+   "lesson": "b3-026",
+   "note": "g-concession 的 as 分支未覆盖倒装形式",
+   "source": "xdf-ty-b3"
+  },
+  {
+   "label": "主语从句",
+   "lesson": "b3-055",
+   "note": "无对应规则（g-object 是宾语从句，不能替代）",
+   "source": "xdf-ty-b3"
+  },
+  {
+   "label": "独立主格结构",
+   "lesson": "b3-034",
+   "note": "g-absolute-construction 的形态覆盖不足，该课零命中",
+   "source": "xdf-ty-b3"
+  },
+  {
+   "label": "倒装（通用）",
+   "lesson": "b3-046",
+   "note": "教材 L46 是「复习所有倒装的结构」，我方只覆盖否定词与部分倒装",
+   "source": "xdf-ty-b3"
+  }
+ ],
+ "unverifiable": [
+  {
+   "book": 3,
+   "officialLesson": 9,
+   "reason": "语料该课内容与官方「Flying cats」不符（实际是火星火箭），教材事实无法核对"
+  }
+ ],
+ "_c1status": {
+  "book1": "10 条 high（两套材料 21 项一致），已核对 10/10",
+  "book2": "21cnjy 表抓到 73 课，其中 40 课有语法段；**关键词自动映射噪声大，需人工策展**，暂只并入可确认的条目",
+  "book3": "太原新东方 60 课大纲全部提取（教学目标字段干净）；映射后 27 条可核，其中约 9 条暴露真实规则缺口",
+  "book4": "讲义提取 211 条，80 条可映射；62% 无对应规则（修辞/省略/信息结构）"
+ }
+}

@@ -1,0 +1,260 @@
+{
+ "_readme": [
+  "第四册语料 ↔ 官方 48 课版的内容对齐表。本文件由 .nce4/align4b.py 的输出生成，不手工誊写。",
+  "",
+  "方法：用整课词集重叠比对「官方 48 课讲义正文」与「本语料课文正文」，重叠度 ≥55% 判定为同一课。",
+  "首句精确匹配会因版本差异误判（官方 L04 是 'in Russia'，本语料是 'In the Soviet Union'），故改用词集重叠。",
+  "",
+  "只记录经内容匹配验证的 officialNo，不写凭印象的官方标题。",
+  "依据 PRINCIPLES.md 原则 11：外部材料是证据，不是内容。"
+ ],
+ "book": 4,
+ "officialLessonCount": 48,
+ "corpusLessonCount": 60,
+ "method": "word-set-overlap",
+ "threshold": 0.55,
+ "alignedCount": 41,
+ "map": [
+  {
+   "officialNo": 1,
+   "corpusSequence": 1,
+   "score": 0.61
+  },
+  {
+   "officialNo": 2,
+   "corpusSequence": 2,
+   "score": 0.61
+  },
+  {
+   "officialNo": 3,
+   "corpusSequence": 3,
+   "score": 0.71
+  },
+  {
+   "officialNo": 4,
+   "corpusSequence": 4,
+   "score": 0.75
+  },
+  {
+   "officialNo": 5,
+   "corpusSequence": 6,
+   "score": 0.73
+  },
+  {
+   "officialNo": 6,
+   "corpusSequence": 7,
+   "score": 0.65
+  },
+  {
+   "officialNo": 7,
+   "corpusSequence": 9,
+   "score": 0.74
+  },
+  {
+   "officialNo": 9,
+   "corpusSequence": 11,
+   "score": 0.62
+  },
+  {
+   "officialNo": 11,
+   "corpusSequence": 14,
+   "score": 0.76
+  },
+  {
+   "officialNo": 12,
+   "corpusSequence": 15,
+   "score": 0.78
+  },
+  {
+   "officialNo": 13,
+   "corpusSequence": 16,
+   "score": 0.66
+  },
+  {
+   "officialNo": 15,
+   "corpusSequence": 18,
+   "score": 0.69
+  },
+  {
+   "officialNo": 16,
+   "corpusSequence": 20,
+   "score": 0.68
+  },
+  {
+   "officialNo": 17,
+   "corpusSequence": 21,
+   "score": 0.7
+  },
+  {
+   "officialNo": 18,
+   "corpusSequence": 22,
+   "score": 0.94
+  },
+  {
+   "officialNo": 19,
+   "corpusSequence": 23,
+   "score": 0.86
+  },
+  {
+   "officialNo": 20,
+   "corpusSequence": 25,
+   "score": 0.84
+  },
+  {
+   "officialNo": 21,
+   "corpusSequence": 26,
+   "score": 0.77
+  },
+  {
+   "officialNo": 22,
+   "corpusSequence": 27,
+   "score": 0.72
+  },
+  {
+   "officialNo": 23,
+   "corpusSequence": 28,
+   "score": 0.58
+  },
+  {
+   "officialNo": 24,
+   "corpusSequence": 29,
+   "score": 0.75
+  },
+  {
+   "officialNo": 25,
+   "corpusSequence": 31,
+   "score": 0.78
+  },
+  {
+   "officialNo": 26,
+   "corpusSequence": 32,
+   "score": 0.76
+  },
+  {
+   "officialNo": 27,
+   "corpusSequence": 33,
+   "score": 0.88
+  },
+  {
+   "officialNo": 28,
+   "corpusSequence": 34,
+   "score": 0.79
+  },
+  {
+   "officialNo": 29,
+   "corpusSequence": 35,
+   "score": 0.8
+  },
+  {
+   "officialNo": 30,
+   "corpusSequence": 36,
+   "score": 0.78
+  },
+  {
+   "officialNo": 31,
+   "corpusSequence": 38,
+   "score": 0.93
+  },
+  {
+   "officialNo": 32,
+   "corpusSequence": 39,
+   "score": 0.67
+  },
+  {
+   "officialNo": 33,
+   "corpusSequence": 41,
+   "score": 0.88
+  },
+  {
+   "officialNo": 34,
+   "corpusSequence": 42,
+   "score": 0.66
+  },
+  {
+   "officialNo": 36,
+   "corpusSequence": 44,
+   "score": 0.61
+  },
+  {
+   "officialNo": 37,
+   "corpusSequence": 45,
+   "score": 0.62
+  },
+  {
+   "officialNo": 39,
+   "corpusSequence": 48,
+   "score": 0.71
+  },
+  {
+   "officialNo": 41,
+   "corpusSequence": 51,
+   "score": 0.93
+  },
+  {
+   "officialNo": 42,
+   "corpusSequence": 52,
+   "score": 0.96
+  },
+  {
+   "officialNo": 43,
+   "corpusSequence": 54,
+   "score": 0.98
+  },
+  {
+   "officialNo": 44,
+   "corpusSequence": 55,
+   "score": 0.9
+  },
+  {
+   "officialNo": 45,
+   "corpusSequence": 57,
+   "score": 0.79
+  },
+  {
+   "officialNo": 46,
+   "corpusSequence": 58,
+   "score": 0.97
+  },
+  {
+   "officialNo": 47,
+   "corpusSequence": 59,
+   "score": 0.87
+  }
+ ],
+ "corpusOnlySequences": [
+  5,
+  8,
+  10,
+  12,
+  13,
+  17,
+  19,
+  24,
+  30,
+  37,
+  40,
+  43,
+  46,
+  47,
+  49,
+  50,
+  53,
+  56,
+  60
+ ],
+ "officialMissingNumbers": [
+  8,
+  10,
+  14,
+  35,
+  38,
+  40,
+  48
+ ],
+ "_notes": [
+  "corpusOnlySequences：本语料有、官方 48 课版没有对应内容的课文（该版本独有）。",
+  "officialMissingNumbers：官方有、本语料找不到对应内容的课（版本差异过大或确实缺失）。",
+  "官方 L04 与 L37 在首轮首句匹配中失败但词集重叠通过——它们正是版本差异最大的两课。",
+  "41 + 19 = 60，账目闭合。"
+ ]
+}

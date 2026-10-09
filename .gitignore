@@ -2,7 +2,18 @@ node_modules/
 dist/
 playwright-report/
 test-results/
+.pw-browsers/
 __pycache__/
 *.pyc
 *.tsbuildinfo
 .DS_Store
+.dict-cache/
+
+# LLM 批处理工作目录：批次与中间产物是临时的，
+# 只有合并并机械校验后的 overrides.json 是构建输入，需要进版本库。
+.llm/in/
+.llm/out/
+.llm/tmp/
+.llm/manifest.json
+.nce4/
+.b4/
