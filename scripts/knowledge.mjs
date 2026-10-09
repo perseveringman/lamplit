@@ -42,26 +42,26 @@ const PAST_PARTICIPLES = (() => {
 // 原形即过去分词的动词（come-come-come 型）。上面的反推会把这些的原形当"原形"剔除，
 // 所以单独补一份——否则 "has become" 会被判成没有分词。
 const PP_SUPPLEMENT = ['become','come','run','cut','put','set','read','hurt','let','cost','hit','shut','spread','burst','bet','cast','rid','shed','split','quit','beat','forecast'];
-const pp = '(?:[a-z]{3,}ed|' + [...PAST_PARTICIPLES, ...PP_SUPPLEMENT].join('|') + ')';
+export const PP = '(?:[a-z]{3,}ed|' + [...PAST_PARTICIPLES, ...PP_SUPPLEMENT].join('|') + ')';
 // 问句里 have/has 与分词之间夹着主语（"Have you had lunch?"），
 // 不允许这个位置的话，现在完成时的疑问形式全部识别不出来。
 const subject = '(?:(?:I|you|he|she|we|they|it|there)\\s+)?';
-const adv = '(?:(?:already|just|never|ever|always|often|nearly|recently|not|yet|also|only|still|probably|certainly|suddenly|carefully|fully|successfully|specially|completely|been)\\s+){0,3}';
+export const ADV = '(?:(?:already|just|never|ever|always|often|nearly|recently|not|yet|also|only|still|probably|certainly|suddenly|carefully|fully|successfully|specially|completely|been)\\s+){0,3}';
 export const rules = [
  rule('g-past','grammar','一般过去时','讲述已经发生的动作或过去的状态。关注过去式及其对应的时间线。', /\b(?:was|were|did|went|had|saw|said|came|got|took|gave|made|found|thought|told|heard|felt|left|bought|brought|stood|sat|ran|knew|began|became|lost|wrote|spoke|read|looked|asked|turned|arrived|wanted|replied|returned|noticed|received|decided|stopped|visited|happened)\b/gi),
  rule('g-present','grammar','一般现在时','描述经常发生的行为、习惯或一般状态。注意第三人称单数和频率副词。', /\b(?:(?:I|you|we|they)\s+(?:(?:always|often|usually|sometimes|never)\s+)?(?:like|know|live|work|want|have|need|think|do|see|go|get|find|feel|believe|read)|(?:he|she|it)\s+(?:(?:always|often|usually|sometimes|never)\s+)?(?:likes|knows|lives|works|wants|has|needs|thinks|does|goes|gets)|am|is|are)\b/gi),
  rule('g-present-continuous','grammar','现在进行时','be + 动词 -ing，描述此刻或当前一段时期正在发生的动作。', /\b(?:am|is|are|'m|'re|'s)\s+(?:(?:not|still|always|now)\s+)?[a-z]+ing\b/gi),
  rule('g-past-continuous','grammar','过去进行时','was / were + 动词 -ing，交代过去某一时刻的动作或故事背景。', /\b(?:was|were)\s+(?:(?:not|still|always|busily)\s+)?[a-z]+ing\b/gi),
- rule('g-present-perfect','grammar','现在完成时','have / has + 过去分词。连接过去的经历与现在的结果，而非单纯定位过去时间。', new RegExp(`(?:\\b(?:have|has)|'ve|'s)\\s+${subject}${adv}${pp}\\b`,'gi')),
- rule('g-past-perfect','grammar','过去完成时','had + 过去分词，说明某个过去时间点之前已经发生的事情。', new RegExp(`\\bhad\\s+${adv}${pp}\\b`,'gi')),
+ rule('g-present-perfect','grammar','现在完成时','have / has + 过去分词。连接过去的经历与现在的结果，而非单纯定位过去时间。', new RegExp(`(?:\\b(?:have|has)|'ve|'s)\\s+${subject}${ADV}${PP}\\b`,'gi')),
+ rule('g-past-perfect','grammar','过去完成时','had + 过去分词，说明某个过去时间点之前已经发生的事情。', new RegExp(`\\bhad\\s+${ADV}${PP}\\b`,'gi')),
  rule('g-future','grammar','一般将来时','用 will / shall 表达将来的行动、预测或临时决定。', /(?:\b(?:will|shall)|'ll)\s+(?:not\s+)?[a-z]+\b/gi),
  rule('g-going-to','grammar','be going to 表计划','be going to + 动词原形，表达打算或有迹象的预测。', /\b(?:am|is|are|'m|'s|'re)\s+going\s+to\s+[a-z]+\b/gi),
  rule('g-future-continuous','grammar','将来进行时','will be + 动词 -ing，说明将来某个时间正在进行的活动。', /\bwill\s+be\s+[a-z]+ing\b/gi),
- rule('g-future-perfect','grammar','将来完成时','will have + 过去分词，以未来的时间为参照回看已完成的行动。', new RegExp(`\\bwill\\s+have\\s+${pp}\\b`,'gi')),
+ rule('g-future-perfect','grammar','将来完成时','will have + 过去分词，以未来的时间为参照回看已完成的行动。', new RegExp(`\\bwill\\s+have\\s+${PP}\\b`,'gi')),
  rule('g-perfect-continuous','grammar','完成进行时','have / has / had been + 动词 -ing，突出行为的持续过程。', /\b(?:have|has|had)\s+been\s+[a-z]+ing\b/gi),
- rule('g-passive','grammar','被动语态','be + 过去分词，把动作的承受者放在叙述中心。注意也可能是表示状态的分词。', new RegExp(`\\b(?:am|is|are|was|were|be|been|being)\\s+(?:(?:not|often|always|just|carefully|fully|recently|finally|usually|specially)\\s+){0,2}${pp}\\b`,'gi')),
+ rule('g-passive','grammar','被动语态','be + 过去分词，把动作的承受者放在叙述中心。注意也可能是表示状态的分词。', new RegExp(`\\b(?:am|is|are|was|were|be|been|being)\\s+(?:(?:not|often|always|just|carefully|fully|recently|finally|usually|specially)\\s+){0,2}${PP}\\b`,'gi')),
  rule('g-modal','grammar','情态动词','can / could / may / might / must / should 等后接动词原形。结合语境区分能力、许可、义务与推测。', /\b(?:can|could|may|might|must|should|would|ought to|needn't|mustn't|can't|couldn't)\s+(?:not\s+)?[a-z]+\b/gi),
- rule('g-deduction','grammar','情态动词表推测','must / might / may / could have + 过去分词，对过去作出推测。', new RegExp(`\\b(?:must|might|may|could|should|cannot|can't|couldn't)\\s+(?:not\\s+)?have\\s+${pp}\\b`,'gi')),
+ rule('g-deduction','grammar','情态动词表推测','must / might / may / could have + 过去分词，对过去作出推测。', new RegExp(`\\b(?:must|might|may|could|should|cannot|can't|couldn't)\\s+(?:not\\s+)?have\\s+${PP}\\b`,'gi')),
  rule('g-relative','grammar','定语从句','who / whom / which / whose 引出信息来限定或补充前面的名词。先找到被修饰对象。', /\b[a-z]+\s+(?:who|whom|which|whose)\s+[^.!?]{2,55}/gi),
  rule('g-object','grammar','宾语从句','把完整信息放在 think / say / know 等动词之后；注意转述时的时态与人称。', /\b(?:think|thought|know|knew|say|said|says|told|believe|believed|realized|realize|found|noticed|explained|hope|hoped)\s+(?:[a-z]+\s+)?that\s+[^.!?]{2,45}/gi),
  rule('g-indirect-question','grammar','间接疑问句','疑问词或 if / whether 引导从句，通常使用陈述语序。', /\b(?:asked|wondered|wonder|know|knew|tell|explain|discover|see)\s+(?:[a-z]+\s+)?(?:whether|if|how|why|what|where|when)\s+[^.!?]{2,40}/gi),
