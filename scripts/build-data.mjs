@@ -216,7 +216,17 @@ for(const def of chunks){def.regex.lastIndex=0;for(const m of text.matchAll(def.
   const clusterIds=[clusterId];if(extra?.score>=4)clusterIds.push(extra.id);
   clusterIds.forEach(c=>clusters.find(x=>x.id===c).lessonIds.push(id));
   const genre=b===0&&(body.match(/\?|:\s/g)||[]).length>4?'对话':b===3?'议论 / 说明':cluster.stage==='思辨'||['process','information'].includes(clusterId)?'说明':'叙事';
-  const lesson={id,book:b+1,sequence:i+1,no:h.no,label:`${bookMeta[b].roman} · ${String(h.no).padStart(2,'0')}${duplicates.get(h.no)!==id?'②':''}`,title,titleZh,titleOrigin,sourceHeading:h.heading,sourceFile:filename,sourceLine:h.line+1,sourceEndLine:next,sourceBody:body,quality,scene:f.scene||cluster.scene,canDo:f.canDo||cluster.description,summary:f.summary||'',excerpt:sentences.find(s=>s.sourceKind==='body'&&s.wc>=5)?.text||sentences[0]?.text||'',genre,clusterIds,kpIds:byType,focus:(f.focus||[]).filter(x=>kpIds.includes(x)),editorialFocus:!!f.focus,editorialCanDo:!!f.canDo,wc:sentences.reduce((n,s)=>n+s.wc,0),sentenceCount:sentences.length,sentences,glosses:glossPools.get(id)?.glosses||[],glossMethods:glossPools.get(id)?.methods||[],...(b+1===4 ? {officialNo: officialNoOf.get(i+1) ?? null, corpusOnly: !officialNoOf.has(i+1)} : {})};
+  const lesson={id,book:b+1,sequence:i+1,no:h.no,label:(() => {
+   const dup=duplicates.get(h.no)!==id?'②':'';
+   // 第四册语料是 60 课版，官方是 48 课版，逐段偏移 +1…+12。
+   // 显示语料序号会让用户对不上教材（"第 57 课"在官方版里不存在），
+   // 所以有对齐结果时显示**官方课号**，没有的标为「非官方版」。
+   if(b+1===4){
+    const off=officialNoOf.get(i+1);
+    return off ? `IV · ${String(off).padStart(2,'0')}` : `IV · ${String(h.no).padStart(2,'0')} 非官方版`;
+   }
+   return `${bookMeta[b].roman} · ${String(h.no).padStart(2,'0')}${dup}`;
+  })(),title,titleZh,titleOrigin,sourceHeading:h.heading,sourceFile:filename,sourceLine:h.line+1,sourceEndLine:next,sourceBody:body,quality,scene:f.scene||cluster.scene,canDo:f.canDo||cluster.description,summary:f.summary||'',excerpt:sentences.find(s=>s.sourceKind==='body'&&s.wc>=5)?.text||sentences[0]?.text||'',genre,clusterIds,kpIds:byType,focus:(f.focus||[]).filter(x=>kpIds.includes(x)),editorialFocus:!!f.focus,editorialCanDo:!!f.canDo,wc:sentences.reduce((n,s)=>n+s.wc,0),sentenceCount:sentences.length,sentences,glosses:glossPools.get(id)?.glosses||[],glossMethods:glossPools.get(id)?.methods||[],...(b+1===4 ? {officialNo: officialNoOf.get(i+1) ?? null, corpusOnly: !officialNoOf.has(i+1)} : {})};
   if(quality.length)issues.push({lessonId:id,kind:'source-format',messages:quality});
   allLessons.push(lesson);
  });
