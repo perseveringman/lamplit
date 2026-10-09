@@ -5379,3 +5379,11 @@ strong {
 .quiz-score small { font-size: 20px; color: var(--muted-foreground, #6b6257); }
 .quiz-missed { list-style: none; padding: 0; margin: 16px auto; max-width: 380px; text-align: left; display: flex; flex-direction: column; gap: 6px; font-size: 13px; }
 .quiz-actions { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
+
+/* 相关课文：原「课文共点」页折进来。用共同知识点数排序，不显示"相似度"这种测不准的分。 */
+.lesson-related { margin: 16px 0 4px; }
+.lesson-related ul { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-direction: column; gap: 2px; }
+.lesson-related li button { display: flex; align-items: baseline; gap: 8px; width: 100%; padding: 7px 8px; border: none; background: none; border-radius: 6px; cursor: pointer; text-align: left; font-size: 13px; }
+.lesson-related li button:hover { background: color-mix(in srgb, var(--foreground, #2f2a24) 5%, transparent); }
+.lesson-related-title { flex: 1; color: var(--foreground, #2f2a24); }
+.lesson-related li em { font-style: normal; font-size: 11.5px; white-space: nowrap; }

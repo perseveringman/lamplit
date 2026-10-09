@@ -125,6 +125,7 @@ function LessonDetail({ id, onOpen }: {
   {lesson.summary && <p className="lesson-summary">{lesson.summary}</p>}
   {c.quizOf(lesson.id).length > 0 && <button className="lesson-quiz-entry" onClick={() => nav.navigate('quiz', lesson.id)}><Icon name="check" size={15}/><span>读完练一练</span><em className="muted">{c.quizOf(lesson.id).length} 题</em></button>}
   <div className="lesson-intention"><span className="eyebrow">这一课，你会练习</span><h3>{lesson.scene}</h3><p>{lesson.canDo}</p></div>
+  <RelatedLessons lessonId={lesson.id} onOpen={open}/>
   {(() => { const tps = c.teachingPointsOf(lesson.id); return tps.length ? <section className="lesson-tps"><span className="eyebrow">教材教学点</span><ul>{tps.map(tp => <li key={tp.id}>{tp.covered && tp.refs[0] ? <button onClick={() => open({ kind: 'kp', id: tp.refs[0]! })}>{tp.title}</button> : <><span>{tp.title}</span><em className="muted">本工具未覆盖</em></>}</li>)}</ul></section> : null; })()}
   <Button className="full" size="lg" onClick={() => nav.read(id, store.data.bookmarks[id])}><Icon name="book"/>{store.data.bookmarks[id] ? '继续精读' : '开始精读'}<Icon name="arrow" size={17}/></Button>
   <EntityActions entity={{ kind: 'lesson', id }}/>
@@ -165,3 +166,25 @@ function SentenceDetail({ id, onOpen }: {
 }) { const c = useCorpus(); const { data, loading, error, retry } = useAsync(() => c.sentence(id), [id]); if (loading)
     return <Loader />; if (error)
     return <ErrorState text={error} onRetry={retry}/>; return data ? <SentenceDetailsBody sentence={data} onOpen={onOpen}/> : null; }
+
+/** 相关课文。原先是独立的「课文共点」页面（nav 六项之一）；IA 收敛后折进课文详情。 */
+function RelatedLessons({ lessonId, onOpen }: { lessonId: string; onOpen: (e: Entity) => void }) {
+    const c = useCorpus();
+    const { data } = useAsync(() => c.relatedOf(lessonId, 4), [lessonId]);
+    const rows = data || [];
+    if (!rows.length) return null;
+    return <section className="lesson-related">
+        <span className="eyebrow">相关课文</span>
+        <ul>{rows.map((r) => {
+            const l = c.lessonSummary(r.lessonId);
+            if (!l) return null;
+            return <li key={r.lessonId}>
+                <button onClick={() => onOpen({ kind: 'lesson', id: r.lessonId })}>
+                    <span className="mono">{l.label}</span>
+                    <span className="lesson-related-title">{l.title}</span>
+                    <em className="muted">{r.count} 个共同知识点</em>
+                </button>
+            </li>;
+        })}</ul>
+    </section>;
+}

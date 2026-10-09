@@ -73,6 +73,15 @@ export class Corpus {
     ][]>>(`contexts/${bucket}.json`); return all[id] || []; }
     async contexts(id: string): Promise<Sentence[]> { const occurrences = await this.occurrences(id); const ids = [...new Set(occurrences.map(x => x[0]))]; return Promise.all(ids.map(sid => this.sentence(sid))); }
     pairs() { return loadJSON<Pair[]>('pairs.json'); }
+    /** 与某一课有共同知识点的其它课文。pairs 是全局的，这里按课文取出来。 */
+    async relatedOf(lessonId: string, limit = 4) {
+        const pairs = await this.pairs();
+        return pairs
+            .filter((p) => p.a === lessonId || p.b === lessonId)
+            .sort((x, y) => y.count - x.count)
+            .slice(0, limit)
+            .map((p) => ({ lessonId: p.a === lessonId ? p.b : p.a, count: p.count, kpIds: p.kpIds }));
+    }
     sentences() { return loadJSON<SentenceSummary[]>('sentences.json'); }
 }
 export const CorpusContext = createContext<Corpus | null>(null);
