@@ -60,11 +60,14 @@ function main() {
         }
         if (words.length) senseItems.push({ sentenceId: s.id, lessonId: s.lessonId, text: s.text, words });
 
-        if (s.tier !== 'example' && !already.has(s.id)) {
+        // 分档已在早前移除，这里改用「册 2-4 + 最小词数」的口径选取例句池。
+        // 册 1 跳过：例句多为极短句（此前实测仅 28% 有实质内容）。
+        const inScope = s.book !== 1 && s.wc >= 6;
+        if (inScope && !already.has(s.id)) {
           analysisItems.push({
             sentenceId: s.id,
             lessonId: s.lessonId,
-            tier: s.tier,
+            wc: s.wc,
             text: s.text,
             grammar: [...new Set(s.hits.map((h) => kpById.get(h[0])).filter((k) => k && k.type === 'grammar').map((k) => k.name))],
             chunks: [...new Set(s.hits.map((h) => kpById.get(h[0])).filter((k) => k && k.type === 'chunk').map((k) => k.name))],
