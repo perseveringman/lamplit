@@ -304,3 +304,4 @@ npm run test:e2e          # 真实浏览器（真实 G6 + 真实 IndexedDB）
 - [PRINCIPLES.md](PRINCIPLES.md) —— 十条设计原则，含**被否决的方案与理由**
 - [CORPUS-ADAPTER.md](CORPUS-ADAPTER.md) —— 脱离新概念的耦合点清单与迁移路径
 - [BACKLOG.md](BACKLOG.md) —— **待实施清单**（依赖有序，含已完成项对照）
+- [HIT-PAYLOAD.md](HIT-PAYLOAD.md) —— **hit 载荷按类型分派**（地基复审第三处修正，待实施）
