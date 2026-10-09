@@ -156,6 +156,17 @@ export function SentenceDetailsBody({ sentence, onOpen }: {
     <section className="detail-section why-learn"><h4>怎样读这一句</h4><p>{analysis.whyLearn}</p></section>
   </> : null}
   {sentence.sourceKind === 'heading' && lesson.quality.length > 0 && <p className="subtle-warning"><Icon name="warning" size={14}/>本句保留了原文件标题中的可见文字，可能不完整。</p>}
+  {(() => {
+        // 本句体现：命中级的结构成分。只有 grammar 需要它（word 是义项，chunk/pattern 挂在知识点上）。
+        const rows = sentence.hits.filter(h => h[0].startsWith('g-') && sentence.structureParts?.[h[1]]).slice(0, 3);
+        if (!rows.length) return null;
+        return <section className="detail-section"><h4>这一句里怎么构成</h4><ul className="structure-parts">
+            {rows.map(h => <li key={h[1]}>
+                <button className="structure-rule" onClick={() => open({ kind: 'kp', id: h[0] })}>{c.kp(h[0])?.name || h[0]}</button>
+                <span className="structure-seq">{(sentence.structureParts?.[h[1]] || []).map((p, i) => <span key={i} className="structure-piece"><b lang="en">{p.text}</b><em>{p.role}</em></span>)}</span>
+            </li>)}
+        </ul></section>;
+    })()}
   <section className="detail-section"><h4>句中知识点</h4><KPGroup ids={[...new Set(sentence.hits.map(x => x[0]))]} onKP={id => open({ kind: 'kp', id })} max={5}/></section>
   <Button variant="outline" className="full" onClick={() => nav.read(sentence.lessonId, sentence.id)}><Icon name="return" size={16}/>回到这一句</Button>
  </div>;

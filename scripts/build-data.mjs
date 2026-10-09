@@ -4,6 +4,7 @@ import { metaOf } from './grammar-meta.mjs';
 import { deriveTeachingPoints, coverageOf } from './teaching-points.mjs';
 import { summaryOf, canDoOf } from './lesson-summary.mjs';
 import { buildQuiz } from './quiz.mjs';
+import { partsOf } from './structure-parts.mjs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
@@ -190,7 +191,18 @@ for(const def of chunks){def.regex.lastIndex=0;for(const m of text.matchAll(def.
     resolveSentenceSenses(sentence,kps);
     const analysis=llmOverrides?.analyses?.[sentence.id];
     if(analysis)sentence.analysis=analysis;
-    sentences.push(sentence);allSentences.push(sentence);
+    // hit 载荷按类型分派：只有 grammar 需要「本句体现」（word 是义项，chunk/pattern 挂在知识点上）。
+  // 按 start 索引，只记能确定性切出来的；切不出的留空，不猜。
+  {
+   const parts = {};
+   for (const h of sentence.hits) {
+    if (!h[0].startsWith('g-')) continue;
+    const p = partsOf(h[0], text.slice(h[1], h[2]));
+    if (p) parts[h[1]] = p;
+   }
+   if (Object.keys(parts).length) sentence.structureParts = parts;
+  }
+  sentences.push(sentence);allSentences.push(sentence);
    }
   });
   let clusterId=primary[b+1]?.[i]||'information';

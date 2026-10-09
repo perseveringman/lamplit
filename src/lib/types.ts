@@ -91,6 +91,8 @@ export interface Sentence {
     wc: number;
     clauses: number;
     hits: Hit[];
+    /** 结构成分拆解：按命中起点索引。只有能确定性切出的语法命中才有条目。 */
+    structureParts?: Record<number, { text: string; role: string }[]>;
     connectives: [
         number,
         number

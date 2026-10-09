@@ -5387,3 +5387,12 @@ strong {
 .lesson-related li button:hover { background: color-mix(in srgb, var(--foreground, #2f2a24) 5%, transparent); }
 .lesson-related-title { flex: 1; color: var(--foreground, #2f2a24); }
 .lesson-related li em { font-style: normal; font-size: 11.5px; white-space: nowrap; }
+
+/* 本句体现：把语法命中切成成分，让读者看到这个结构在这一句里落在哪些词上。 */
+.structure-parts { list-style: none; padding: 0; margin: 6px 0 0; display: flex; flex-direction: column; gap: 8px; }
+.structure-parts li { display: flex; flex-direction: column; gap: 3px; }
+.structure-rule { background: none; border: none; padding: 0; cursor: pointer; text-align: left; font-size: 12px; color: var(--muted-foreground, #6b6257); text-decoration: underline; text-underline-offset: 3px; align-self: flex-start; }
+.structure-seq { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.structure-piece { display: inline-flex; align-items: baseline; gap: 4px; padding: 3px 7px; border-radius: 4px; background: color-mix(in srgb, var(--gold, #b99469) 10%, transparent); }
+.structure-piece b { font-weight: 500; font-size: 13.5px; }
+.structure-piece em { font-style: normal; font-size: 10.5px; color: var(--muted-foreground, #6b6257); }

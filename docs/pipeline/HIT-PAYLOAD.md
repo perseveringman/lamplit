@@ -1,6 +1,6 @@
 # Hit 载荷按类型分派
 
-> 状态：**待实施**。这是「地基复审」三处修正里的第三处，前两处已完成。
+> 状态：**已实施**（8 条公式化规则）。这是「地基复审」三处修正里的第三处，前两处已完成。
 > 本文记录现状、待决策点与验证方式，供独立会话接手。
 
 ---
@@ -221,3 +221,56 @@ rule('g-present-perfect', ..., { parts: [
 教学层   教材教学点：现在完成时（可点击）                          ← C4 已做
 本句层   have(助动词) + just(副词) + received(过去分词)            ← 本文
 ```
+
+---
+
+## 八、实施结果
+
+### 做了什么
+
+新增 `scripts/structure-parts.mjs`：
+
+```js
+STRUCTURE_PARTS = { 'g-present-perfect': [[AUX,'助动词'],[NOT+ADV,'副词'],[PP,'过去分词']], ... }
+splitSpan(span, parts)   // 切不出返回 null
+partsOf(kpId, span)
+```
+
+`build-data` 在句子对象上挂 `structureParts`，**按命中起点索引**——只记能切出来的：
+
+```js
+sentence.structureParts = { 30: [{text:'were',role:'助动词'},{text:'sitting',role:'现在分词'}] }
+```
+
+**没有改 `Hit` 元组**（方案 B 的全部价值）。
+
+### 覆盖
+
+```
+有 parts 规格的 8 条规则：2548/2594 = 98.2%
+
+  g-passive            716/717  100%
+  g-modal              632/647   98%
+  g-present-perfect    363/382   95%
+  g-future             265/265  100%
+  g-past-perfect       261/261  100%
+  g-present-continuous 149/160   93%
+  g-past-continuous    133/133  100%
+  g-going-to            29/29   100%
+```
+
+相对全部 61 条语法规则是 21.4%——**这是有意的**：只收公式化的结构，
+语义型的（定语从句、条件句、让步）没有可枚举的成分序列，收了就只能靠猜。
+
+### 三条纪律的落实
+
+| 纪律 | 怎么做的 |
+|---|---|
+| **切不出就留空，不猜** | `splitSpan` 返回 `null`；`is now working` 因为 `now` 不在副词表里而**拒绝切分**（实测过） |
+| **产物自证合法** | `data:check` 断言「每条成分的文本必须是命中 span 的精确子串」+「没有语法命中的句子不得有结构成分」 |
+| **必须有消费者** | 句子详情显示「这一句里怎么构成：现在完成时 → have(助动词) + just(副词) + received(过去分词)」，截图 `docs/screenshots/hit-parts.png` |
+
+### 已知未修
+
+- **疑问语序**（`Have we got`）——占剩余失败的多数
+- `now` 等副词不在 `ADV` 表里

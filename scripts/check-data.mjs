@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { validateItem, vocabIdsOf } from './quiz.mjs';
 import { stop } from './knowledge.mjs';
+import { STRUCTURE_PARTS } from './structure-parts.mjs';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {gunzipSync} from 'node:zlib';
@@ -284,6 +285,29 @@ check(b4.filter(l=>l.corpusOnly).every(l=>!l.officialNo),'corpus-only lessons ca
  report.quizItems=quiz.length;
  report.quizLessons=new Set(quiz.map(q=>q.lessonId)).size;
  report.quizKinds=kinds;
+}
+
+// ── 结构成分拆解（hit 载荷按类型分派）──
+{
+ const spec=new Set(Object.keys(STRUCTURE_PARTS));
+ let tot=0, ok=0; const bad=[];
+ for(const l of lessons) for(const s of l.sentences||[]){
+  for(const h of s.hits){
+   if(!spec.has(h[0])) continue;
+   tot++;
+   const parts=(s.structureParts||{})[h[1]];
+   if(!parts) continue;
+   ok++;
+   const span=s.text.slice(h[1],h[2]);
+   // 每条成分的文本必须是命中 span 的精确子串
+   if(!parts.length||parts.some(p=>!p.text||!span.includes(p.text))) bad.push(s.id+':'+h[0]);
+  }
+ }
+ check(bad.length===0, `成分文本必须是命中 span 的精确子串（异常 ${bad.length} 条：${bad.slice(0,3).join(', ')}）`);
+ // 结构成分不得凭空出现：没有 grammar 命中的句子不该有 structureParts
+ const stray=lessons.flatMap(l=>(l.sentences||[]).filter(s=>s.structureParts&&!s.hits.some(h=>h[0].startsWith('g-'))).map(s=>s.id));
+ check(stray.length===0, `没有语法命中的句子不应有成分拆解（异常 ${stray.length} 条）`);
+ report.structureParts={rules:spec.size, hits:tot, split:ok, rate:tot?Number((100*ok/tot).toFixed(1)):0};
 }
 
 const result={passed:true,checks,teachingPoints:catalog.teachingPoints?.length||0,...report,book4Aligned:b4Aligned.length,book4CorpusOnly:b4CorpusOnly.length,deadChunks:deadChunks.length,chunkCoverage:Number((100*coveredByChunk/wordHits).toFixed(1)),lessons:lessons.length,sentences:sentences.length,knowledgePoints:kp.size,matchedSpans:hitCount,paths:catalog.clusters.length,pairs:pairs.length,gzipFiles,scope:'Exact-source spans, IDs, counts, relationships, context links and source hashes. Does not assert linguistic annotation accuracy.'};

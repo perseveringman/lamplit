@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "checks": 230021,
+  "checks": 230023,
   "teachingPoints": 28,
   "offCorpusPatterns": 9,
   "patternCoverage": 95.5,
@@ -46,6 +46,12 @@
   "quizKinds": {
     "blank": 1029,
     "structure": 691
+  },
+  "structureParts": {
+    "rules": 8,
+    "hits": 2594,
+    "split": 2548,
+    "rate": 98.2
   },
   "book4Aligned": 41,
   "book4CorpusOnly": 19,
