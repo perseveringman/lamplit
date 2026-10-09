@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { validateItem } from './quiz.mjs';
+import { validateItem, vocabIdsOf } from './quiz.mjs';
+import { stop } from './knowledge.mjs';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {gunzipSync} from 'node:zlib';
@@ -267,7 +268,9 @@ check(b4.filter(l=>l.corpusOnly).every(l=>!l.officialNo),'corpus-only lessons ca
  const fails={};
  for(const q of quiz){
   const l=lessonById.get(q.lessonId); if(!l){fails['课文不存在']=(fails['课文不存在']||0)+1;continue;}
-  const why=validateItem(q,l,kpById,pool,focusOf.get(q.lessonId)||[]);
+  // 判据在**校验侧独立重算**，不采信题目自己的标记 —— 否则校验只是自证
+  const foc=focusOf.get(q.lessonId)||[];
+  const why=validateItem(q,l,kpById,pool,foc,vocabIdsOf(l,foc,kpById,stop,l.book));
   if(why) fails[why]=(fails[why]||0)+1;
  }
  check(Object.keys(fails).length===0, `题库必须全部通过五条机械校验：${JSON.stringify(fails).slice(0,140)}`);

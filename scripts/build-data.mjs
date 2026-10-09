@@ -354,7 +354,7 @@ const quiz = (() => {
  for (const l of allLessons) {
   const focus = (l.focus || []).filter((id) => kpById.has(id));
   if (!focus.length) continue;
-  out.push(...buildQuiz(l, focus, kpById, compactKps, l.book));
+  out.push(...buildQuiz(l, focus, kpById, compactKps, l.book, stop));
  }
  return out;
 })();

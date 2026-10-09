@@ -28,9 +28,24 @@ function blank(text, start, end) {
   return { stem: text.slice(0, start) + '______' + text.slice(end), answer: text.slice(start, end) };
 }
 
-export function buildQuiz(lesson, focusIds, kpById, pool, book) {
+/** 本课的词汇题候选：重复出现 >= 2 次、非功能词、有释义、引入册不超前的词或语块。 */
+export function vocabIdsOf(lesson, focusIds, kpById, stopSet, book) {
+  const focus = new Set(focusIds);
+  const counts = new Map();
+  for (const s of lesson.sentences || []) for (const h of s.hits) counts.set(h[0], (counts.get(h[0]) || 0) + 1);
+  return [...counts.entries()]
+    .filter(([id, n]) => n >= 2 && !focus.has(id))
+    .map(([id, n]) => ({ kp: kpById.get(id), n }))
+    .filter(({ kp }) => kp && (kp.type === 'word' || kp.type === 'chunk') && !stopSet.has(kp.name.toLowerCase()) && (kp.coreSense || kp.meaning) && (kp.introduceBook == null || kp.introduceBook <= book))
+    .sort((a, b) => b.n - a.n || a.kp.id.localeCompare(b.kp.id))
+    .slice(0, 4)
+    .map(({ kp }) => kp.id);
+}
+
+export function buildQuiz(lesson, focusIds, kpById, pool, book, stopSet) {
   const focus = new Set(focusIds);
   const items = [];
+  const vocabIds = vocabIdsOf(lesson, focusIds, kpById, stopSet, book);
   // 第一种：结构辨认。用于 focus 里的语法/句型 —— 它们没法"挖空填释义"。
   // 题干是该课的一句原句，正确项是该结构的名称，干扰项取自同类型的其它结构。
   for (const id of focusIds) {
@@ -49,8 +64,8 @@ export function buildQuiz(lesson, focusIds, kpById, pool, book) {
       const kp = kpById.get(h[0]);
       if (!kp) continue;
       if (kp.type !== 'word' && kp.type !== 'chunk') continue;
-      // ⑤ 必须命中该课 teachingFocus
-      if (!focus.has(kp.id)) continue;
+      // ⑤ 命中 teachingFocus，或命中本课重复词判据
+      if (!focus.has(kp.id) && !vocabIds.includes(kp.id)) continue;
       // 引入册约束
       if (kp.introduceBook != null && kp.introduceBook > book) continue;
       const [start, end] = [h[1], h[2]];
@@ -62,7 +77,8 @@ export function buildQuiz(lesson, focusIds, kpById, pool, book) {
       if (stem.replace('______', '') !== s.text.slice(0, start) + s.text.slice(end)) continue;
       const meaning = kp.coreSense || kp.meaning;
       if (!meaning) continue;
-      const wrong = distractorsOf(kp, pool, 3, book).map((k) => k.coreSense || k.meaning).filter((m) => m && m !== meaning);
+      // 去重：不同知识点可能有相同的释义字符串，重复的选项会让题目无解
+      const wrong = [...new Set(distractorsOf(kp, pool, 4, book).map((k) => k.coreSense || k.meaning).filter((m) => m && m !== meaning))];
       if (wrong.length < 3) continue;
       // 问法是「空里那个表达是什么意思」——所以答案是**释义**，被挖掉的原文另存 blanked。
       // 两者混用会让 answerIndex 指向错的选项（这个 bug 被 check-data 抓到过）。
@@ -81,14 +97,14 @@ export function buildQuiz(lesson, focusIds, kpById, pool, book) {
         sourceStart: start,
         sourceEnd: end,
       });
-      if (items.length >= 5) return items;
+      if (items.length >= 6) return items;
     }
   }
   return items;
 }
 
 /** 五条机械校验。返回 null 表示通过，否则返回失败原因。 */
-export function validateItem(item, lesson, kpById, pool, focusIds) {
+export function validateItem(item, lesson, kpById, pool, focusIds, vocabIds = []) {
   const s = (lesson.sentences || []).find((x) => x.id === item.sentenceId);
   if (!s) return '句子不存在';
   if (item.kind === 'structure') {
@@ -97,7 +113,7 @@ export function validateItem(item, lesson, kpById, pool, focusIds) {
     if (!kp0 || item.answer !== kp0.name) return '① 答案不是该结构的名称';
     if (!s.hits.some((h) => h[0] === item.kpId)) return '② 该句没有这个结构的真实命中';
     if (new Set(item.options).size < 4) return '④ 干扰项重复';
-    if (!focusIds.includes(item.kpId)) return '⑤ 未命中该课 teachingFocus';
+    if (!focusIds.includes(item.kpId) && !vocabIds.includes(item.kpId)) return '⑤ 未命中该课 teachingFocus 或本课重复词判据';
     if (kp0.introduceBook != null && kp0.introduceBook > lesson.book) return '引入册晚于本课所在册';
     return null;
   }
@@ -112,7 +128,7 @@ export function validateItem(item, lesson, kpById, pool, focusIds) {
   const wrong = item.options.filter((o) => o !== (kp.coreSense || kp.meaning));
   if (wrong.length < 3) return '④ 干扰项不足';
   if (item.options[item.answerIndex] !== (kp.coreSense || kp.meaning)) return '① 答案下标与释义不符';
-  if (!focusIds.includes(item.kpId)) return '⑤ 未命中该课 teachingFocus';
+  if (!focusIds.includes(item.kpId) && !vocabIds.includes(item.kpId)) return '⑤ 未命中该课 teachingFocus 或本课重复词判据';
   if (kp.introduceBook != null && kp.introduceBook > lesson.book) return '引入册晚于本课所在册';
   return null;
 }

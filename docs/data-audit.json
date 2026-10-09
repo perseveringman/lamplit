@@ -1301,11 +1301,11 @@
     "book4CorpusOnly": 19,
     "kpWithIntroduceBook": 24,
     "kpWithFormula": 50,
-    "quizItems": 696,
+    "quizItems": 1720,
     "kpWithLevel": 24
   },
   "catalogSize": {
-    "bytes": 8175042,
-    "gzip": 1256820
+    "bytes": 8619198,
+    "gzip": 1330890
   }
 }
