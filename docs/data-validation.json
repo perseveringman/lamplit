@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "checks": 230023,
+  "checks": 230133,
   "teachingPoints": 28,
   "offCorpusPatterns": 9,
   "patternCoverage": 95.5,
@@ -14,16 +14,16 @@
     "p-either-or(1)",
     "p-how-long(1)",
     "p-could-you-tell(1)",
-    "p-such-a-that(1)"
+    "p-nothing-but(1)"
   ],
   "ruleUsage": {
-    "grammarRules": 50,
+    "grammarRules": 52,
     "patternRules": 92,
     "minGrammarFreq": 2,
     "minPatternFreq": 1
   },
   "kpWithIntroduceBook": 24,
-  "kpWithFormula": 50,
+  "kpWithFormula": 52,
   "teachingFacts": {
     "total": 28,
     "highConfidence": 10,
@@ -44,8 +44,8 @@
   "quizItems": 1720,
   "quizLessons": 288,
   "quizKinds": {
-    "blank": 1029,
-    "structure": 691
+    "blank": 1027,
+    "structure": 693
   },
   "structureParts": {
     "rules": 8,
@@ -59,8 +59,8 @@
   "chunkCoverage": 10.4,
   "lessons": 288,
   "sentences": 4606,
-  "knowledgePoints": 8715,
-  "matchedSpans": 48322,
+  "knowledgePoints": 8717,
+  "matchedSpans": 48348,
   "paths": 25,
   "pairs": 100,
   "gzipFiles": 40,

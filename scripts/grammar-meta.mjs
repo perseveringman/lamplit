@@ -28,6 +28,8 @@ export const GRAMMAR_META = {
   'g-modal':                  { en: 'modal verbs',              formula: '情态动词 + 动词原形' },
   'g-deduction':              { en: 'modals of deduction',      formula: 'must / can’t / may / might (+ have + 过去分词)' },
   'g-subjunctive-past':       { en: 'subjunctive / unreal past',formula: 'if + 过去式 / had + 过去分词，主句用 would' },
+  'g-double-negative':        { en: 'double negative',         formula: 'not + un-/in-/dis- 形容词；never fail to；cannot … without；no … without' },
+  'g-parenthesis':            { en: 'parenthesis',             formula: '主语 + , + 插入成分 + , + 谓语' },
   'g-wish-clause':            { en: 'wish + past subjunctive',  formula: 'wish + 过去式 / had + 过去分词' },
   'g-question':               { en: 'yes–no question',          formula: '助动词 / be 提前至句首' },
   'g-wh-question':            { en: 'wh-question',              formula: '疑问词 + 助动词 + 主语 + 动词' },

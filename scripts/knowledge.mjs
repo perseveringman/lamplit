@@ -207,7 +207,13 @@ export const rules = [
  rule('p-it-is-no-use','pattern','It is no use … · 做…没用','It is no use / no good 后接动名词，说明做某事没有意义。', /\bIt\s+(?:is|was)\s+no\s+(?:use|good)\s+[a-z]+ing\b/gi, 'g-gerund'),
  rule('p-suppose-clause','pattern','Suppose … · 假设','Suppose / Supposing 引导假设，常用于提出一个情形来讨论。', /\bSuppose\s+(?:that\s+)?[^.!?]{3,50}/gi),
   rule('p-not-only-inv','pattern','Not only … but also … · 不但…而且','not only 放句首时前半句要部分倒装，but also 后接并列成分。', /\bNot\s+only\s+[^.!?]{2,45}\bbut\s+(?:also\s+)?[^.!?]{0,40}/gi, 'p-not-only'),
-];
+ // ── 由教材事实（新东方太原第三册大纲）反查出的缺口，语料验证后入册 ──
+ // 双重否定在教材里出现三次（L09 双重否定表肯定 / L41 全面积累 / L44 多种结构），信号最强。
+ rule('g-double-negative','grammar','双重否定表肯定','两个否定叠在一起表示强调的肯定。把两个否定都还原成正说，意思就清楚了。',
+  /\b(?:not\s+(?:un|in|im|dis|ir)[a-z]+|never\s+(?:fails?|forgets?|ceases?|tires?)|cannot\s+[a-z]+\s+without|no\s+[a-z]+\s+without|nothing\s+(?:if\s+not|but)|not\s+without)\b[^.!?]{0,45}/gi, null, { priority: 62 }),
+ // 插入语：教材 L38「总结常见的插入语表达」
+ rule('g-parenthesis','grammar','插入语','插在句子中间、去掉后句子依然完整的成分。它表达说话人的态度或补充说明。',
+  /,\s*(?:it\s+(?:seems|appears|is\s+said)|I\s+(?:think|believe|suppose|guess|hope)|as\s+it\s+were|so\s+to\s+speak|in\s+fact|to\s+be\s+honest|if\s+anything)\s*,/gi, null, { priority: 58 }),];
 
 // ── 语料范围外的句型（已从 rules 移除，保留记录）────────────────────
 // 这 9 条经实测在新概念 1–4 语料里 0 命中，按原则 4 不入册。但缺口本身有信息量：
@@ -1097,7 +1103,8 @@ function headForms(head){
 const BE_GAP='\\s+(?:(?:very|quite|so|really|rather|extremely|always|never|still|just|not|also|too|most|more|only|already|often|usually|sometimes)\\s+)*';
 // 占位符展开：清单里写的 one's / sb 在语料里永远不会字面出现，
 // 语料里是 "to my surprise"、"do his best"。不展开这些语块就是死的。
-const PLACEHOLDER_MAP=[[/one's/g,'(?:my|your|his|her|its|our|their)'],[/\bsb\b/g,'(?:me|you|him|her|us|them|someone|somebody)'],[/\bsth\b/g,'(?:something|anything|nothing|it)'],[/\boneself\b/g,'(?:myself|yourself|himself|herself|itself|ourselves|themselves)']];
+const PLACEHOLDER_MAP=[[/one's/g,'(?:my|your|his|her|its|our|their)'],[/\bsb\b/g,'(?:me|you|him|her|us|them|someone|somebody)'],[/\bsth\b/g,'(?:something|anything|nothing|it)'],[/\boneself\b/g,'(?:myself|yourself|himself|herself|itself|ourselves|themselves)']
+];
 const expandPlaceholders=(text)=>{let out=text.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');for(const [re,alt] of PLACEHOLDER_MAP)out=out.replace(re,alt);return out;};
 export function chunkRegex(name){
  const esc = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

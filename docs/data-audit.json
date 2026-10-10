@@ -1281,10 +1281,10 @@
   "stats": {
     "lessons": 288,
     "sentences": 4606,
-    "kps": 8715,
+    "kps": 8717,
     "clusters": 25,
     "byType": {
-      "grammar": 50,
+      "grammar": 52,
       "pattern": 92,
       "chunk": 832,
       "word": 7741
@@ -1292,7 +1292,7 @@
     "glossedWords": 3573,
     "contextWords": 4168,
     "pairs": 100,
-    "hits": 48322,
+    "hits": 48348,
     "senseResolved": 31636,
     "senseSkipped": 140,
     "llmSenses": 8553,
@@ -1300,12 +1300,12 @@
     "book4Aligned": 41,
     "book4CorpusOnly": 19,
     "kpWithIntroduceBook": 24,
-    "kpWithFormula": 50,
+    "kpWithFormula": 52,
     "quizItems": 1720,
     "kpWithLevel": 24
   },
   "catalogSize": {
-    "bytes": 8620192,
-    "gzip": 1331107
+    "bytes": 8627756,
+    "gzip": 1333308
   }
 }
