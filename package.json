@@ -13,7 +13,7 @@
     "data:build": "node scripts/build-data.mjs",
     "data:check": "node scripts/check-data.mjs",
     "test": "node --experimental-strip-types --test tests/domain.test.ts tests/sense.test.ts tests/sense-quality.test.ts tests/progress.test.ts",
-    "check": "npm run data:check && npm test && npm run build",
+    "check": "npm run data:check && npm test && npm run build && npm run preview:rebuild",
     "test:e2e": "playwright test",
     "preview:local": "node scripts/serve.mjs",
     "preview:rebuild": "node scripts/build-local-preview.mjs",

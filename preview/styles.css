@@ -1190,20 +1190,6 @@ strong {
   margin: 18px 0;
   overflow-wrap: anywhere;
 }
-.tier-label {
-  font-size: 10px;
-  color: #837199;
-  padding-left: 8px;
-  border-left: 3px solid #9b8bb2;
-}
-.tier-complex {
-  color: #ad8053;
-  border-left: 3px dashed #b99469;
-}
-.tier-example {
-  color: #7d908c;
-  border-left: 2px solid #94a29b;
-}
 .subtle-warning {
   display: flex;
   gap: 6px;
@@ -2150,12 +2136,6 @@ strong {
   bottom: 14px;
   width: 2px;
   border-radius: 1px;
-}
-.sentence-row.sentence-model:before {
-  background: #a997c8;
-}
-.sentence-row.sentence-complex:before {
-  border-left: 2px dashed #c29769;
 }
 .sentence-row.kp-located {
   background: #b4986610;
@@ -5161,3 +5141,260 @@ strong {
     bottom: 150px;
   }
 }
+
+/* ── 语境释义卡（Step 0–2）────────────────────────────────────────────
+   释义在两个层级上，视觉上必须能区分：
+   「语境义」是这句话里的意思，「核心义」是这个字最常用的意思。
+   混在一起显示就是原来那个"戏剧；玩；演奏"的问题。
+
+   注意：这块内容渲染在 .paper 里，用的是纸面作用域的局部变量
+   （--foreground / --muted-foreground / --border / --gold），
+   不是深色主题的 --ink/--muted。用错变量会得到浅色字压浅色底。 */
+.sense-block {
+  margin: 0 0 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: color-mix(in oklab, var(--foreground, #344047) 6%, transparent);
+  border-left: 3px solid var(--border, #d5d1c4);
+}
+
+.sense-context {
+  border-left-color: var(--gold, #ae915b);
+  background: color-mix(in oklab, var(--gold, #ae915b) 12%, transparent);
+}
+
+.sense-core {
+  border-left-color: var(--border, #d5d1c4);
+}
+
+.sense-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.sense-tag {
+  font-size: 11px;
+  letter-spacing: .14em;
+  color: var(--gold, #ae915b);
+  font-weight: 600;
+}
+
+.sense-core .sense-tag {
+  color: var(--muted-foreground, #7b827d);
+}
+
+.sense-source {
+  font-size: 11px;
+  color: var(--muted-foreground, #7b827d);
+  white-space: nowrap;
+}
+
+.sense-gloss {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--foreground, #344047);
+  font-weight: 500;
+}
+
+.sense-en {
+  margin: 6px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted-foreground, #7b827d);
+  font-style: italic;
+}
+
+.sense-family,
+.sense-tags {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--muted-foreground, #7b827d);
+}
+
+.sense-family span {
+  color: var(--foreground, #344047);
+}
+
+.sense-tags span {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  border: 1px solid var(--border, #d5d1c4);
+}
+
+.sense-note {
+  margin: 8px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted-foreground, #7b827d);
+}
+
+/* ── 句子结构分析（Step 5）── */
+.skeleton-line {
+  margin: 0 0 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--gold, #ae915b) 14%, transparent);
+  color: var(--foreground, #344047);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.modifier-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+
+.modifier-list li {
+  display: grid;
+  grid-template-columns: 5.5em 1fr;
+  gap: 8px;
+  align-items: baseline;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--foreground, #344047);
+}
+
+.modifier-role {
+  color: var(--gold, #ae915b);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* 语法元数据：英文术语与结构公式。术语用等宽衬线区分，公式独占一行便于照着套。 */
+.kp-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: -6px 0 14px;
+}
+.kp-en {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--muted-foreground, #6b6257);
+  letter-spacing: 0.01em;
+}
+.kp-formula {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--foreground, #2f2a24);
+  background: color-mix(in srgb, var(--gold, #b99469) 12%, transparent);
+  border-left: 3px solid var(--gold, #b99469);
+  padding: 5px 9px;
+  border-radius: 3px;
+  overflow-wrap: anywhere;
+}
+
+/* 教材教学点：与「你会练习」区分开——那是本工具的教学意图，这是教材本身的教学点。 */
+.lesson-tps { margin: 14px 0 4px; }
+.lesson-tps ul { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-direction: column; gap: 6px; }
+.lesson-tps li { display: flex; align-items: baseline; gap: 8px; font-size: 13.5px; line-height: 1.5; }
+.lesson-tps li button { background: none; border: none; padding: 0; text-align: left; color: var(--foreground, #2f2a24); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--gold, #b99469) 55%, transparent); text-underline-offset: 3px; cursor: pointer; }
+.lesson-tps li em { font-style: normal; font-size: 11px; color: var(--muted-foreground, #6b6257); border: 1px solid color-mix(in srgb, var(--muted-foreground, #6b6257) 30%, transparent); border-radius: 3px; padding: 1px 5px; white-space: nowrap; }
+
+/* 课文导读：模板化生成（体裁读法 + 本课精读重点）。与下方的「你会练习」区分：
+   导读是描述这篇课文长什么样，canDo 是读者要做的动作。 */
+.lesson-summary {
+  margin: 10px 0 2px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--muted-foreground, #6b6257);
+  border-left: 3px solid color-mix(in srgb, var(--gold, #b99469) 45%, transparent);
+  padding-left: 10px;
+}
+
+/* ── 今日页 ─────────────────────────────────────────────
+   四块按固定顺序回答四个问题：继续读什么 → 有多少要复习 → 攒下了多少 → 今天想做什么。 */
+.today-page { max-width: 940px; margin: 0 auto; padding: 8px 0 40px; }
+.today-block { background: color-mix(in srgb, var(--foreground, #2f2a24) 3%, transparent); border: 1px solid color-mix(in srgb, var(--foreground, #2f2a24) 8%, transparent); border-radius: 10px; padding: 18px 20px; }
+.today-block-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+.today-block h2 { margin: 2px 0 4px; font-size: 21px; }
+.today-resume { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.today-progress { display: flex; align-items: center; gap: 10px; width: 100%; margin: 4px 0 2px; }
+.today-progress-bar { flex: 1; height: 5px; border-radius: 3px; background: color-mix(in srgb, var(--foreground, #2f2a24) 10%, transparent); overflow: hidden; }
+.today-progress-bar i { display: block; height: 100%; background: var(--gold, #b99469); }
+.today-row { display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 14px; margin: 14px 0; }
+@media (max-width: 760px) { .today-row { grid-template-columns: 1fr; } }
+.today-number { display: block; font-size: 38px; line-height: 1.1; font-weight: 500; }
+.today-due { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.axis-list { display: flex; flex-direction: column; gap: 12px; margin: 0; }
+.axis-list > div { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 2px 12px; align-items: baseline; }
+.axis-list dt { font-size: 12px; color: var(--muted-foreground, #6b6257); }
+.axis-list dd { margin: 0; font-size: 17px; }
+.axis-list dd small { font-size: 12px; color: var(--muted-foreground, #6b6257); }
+.axis-note { grid-column: 2; font-size: 11.5px; color: var(--muted-foreground, #6b6257); }
+.today-note { display: flex; align-items: center; gap: 6px; margin: 12px 0 0; font-size: 12px; color: var(--muted-foreground, #6b6257); }
+.today-actions { margin-top: 14px; }
+.today-action-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; }
+.today-action-grid button { display: flex; align-items: center; gap: 9px; padding: 12px 14px; border-radius: 8px; border: 1px solid color-mix(in srgb, var(--foreground, #2f2a24) 10%, transparent); background: none; cursor: pointer; font-size: 13.5px; text-align: left; }
+.today-action-grid button:hover { border-color: var(--gold, #b99469); }
+
+/* 课程卡片进度条：只在读过之后出现，避免未开始的课也占一条视觉重量 */
+.lesson-card-progress { height: 3px; border-radius: 2px; background: color-mix(in srgb, var(--foreground, #2f2a24) 9%, transparent); margin: 10px 0 0; overflow: hidden; }
+.lesson-card-progress i { display: block; height: 100%; background: var(--gold, #b99469); }
+.lesson-card.has-progress { border-color: color-mix(in srgb, var(--gold, #b99469) 38%, transparent); }
+
+/* ── 精读收尾测验 ── */
+.lesson-quiz-entry { display: flex; align-items: center; gap: 8px; width: 100%; margin: 12px 0 2px; padding: 11px 14px; border-radius: 8px; border: 1px solid color-mix(in srgb, var(--gold, #b99469) 42%, transparent); background: color-mix(in srgb, var(--gold, #b99469) 8%, transparent); cursor: pointer; font-size: 13.5px; text-align: left; }
+.lesson-quiz-entry em { font-style: normal; margin-left: auto; font-size: 12px; }
+.quiz-page { max-width: 720px; margin: 0 auto; padding: 8px 0 40px; }
+.quiz-progress { display: flex; align-items: center; gap: 10px; margin: 4px 0 16px; font-size: 12px; color: var(--muted-foreground, #6b6257); }
+.quiz-progress i { display: block; height: 3px; background: var(--gold, #b99469); border-radius: 2px; flex: 1; }
+.quiz-card { background: color-mix(in srgb, var(--foreground, #2f2a24) 3%, transparent); border: 1px solid color-mix(in srgb, var(--foreground, #2f2a24) 8%, transparent); border-radius: 10px; padding: 20px; }
+.quiz-prompt { margin: 0 0 10px; font-size: 13px; color: var(--muted-foreground, #6b6257); }
+.quiz-stem { margin: 0 0 18px; padding: 12px 14px; border-left: 3px solid color-mix(in srgb, var(--gold, #b99469) 55%, transparent); background: color-mix(in srgb, var(--foreground, #2f2a24) 4%, transparent); font-size: 15px; line-height: 1.7; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-option { display: flex; align-items: center; gap: 10px; padding: 11px 14px; border-radius: 8px; border: 1px solid color-mix(in srgb, var(--foreground, #2f2a24) 11%, transparent); background: none; cursor: pointer; font-size: 14px; text-align: left; }
+.quiz-option:hover:not(:disabled) { border-color: var(--gold, #b99469); }
+.quiz-option.dim { opacity: 0.45; }
+.quiz-option.right { border-color: #4f8a63; background: color-mix(in srgb, #4f8a63 12%, transparent); }
+.quiz-option.wrong { border-color: #b0603f; background: color-mix(in srgb, #b0603f 12%, transparent); }
+.quiz-option-mark { font-size: 12px; color: var(--muted-foreground, #6b6257); min-width: 14px; }
+.quiz-explain { margin-top: 16px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.quiz-verdict { font-size: 13px; font-weight: 500; }
+.quiz-verdict.right { color: #4f8a63; }
+.quiz-verdict.wrong { color: #b0603f; }
+.quiz-kp { background: none; border: none; padding: 0; cursor: pointer; font-size: 13.5px; text-decoration: underline; text-underline-offset: 3px; color: var(--foreground, #2f2a24); }
+.quiz-formula { margin: 0; font-size: 13px; padding: 6px 10px; border-left: 3px solid var(--gold, #b99469); background: color-mix(in srgb, var(--gold, #b99469) 10%, transparent); border-radius: 3px; }
+.quiz-done { text-align: center; padding: 40px 0; }
+.quiz-score { display: block; font-size: 52px; line-height: 1.1; font-weight: 500; margin: 8px 0; }
+.quiz-score small { font-size: 20px; color: var(--muted-foreground, #6b6257); }
+.quiz-missed { list-style: none; padding: 0; margin: 16px auto; max-width: 380px; text-align: left; display: flex; flex-direction: column; gap: 6px; font-size: 13px; }
+.quiz-actions { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
+
+/* 相关课文：原「课文共点」页折进来。用共同知识点数排序，不显示"相似度"这种测不准的分。 */
+.lesson-related { margin: 16px 0 4px; }
+.lesson-related ul { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-direction: column; gap: 2px; }
+.lesson-related li button { display: flex; align-items: baseline; gap: 8px; width: 100%; padding: 7px 8px; border: none; background: none; border-radius: 6px; cursor: pointer; text-align: left; font-size: 13px; }
+.lesson-related li button:hover { background: color-mix(in srgb, var(--foreground, #2f2a24) 5%, transparent); }
+.lesson-related-title { flex: 1; color: var(--foreground, #2f2a24); }
+.lesson-related li em { font-style: normal; font-size: 11.5px; white-space: nowrap; }
+
+/* 本句体现：把语法命中切成成分，让读者看到这个结构在这一句里落在哪些词上。 */
+.structure-parts { list-style: none; padding: 0; margin: 6px 0 0; display: flex; flex-direction: column; gap: 8px; }
+.structure-parts li { display: flex; flex-direction: column; gap: 3px; }
+.structure-rule { background: none; border: none; padding: 0; cursor: pointer; text-align: left; font-size: 12px; color: var(--muted-foreground, #6b6257); text-decoration: underline; text-underline-offset: 3px; align-self: flex-start; }
+.structure-seq { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.structure-piece { display: inline-flex; align-items: baseline; gap: 4px; padding: 3px 7px; border-radius: 4px; background: color-mix(in srgb, var(--gold, #b99469) 10%, transparent); }
+.structure-piece b { font-weight: 500; font-size: 13.5px; }
+.structure-piece em { font-style: normal; font-size: 10.5px; color: var(--muted-foreground, #6b6257); }
+
+/* 阶梯进度：五个阶段（生存→日常→叙事→读写→思辨）。
+   显示「读过几课 / 共几课」而不是百分比——阶段之间课数差别大，百分比会让人以为进度均匀。 */
+.stage-ladder { list-style: none; padding: 0; margin: 4px 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.stage-ladder li { display: grid; grid-template-columns: auto 1fr auto; gap: 2px 8px; align-items: baseline; padding: 10px 12px; border-radius: 8px; border: 1px solid color-mix(in srgb, var(--foreground, #2f2a24) 8%, transparent); }
+.stage-ladder li.active { border-color: color-mix(in srgb, var(--gold, #b99469) 45%, transparent); }
+.stage-ladder li.done { background: color-mix(in srgb, var(--gold, #b99469) 9%, transparent); }
+.stage-index { font-size: 11px; color: var(--muted-foreground, #6b6257); }
+.stage-name { font-size: 14px; }
+.stage-count { font-size: 11.5px; color: var(--muted-foreground, #6b6257); }
+.stage-bar { grid-column: 1 / -1; height: 3px; border-radius: 2px; background: color-mix(in srgb, var(--foreground, #2f2a24) 9%, transparent); overflow: hidden; margin-top: 5px; }
+.stage-bar i { display: block; height: 100%; background: var(--gold, #b99469); }

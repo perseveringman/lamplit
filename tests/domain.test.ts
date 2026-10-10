@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import {createCard,scheduleOptions,intervalFor,retrievability,dueCards,DAY,localDay} from '../src/lib/fsrs.ts';
 import {matchScore,searchCatalog} from '../src/lib/search.ts';
 import {highlightSegments} from '../src/lib/highlight.ts';
+import {parseRoute} from '../src/lib/router.ts';
 import type {Catalog,Grade,Lesson,Layers} from '../src/lib/types.ts';
 const now=Date.UTC(2026,8,22,12),entity={kind:'kp' as const,id:'g-past'};
 const catalog:Catalog=JSON.parse(fs.readFileSync(new URL('../public/data/catalog.json',import.meta.url),'utf8'));
@@ -25,3 +26,4 @@ test('Chinese KP and source lesson searches return real IDs',()=>{assert.equal(s
 test('all book-II highlighted text reassembles without loss',()=>{for(const l of lessons)for(const sentence of l.sentences){const segments=highlightSegments(sentence,kps,layers,{},{});assert.equal(segments.map(x=>x.text).join(''),sentence.text);}});
 test('selected and weak KPs remain visible when their type layer is off',()=>{const sentence=lessons.flatMap(l=>l.sentences).find(s=>s.hits.some(h=>kps.get(h[0])?.type==='word'))!;const id=sentence.hits.find(h=>kps.get(h[0])?.type==='word')![0];const segments=highlightSegments(sentence,kps,{...layers,grammar:false,pattern:false,chunk:false}, {['kp:'+id]:{weak:true,star:false}}, {},id);assert.ok(segments.some(s=>s.kpIds.includes(id)&&s.emphasis==='weak'));assert.equal(segments.map(x=>x.text).join(''),sentence.text);});
 test('local-day label is calendar-based, not ISO UTC slicing',()=>{assert.match(localDay(now),/^\d{4}-\d{2}-\d{2}$/);});
+test('default route resolves to today for empty and root hashes',()=>{assert.equal(parseRoute('').view,'today');assert.equal(parseRoute('#').view,'today');assert.equal(parseRoute('#/').view,'today');assert.equal(parseRoute('#/today').view,'today');assert.equal(parseRoute('#/atlas/g-past').view,'atlas');});

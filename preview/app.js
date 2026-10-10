@@ -1,4 +1,4 @@
-/*! Lamplit local inspection build. Same TSX source; G6 dynamically falls back to the accessible SVG renderer. Not a Vite production build. */
+/*! Local preview; not a Vite production build. See README. */
 (function(){const modules={"App":function(module,exports,require){
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
@@ -48,7 +48,9 @@ const Icon_1 = require("./components/Icon");
 const Common_1 = require("./components/Common");
 const Details_1 = require("./components/Details");
 const SearchDialog_1 = require("./components/SearchDialog");
-const Atlas = (0, react_1.lazy)(() => Promise.resolve().then(() => __importStar(require('./pages/Atlas')))), Learn = (0, react_1.lazy)(() => Promise.resolve().then(() => __importStar(require('./pages/Learn')))), IndexPage = (0, react_1.lazy)(() => Promise.resolve().then(() => __importStar(require('./pages/IndexPage')))), Connections = (0, react_1.lazy)(() => Promise.resolve().then(() => __importStar(require('./pages/Connections')))), Reader = (0, react_1.lazy)(() => Promise.resolve().then(() => __importStar(require('./pages/Reader')))), Cards = (0, react_1.lazy)(() => Promise.resolve().then(() => __importStar(require('./pages/Cards')))), Review = (0, react_1.lazy)(() => Promise.resolve().then(() => __importStar(require('./pages/Review'))));
+const Today = (0, react_1.lazy)(() => Promise.resolve().then(() => __importStar(require('./pages/Today')))), Quiz = (0, react_1.lazy)(() => Promise.resolve().then(() => __importStar(require('./pages/Quiz')))), Atlas = (0, react_1.lazy)(() => Promise.resolve().then(() => __importStar(require('./pages/Atlas')))), Learn = (0, react_1.lazy)(() => Promise.resolve().then(() => __importStar(require('./pages/Learn')))), IndexPage = (0, react_1.lazy)(() => Promise.resolve().then(() => __importStar(require('./pages/IndexPage')))), Connections = (0, react_1.lazy)(() => Promise.resolve().then(() => __importStar(require('./pages/Connections')))), Reader = (0, react_1.lazy)(() => Promise.resolve().then(() => __importStar(require('./pages/Reader')))), Cards = (0, react_1.lazy)(() => Promise.resolve().then(() => __importStar(require('./pages/Cards')))), Review = (0, react_1.lazy)(() => Promise.resolve().then(() => __importStar(require('./pages/Review'))));
+// 二级入口：星图 / 索引 / 共点 / 精读 不再是 tab，但仍可从今日页或搜索进入。
+const SECONDARY_LABEL = { atlas: '知识星图', index: '知识索引', connections: '课文共点', read: '阅读工作台', review: '复习', quiz: '收尾测验' };
 function App() {
     const [corpus, setCorpus] = (0, react_1.useState)(null), [error, setError] = (0, react_1.useState)(''), [attempt, setAttempt] = (0, react_1.useState)(0);
     (0, react_1.useEffect)(() => {
@@ -111,13 +113,13 @@ function Shell({ corpus: c }) {
         window.addEventListener('keydown', key);
         return () => window.removeEventListener('keydown', key);
     }, []);
-    const navs = [{ view: 'atlas', label: '知识星图', short: '星图', icon: 'network' }, { view: 'index', label: '知识索引', short: '索引', icon: 'list' }, { view: 'learn', label: '连学', short: '连学', icon: 'route' }, { view: 'connections', label: '课文共点', short: '共点', icon: 'link' }, { view: 'read', label: '阅读工作台', short: '精读', icon: 'book' }, { view: 'cards', label: '我的卡片', short: '卡片', icon: 'cards' }];
-    const page = route.view === 'atlas' ? react_1.default.createElement(Atlas, { id: route.id }) : route.view === 'index' ? react_1.default.createElement(IndexPage, null) : route.view === 'learn' ? react_1.default.createElement(Learn, { id: route.id }) : route.view === 'connections' ? react_1.default.createElement(Connections, null) : reader ? react_1.default.createElement(Reader, { id: route.id, params: route.params }) : route.view === 'cards' ? react_1.default.createElement(Cards, null) : review ? react_1.default.createElement(Review, null) : react_1.default.createElement(Common_1.EmptyState, { title: "\u8FD9\u4E00\u9875\u6682\u65F6\u6CA1\u6709\u5185\u5BB9", action: react_1.default.createElement(button_1.Button, { onClick: () => navigate('atlas', c.catalog.defaultKP) }, "\u56DE\u5230\u661F\u56FE") });
+    const navs = [{ view: 'today', label: '今天', short: '今天', icon: 'sun' }, { view: 'learn', label: '课程', short: '课程', icon: 'route' }, { view: 'index', label: '知识索引', short: '索引', icon: 'list' }, { view: 'cards', label: '我的卡片', short: '卡片', icon: 'cards' }];
+    const page = route.view === 'today' ? react_1.default.createElement(Today, null) : route.view === 'quiz' ? react_1.default.createElement(Quiz, { id: route.id }) : route.view === 'atlas' ? react_1.default.createElement(Atlas, { id: route.id }) : route.view === 'index' ? react_1.default.createElement(IndexPage, null) : route.view === 'learn' ? react_1.default.createElement(Learn, { id: route.id }) : route.view === 'connections' ? react_1.default.createElement(Connections, null) : reader ? react_1.default.createElement(Reader, { id: route.id, params: route.params }) : route.view === 'cards' ? react_1.default.createElement(Cards, null) : review ? react_1.default.createElement(Review, null) : react_1.default.createElement(Common_1.EmptyState, { title: "\u8FD9\u4E00\u9875\u6682\u65F6\u6CA1\u6709\u5185\u5BB9", action: react_1.default.createElement(button_1.Button, { onClick: () => navigate('today') }, "\u56DE\u5230\u4ECA\u5929") });
     return react_1.default.createElement(navigation_1.NavigationContext.Provider, { value: nav },
         react_1.default.createElement("div", { className: 'app-shell ' + (reader ? 'reading-shell' : '') + (review ? ' review-shell' : '') },
             react_1.default.createElement("a", { className: "skip-link", href: "#main-content", onClick: e => { e.preventDefault(); document.getElementById('main-content')?.focus(); } }, "\u8DF3\u5230\u4E3B\u8981\u5185\u5BB9"),
             react_1.default.createElement("aside", { className: "app-sidebar" },
-                react_1.default.createElement("button", { className: "brand", onClick: () => navigate('atlas', c.catalog.defaultKP), "aria-label": "\u706F\u4E0B\uFF0C\u8FD4\u56DE\u77E5\u8BC6\u661F\u56FE" },
+                react_1.default.createElement("button", { className: "brand", onClick: () => navigate('today'), "aria-label": "\u706F\u4E0B\uFF0C\u8FD4\u56DE\u4ECA\u5929" },
                     react_1.default.createElement("span", { className: "brand-symbol" }, "\u2727"),
                     react_1.default.createElement("span", { className: "brand-name" },
                         "\u706F\u4E0B",
@@ -150,7 +152,7 @@ function Shell({ corpus: c }) {
                             "\u65B0\u6982\u5FF5\u82F1\u8BED ",
                             react_1.default.createElement("span", null, "/"),
                             " ",
-                            navs.find(n => n.view === route.view)?.label || '回看')),
+                            navs.find(n => n.view === route.view)?.label || SECONDARY_LABEL[route.view] || '回看')),
                     react_1.default.createElement("button", { className: "global-search", onClick: () => { setSelected(null); setSearch(true); }, "aria-label": "\u6253\u5F00\u5168\u5C40\u641C\u7D22" },
                         react_1.default.createElement(Icon_1.Icon, { name: "search", size: 17 }),
                         react_1.default.createElement("span", null, "\u627E\u4E00\u4E2A\u8868\u8FBE\u3001\u4E00\u7BC7\u8BFE\u6587"),
@@ -300,7 +302,12 @@ function EntityActions({ entity, compact = false }) {
 }
 function LessonCard({ lesson, onLesson, onKP, sequence }) {
     const corpus = (0, data_1.useCorpus)(), store = (0, store_1.useStore)();
-    return react_1.default.createElement("article", { className: (0, utils_1.cn)('lesson-card', 'book-' + lesson.book) },
+    // 进度来自 E 组的 lessons 记录。用累计可见句数而不是"读到第几句"——
+    // 读者会回看、会跳读，只记最后一句会低估覆盖。
+    const prog = store.data.lessons?.[lesson.id];
+    const visited = Math.min(prog?.visited?.length || 0, lesson.sentenceCount || 0);
+    const pct = lesson.sentenceCount ? Math.round((100 * visited) / lesson.sentenceCount) : 0;
+    return react_1.default.createElement("article", { className: (0, utils_1.cn)('lesson-card', 'book-' + lesson.book, prog && 'has-progress') },
         react_1.default.createElement("div", { className: "lesson-card-meta" },
             react_1.default.createElement("span", { className: "mono" },
                 sequence !== undefined && react_1.default.createElement("span", { className: "route-number" }, String(sequence + 1).padStart(2, '0')),
@@ -313,15 +320,18 @@ function LessonCard({ lesson, onLesson, onKP, sequence }) {
             react_1.default.createElement("p", { className: "lesson-scene" }, lesson.scene),
             react_1.default.createElement("p", { className: "lesson-can-do" }, lesson.canDo)),
         react_1.default.createElement("div", { className: "lesson-card-pills" }, lesson.focus.slice(0, 4).map(id => corpus.kp(id)).filter((k) => !!k).map(k => react_1.default.createElement(KPPill, { key: k.id, kp: k, onClick: () => onKP(k.id), compact: true }))),
+        visited > 0 && react_1.default.createElement("div", { className: "lesson-card-progress", title: `已读 ${visited} / ${lesson.sentenceCount} 句` },
+            react_1.default.createElement("i", { style: { width: pct + '%' } })),
         react_1.default.createElement("div", { className: "lesson-card-footer" },
             react_1.default.createElement("span", null,
                 react_1.default.createElement(Icon_1.Icon, { name: "clock", size: 14 }),
+                visited > 0 ? `${visited}/${lesson.sentenceCount} 句 · ` : '',
                 (0, utils_1.readingTime)(lesson.wc),
                 " \u5206\u949F \u00B7 ",
                 lesson.wc,
                 " \u8BCD"),
             react_1.default.createElement("button", { onClick: () => onLesson(lesson.id) },
-                store.data.bookmarks[lesson.id] ? '继续这一课' : '看看这一课',
+                prog ? '继续这一课' : '看看这一课',
                 react_1.default.createElement(Icon_1.Icon, { name: "arrow", size: 16 }))));
 }
 function Pagination({ page, pages, onPage, total }) {
@@ -413,6 +423,8 @@ const utils_1 = require("../lib/utils");
 const button_1 = require("./ui/button");
 const Icon_1 = require("./Icon");
 const Common_1 = require("./Common");
+/** 考纲标签的中文说法，直接来自 ECDICT 的 tag 字段。 */
+const TAG_LABEL = { zk: '中考', gk: '高考', cet4: '四级', cet6: '六级', ky: '考研', toefl: '托福', ielts: '雅思', gre: 'GRE' };
 const HighlightedText_1 = require("./HighlightedText");
 function EntityDetail({ entity, onOpen, context }) {
     if (entity.kind === 'kp')
@@ -475,6 +487,10 @@ function KPDetail({ id, onOpen, context }) {
     if (!kp)
         return react_1.default.createElement(Common_1.ErrorState, { text: "\u6CA1\u6709\u627E\u5230\u8FD9\u4E2A\u77E5\u8BC6\u70B9\u3002" });
     const related = [...(kp.parent ? [kp.parent] : []), ...kp.contains, ...kp.related].filter((x, i, a) => x !== id && a.indexOf(x) === i).map(x => c.kp(x)).filter((k) => !!k).sort((a, b) => types_1.TYPE_ORDER.indexOf(a.type) - types_1.TYPE_ORDER.indexOf(b.type));
+    const sense = context?.sense || null;
+    const core = kp.coreSense && kp.coreSense !== sense?.gloss ? kp.coreSense : null;
+    const family = (kp.wordFamily || []).filter(Boolean);
+    const tags = kp.examTags || [];
     return react_1.default.createElement("div", { className: "entity-detail kp-detail" },
         react_1.default.createElement("div", { className: "detail-kicker" },
             react_1.default.createElement(Common_1.TypeBadge, { type: kp.type }),
@@ -484,7 +500,28 @@ function KPDetail({ id, onOpen, context }) {
                 kp.frequency,
                 " \u6B21")),
         react_1.default.createElement("h2", { className: kp.type === 'word' || kp.type === 'chunk' ? 'english-heading' : '' }, kp.name),
-        react_1.default.createElement("p", { className: "detail-meaning" }, kp.meaning || '原文没有附带中文释义，可以先比较它在不同句子中的用法。'),
+        (kp.enName || kp.formula) && react_1.default.createElement("div", { className: "kp-meta" },
+            kp.enName && react_1.default.createElement("span", { className: "kp-en" }, kp.enName),
+            kp.formula && react_1.default.createElement("span", { className: "kp-formula" }, kp.formula)),
+        sense ? react_1.default.createElement("section", { className: "sense-block sense-context" },
+            react_1.default.createElement("div", { className: "sense-head" },
+                react_1.default.createElement("span", { className: "sense-tag" }, "\u8BED\u5883\u4E49"),
+                react_1.default.createElement("span", { className: "sense-source" }, sense.source)),
+            react_1.default.createElement("p", { className: "sense-gloss" }, sense.gloss),
+            sense.fromChunk && react_1.default.createElement("p", { className: "sense-note" }, "\u8FD9\u4E2A\u4F4D\u7F6E\u7684\u8BCD\u4E49\u7531\u56FA\u5B9A\u642D\u914D\u627F\u62C5\u3002\u70B9\u300C\u539F\u53E5\u7528\u6CD5\u300D\u770B\u5B83\u5728\u522B\u5904\u600E\u4E48\u7528\u3002")) : react_1.default.createElement("p", { className: "detail-meaning" }, kp.meaning || '原文没有附带中文释义，可以先比较它在不同句子中的用法。'),
+        (core || kp.enDefinition || family.length > 0) && react_1.default.createElement("section", { className: "sense-block sense-core" },
+            react_1.default.createElement("div", { className: "sense-head" },
+                react_1.default.createElement("span", { className: "sense-tag" }, "\u6838\u5FC3\u4E49"),
+                kp.collins ? react_1.default.createElement("span", { className: "sense-source" },
+                    "\u67EF\u6797\u65AF ",
+                    kp.collins,
+                    "\u2605") : null),
+            core && react_1.default.createElement("p", { className: "sense-gloss" }, core),
+            kp.enDefinition && react_1.default.createElement("p", { className: "sense-en", lang: "en" }, kp.enDefinition),
+            family.length > 0 && react_1.default.createElement("p", { className: "sense-family" },
+                "\u8BCD\u4F19 ",
+                react_1.default.createElement("span", { lang: "en" }, family.join(' · '))),
+            tags.length > 0 && react_1.default.createElement("p", { className: "sense-tags" }, tags.map(t => react_1.default.createElement("span", { key: t }, TAG_LABEL[t] || t)))),
         react_1.default.createElement(Common_1.EntityActions, { entity: { kind: 'kp', id } }),
         react_1.default.createElement(UseQuote, { kp: kp, context: context }),
         react_1.default.createElement(button_1.Button, { className: "full", onClick: () => nav.read(context && kp.lessonIds.includes(context.lessonId) ? context.lessonId : kp.lessonIds.includes(c.catalog.defaultLesson) ? c.catalog.defaultLesson : kp.lessonIds[0], context?.sentenceId, kp.id) },
@@ -534,10 +571,23 @@ function LessonDetail({ id, onOpen }) {
             react_1.default.createElement("span", null,
                 (0, utils_1.readingTime)(lesson.wc),
                 " \u5206\u949F")),
+        lesson.summary && react_1.default.createElement("p", { className: "lesson-summary" }, lesson.summary),
+        c.quizOf(lesson.id).length > 0 && react_1.default.createElement("button", { className: "lesson-quiz-entry", onClick: () => nav.navigate('quiz', lesson.id) },
+            react_1.default.createElement(Icon_1.Icon, { name: "check", size: 15 }),
+            react_1.default.createElement("span", null, "\u8BFB\u5B8C\u7EC3\u4E00\u7EC3"),
+            react_1.default.createElement("em", { className: "muted" },
+                c.quizOf(lesson.id).length,
+                " \u9898")),
         react_1.default.createElement("div", { className: "lesson-intention" },
             react_1.default.createElement("span", { className: "eyebrow" }, "\u8FD9\u4E00\u8BFE\uFF0C\u4F60\u4F1A\u7EC3\u4E60"),
             react_1.default.createElement("h3", null, lesson.scene),
             react_1.default.createElement("p", null, lesson.canDo)),
+        react_1.default.createElement(RelatedLessons, { lessonId: lesson.id, onOpen: open }),
+        (() => { const tps = c.teachingPointsOf(lesson.id); return tps.length ? react_1.default.createElement("section", { className: "lesson-tps" },
+            react_1.default.createElement("span", { className: "eyebrow" }, "\u6559\u6750\u6559\u5B66\u70B9"),
+            react_1.default.createElement("ul", null, tps.map(tp => react_1.default.createElement("li", { key: tp.id }, tp.covered && tp.refs[0] ? react_1.default.createElement("button", { onClick: () => open({ kind: 'kp', id: tp.refs[0] }) }, tp.title) : react_1.default.createElement(react_1.default.Fragment, null,
+                react_1.default.createElement("span", null, tp.title),
+                react_1.default.createElement("em", { className: "muted" }, "\u672C\u5DE5\u5177\u672A\u8986\u76D6")))))) : null; })(),
         react_1.default.createElement(button_1.Button, { className: "full", size: "lg", onClick: () => nav.read(id, store.data.bookmarks[id]) },
             react_1.default.createElement(Icon_1.Icon, { name: "book" }),
             store.data.bookmarks[id] ? '继续精读' : '开始精读',
@@ -565,10 +615,9 @@ function SentenceDetailsBody({ sentence, onOpen }) {
     const c = (0, data_1.useCorpus)(), nav = (0, navigation_1.useNavigation)();
     const lesson = c.lessonSummary(sentence.lessonId);
     const open = onOpen || nav.openEntity;
-    const why = { model: '适合整句记忆。抓住表达结构，再替换人物、动作或场景。', complex: '先抓主干，再逐层看修饰。顺着句中的语法提示，找到信息之间的关系。', example: '把它作为语境来读。理解词和语块在这里的作用，不必逐句背诵。' }[sentence.tier];
+    const analysis = sentence.analysis;
     return react_1.default.createElement("div", { className: "entity-detail sentence-detail" },
         react_1.default.createElement("div", { className: "detail-kicker" },
-            react_1.default.createElement("span", { className: 'tier-label tier-' + sentence.tier }, types_1.TIER_LABEL[sentence.tier]),
             react_1.default.createElement("span", { className: "mono" },
                 "\u7B2C ",
                 String(sentence.index + 1).padStart(2, '0'),
@@ -583,12 +632,35 @@ function SentenceDetailsBody({ sentence, onOpen }) {
                 sentence.clauses,
                 " \u5904\u4ECE\u53E5\u7EBF\u7D22")),
         react_1.default.createElement(Common_1.EntityActions, { entity: { kind: 'sentence', id: sentence.id } }),
-        react_1.default.createElement("section", { className: "detail-section why-learn" },
-            react_1.default.createElement("h4", null, "\u600E\u6837\u8BFB\u8FD9\u4E00\u53E5"),
-            react_1.default.createElement("p", null, why)),
+        analysis ? react_1.default.createElement(react_1.default.Fragment, null,
+            react_1.default.createElement("section", { className: "detail-section why-learn" },
+                react_1.default.createElement("h4", null, "\u8FD9\u4E00\u53E5\u5728\u8BB2\u4EC0\u4E48"),
+                react_1.default.createElement("p", null, analysis.gloss)),
+            react_1.default.createElement("section", { className: "detail-section" },
+                react_1.default.createElement("h4", null, "\u4E3B\u5E72\u4E0E\u4FEE\u9970"),
+                react_1.default.createElement("p", { className: "skeleton-line", lang: "en" }, analysis.skeleton),
+                analysis.modifiers.length > 0 && react_1.default.createElement("ul", { className: "modifier-list" }, analysis.modifiers.map((m, i) => react_1.default.createElement("li", { key: i },
+                    react_1.default.createElement("span", { className: "modifier-role" }, m.role),
+                    react_1.default.createElement("span", { lang: "en" }, m.text))))),
+            react_1.default.createElement("section", { className: "detail-section why-learn" },
+                react_1.default.createElement("h4", null, "\u600E\u6837\u8BFB\u8FD9\u4E00\u53E5"),
+                react_1.default.createElement("p", null, analysis.whyLearn))) : null,
         sentence.sourceKind === 'heading' && lesson.quality.length > 0 && react_1.default.createElement("p", { className: "subtle-warning" },
             react_1.default.createElement(Icon_1.Icon, { name: "warning", size: 14 }),
             "\u672C\u53E5\u4FDD\u7559\u4E86\u539F\u6587\u4EF6\u6807\u9898\u4E2D\u7684\u53EF\u89C1\u6587\u5B57\uFF0C\u53EF\u80FD\u4E0D\u5B8C\u6574\u3002"),
+        (() => {
+            // 本句体现：命中级的结构成分。只有 grammar 需要它（word 是义项，chunk/pattern 挂在知识点上）。
+            const rows = sentence.hits.filter(h => h[0].startsWith('g-') && sentence.structureParts?.[h[1]]).slice(0, 3);
+            if (!rows.length)
+                return null;
+            return react_1.default.createElement("section", { className: "detail-section" },
+                react_1.default.createElement("h4", null, "\u8FD9\u4E00\u53E5\u91CC\u600E\u4E48\u6784\u6210"),
+                react_1.default.createElement("ul", { className: "structure-parts" }, rows.map(h => react_1.default.createElement("li", { key: h[1] },
+                    react_1.default.createElement("button", { className: "structure-rule", onClick: () => open({ kind: 'kp', id: h[0] }) }, c.kp(h[0])?.name || h[0]),
+                    react_1.default.createElement("span", { className: "structure-seq" }, (sentence.structureParts?.[h[1]] || []).map((p, i) => react_1.default.createElement("span", { key: i, className: "structure-piece" },
+                        react_1.default.createElement("b", { lang: "en" }, p.text),
+                        react_1.default.createElement("em", null, p.role))))))));
+        })(),
         react_1.default.createElement("section", { className: "detail-section" },
             react_1.default.createElement("h4", null, "\u53E5\u4E2D\u77E5\u8BC6\u70B9"),
             react_1.default.createElement(Common_1.KPGroup, { ids: [...new Set(sentence.hits.map(x => x[0]))], onKP: id => open({ kind: 'kp', id }), max: 5 })),
@@ -604,6 +676,28 @@ function SentenceDetail({ id, onOpen }) {
     if (error)
         return react_1.default.createElement(Common_1.ErrorState, { text: error, onRetry: retry });
     return data ? react_1.default.createElement(SentenceDetailsBody, { sentence: data, onOpen: onOpen }) : null;
+}
+/** 相关课文。原先是独立的「课文共点」页面（nav 六项之一）；IA 收敛后折进课文详情。 */
+function RelatedLessons({ lessonId, onOpen }) {
+    const c = (0, data_1.useCorpus)();
+    const { data } = (0, data_1.useAsync)(() => c.relatedOf(lessonId, 4), [lessonId]);
+    const rows = data || [];
+    if (!rows.length)
+        return null;
+    return react_1.default.createElement("section", { className: "lesson-related" },
+        react_1.default.createElement("span", { className: "eyebrow" }, "\u76F8\u5173\u8BFE\u6587"),
+        react_1.default.createElement("ul", null, rows.map((r) => {
+            const l = c.lessonSummary(r.lessonId);
+            if (!l)
+                return null;
+            return react_1.default.createElement("li", { key: r.lessonId },
+                react_1.default.createElement("button", { onClick: () => onOpen({ kind: 'lesson', id: r.lessonId }) },
+                    react_1.default.createElement("span", { className: "mono" }, l.label),
+                    react_1.default.createElement("span", { className: "lesson-related-title" }, l.title),
+                    react_1.default.createElement("em", { className: "muted" },
+                        r.count,
+                        " \u4E2A\u5171\u540C\u77E5\u8BC6\u70B9")));
+        })));
 }
 
 },
@@ -1260,6 +1354,8 @@ function loadJSON(name) {
 }
 class Corpus {
     catalog;
+    tpIndex;
+    quizIndex;
     kpMap;
     lessonMap;
     constructor(catalog) {
@@ -1269,6 +1365,32 @@ class Corpus {
     }
     kp(id) { return this.kpMap.get(id); }
     lessonSummary(id) { return this.lessonMap.get(id); }
+    /** 某一课的测验题。题目在构建期已过五条机械校验。 */
+    quizOf(id) {
+        if (!this.quizIndex) {
+            this.quizIndex = new Map();
+            for (const q of (this.catalog.quiz || [])) {
+                const arr = this.quizIndex.get(q.lessonId) || [];
+                arr.push(q);
+                this.quizIndex.set(q.lessonId, arr);
+            }
+        }
+        return this.quizIndex.get(id) || [];
+    }
+    /** 某一课的教学点。空数组表示：要么这一课没有教材事实，要么教材教的点本架构接不住。 */
+    teachingPointsOf(id) {
+        if (!this.tpIndex) {
+            this.tpIndex = new Map();
+            for (const tp of (this.catalog.teachingPoints || [])) {
+                if (!tp.lessonId)
+                    continue;
+                const arr = this.tpIndex.get(tp.lessonId) || [];
+                arr.push(tp);
+                this.tpIndex.set(tp.lessonId, arr);
+            }
+        }
+        return this.tpIndex.get(id) || [];
+    }
     async book(book) { return loadJSON(`books/${book}.json`); }
     async lesson(id) {
         const result = (await this.book((0, utils_1.sourceBook)(id))).find(l => l.id === id);
@@ -1289,6 +1411,15 @@ class Corpus {
     }
     async contexts(id) { const occurrences = await this.occurrences(id); const ids = [...new Set(occurrences.map(x => x[0]))]; return Promise.all(ids.map(sid => this.sentence(sid))); }
     pairs() { return loadJSON('pairs.json'); }
+    /** 与某一课有共同知识点的其它课文。pairs 是全局的，这里按课文取出来。 */
+    async relatedOf(lessonId, limit = 4) {
+        const pairs = await this.pairs();
+        return pairs
+            .filter((p) => p.a === lessonId || p.b === lessonId)
+            .sort((x, y) => y.count - x.count)
+            .slice(0, limit)
+            .map((p) => ({ lessonId: p.a === lessonId ? p.b : p.a, count: p.count, kpIds: p.kpIds }));
+    }
     sentences() { return loadJSON('sentences.json'); }
 }
 exports.Corpus = Corpus;
@@ -1460,6 +1591,113 @@ function useNavigation() {
 }
 
 },
+"lib/progress":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MATURE_STABILITY = void 0;
+exports.coverageOf = coverageOf;
+exports.retentionOf = retentionOf;
+exports.masteryOf = masteryOf;
+exports.streakOf = streakOf;
+exports.visitedCount = visitedCount;
+exports.isFinished = isFinished;
+/**
+ * 进度三条轴。
+ *
+ * **刻意不做成一个复合百分比。** 三条轴不同步本身是信息：
+ *   「覆盖高 / 沉淀低」= 读得多但没留下东西
+ *   「覆盖低 / 掌握高」= 反复磨少数几课
+ * 合成一个数字会把这层信息抹掉。
+ *
+ * 时间口径：`now` 由调用方传入，函数保持纯函数，便于测试。
+ */
+/** 成熟卡的稳定度门槛（天）。沿用 Anki 的约定。 */
+exports.MATURE_STABILITY = 21;
+/** 覆盖：读了多少。只看阅读行为，不看卡片。 */
+function coverageOf(data, lessonsTotal) {
+    const entries = Object.values(data.lessons || {});
+    const lessonsRead = entries.filter((l) => (l.lastReadAt || 0) > 0).length;
+    const lessonsFinished = entries.filter((l) => l.state === 'read').length;
+    return {
+        lessonsRead,
+        lessonsTotal,
+        rate: lessonsTotal ? Number(((100 * lessonsRead) / lessonsTotal).toFixed(1)) : 0,
+        lessonsFinished,
+    };
+}
+/** 沉淀：留下了多少。看卡片状态，不看阅读行为。 */
+function retentionOf(data) {
+    const cards = Object.values(data.cards || {});
+    return {
+        cards: cards.length,
+        inReview: cards.filter((c) => c.state === 'review').length,
+        mature: cards.filter((c) => (c.stability || 0) >= exports.MATURE_STABILITY).length,
+    };
+}
+/**
+ * 掌握：复习期内回忆成功的比例。
+ *
+ * 只统计**进入复习期之后**的回忆（`previousState === 'review'`）。
+ * 学习期的回忆必然成功率高（刚看过），混进来会把掌握度整体抬高。
+ */
+function masteryOf(data) {
+    const logs = data.reviews || [];
+    const graded = logs.filter((r) => r.previousState === 'review');
+    const successes = graded.filter((r) => r.grade > 1).length;
+    return {
+        attempts: graded.length,
+        successes,
+        rate: graded.length ? Number(((100 * successes) / graded.length).toFixed(1)) : null,
+    };
+}
+/**
+ * 连续学习天数。
+ *
+ * 旧实现只统计 `reviews` 的日期——**只读课文不复习的日子不算数**，
+ * 于是"每天都打开来读"的用户会看到连续天数断掉。
+ * 现在把阅读记录（lessons[].lastReadAt）一并计入。
+ */
+function streakOf(data, now) {
+    const dayOf = (t) => Math.floor(t / 86400000);
+    const days = new Set();
+    for (const r of data.reviews || [])
+        days.add(dayOf(r.at));
+    for (const l of Object.values(data.lessons || {}))
+        if (l.lastReadAt)
+            days.add(dayOf(l.lastReadAt));
+    if (!days.size)
+        return 0;
+    const today = dayOf(now);
+    // 今天还没学也保留昨天开始的连续段（当天未结束，不算断）
+    let cursor = days.has(today) ? today : today - 1;
+    if (!days.has(cursor))
+        return 0;
+    let n = 0;
+    while (days.has(cursor)) {
+        n += 1;
+        cursor -= 1;
+    }
+    return n;
+}
+/** 某一课读了多少句。visited 缺失时退回 lastSentenceId 之前的部分。 */
+function visitedCount(progress, sentenceCount) {
+    if (!progress)
+        return 0;
+    const n = progress.visited?.length || 0;
+    return Math.min(n, sentenceCount);
+}
+/** 一课是否算「读完」：看过 >= 80% 的句子，或手动标记。 */
+function isFinished(progress, sentenceCount) {
+    if (!progress)
+        return false;
+    if (progress.state === 'read')
+        return true;
+    if (!sentenceCount)
+        return false;
+    return visitedCount(progress, sentenceCount) / sentenceCount >= 0.8;
+}
+
+},
 "lib/router":function(module,exports,require){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -1475,7 +1713,7 @@ const safeDecode = (value) => {
         return value;
     }
 };
-function parseRoute(hash) { const value = hash.replace(/^#/, '') || '/atlas/g-past'; const [pathname, query] = value.split('?'); const [, view = 'atlas', id = ''] = pathname.split('/'); return { view, id: safeDecode(id), params: new URLSearchParams(query || ''), key: value }; }
+function parseRoute(hash) { const value = hash.replace(/^#/, '') || '/today'; const [pathname, query] = value.split('?'); const [, rawView = '', id = ''] = pathname.split('/'); const view = rawView || 'today'; return { view, id: safeDecode(id), params: new URLSearchParams(query || ''), key: value }; }
 function go(view, id = '', params = {}, replace = false) {
     const query = new URLSearchParams(Object.entries(params).filter(([, v]) => v !== undefined)).toString();
     const hash = `#/${view}${id ? '/' + encodeURIComponent(id) : ''}${query ? '?' + query : ''}`;
@@ -1551,9 +1789,66 @@ function searchCatalog(catalog, sentences, query, limit = 30, scope = 'all') {
         for (const s of sentences) {
             const score = matchScore(s.text, '', query);
             if (score)
-                out.push({ kind: 'sentence', id: s.id, name: s.text, subtitle: s.tier === 'model' ? '范句' : s.tier === 'complex' ? '长难句' : '原文例句', type: 'sentence', score: score === 100 ? 100 : score - 5 });
+                out.push({ kind: 'sentence', id: s.id, name: s.text, subtitle: `${s.wc} 词`, type: 'sentence', score: score === 100 ? 100 : score - 5 });
         }
     return out.sort((a, b) => b.score - a.score || ({ kp: 0, lesson: 1, sentence: 2 }[a.kind] - { kp: 0, lesson: 1, sentence: 2 }[b.kind]) || a.name.length - b.name.length).slice(0, limit);
+}
+
+},
+"lib/sense":function(module,exports,require){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.senseSourceLabel = senseSourceLabel;
+exports.contextSense = contextSense;
+exports.coreSenseOf = coreSenseOf;
+/** 解析方法的可读来源标签。 */
+const METHOD_LABEL = {
+    'source-inline': '课本原注',
+    llm: '语境判定',
+    chunk: '语块释义',
+    'editorial-single': '整理释义',
+    'editorial-first': '整理释义',
+    'single-sense': '词典',
+    'pos-match': '词典 + 词性',
+    'pos-match-multi': '词典 + 词性',
+    'first-sense': '词典常用义',
+    'pos-ratio': '词典词性比例',
+};
+/** 把 `pos-match-multi+lemma` 这样的方法串渲染成给学习者看的一句话。 */
+function senseSourceLabel(method) {
+    if (!method)
+        return '词典';
+    const parts = method.split('+');
+    const base = METHOD_LABEL[parts[0]] || '词典';
+    if (parts.includes('lemma'))
+        return `${base}（原形）`;
+    return base;
+}
+/**
+ * 取出某个知识点在某一句话里的语境义。
+ * 找不到（词典层未生成、或该句没有这个词）时返回 null，UI 应回退到核心义。
+ */
+function contextSense(lesson, sentence, kpId) {
+    if (!lesson || !sentence || !lesson.glosses?.length)
+        return null;
+    const hit = sentence.hits.find((h) => h[0] === kpId && h.length > 3);
+    if (!hit || hit[3] === undefined)
+        return null;
+    const gloss = lesson.glosses[hit[3]];
+    if (!gloss)
+        return null;
+    const method = (hit[4] !== undefined ? lesson.glossMethods?.[hit[4]] : '') || '';
+    return {
+        gloss,
+        method,
+        source: senseSourceLabel(method),
+        // 方法为 chunk 时，这个位置的词义由语块承担，UI 应说明而不是假装是这个词的义项
+        fromChunk: method === 'chunk',
+    };
+}
+/** 词条的核心义（词典首义）。这是「有出处的根义」，不是生成的词源。 */
+function coreSenseOf(kp) {
+    return kp?.coreSense || kp?.meaning || null;
 }
 
 },
@@ -1601,14 +1896,24 @@ const types_1 = require("./types");
 const utils_1 = require("./utils");
 const fsrs_1 = require("./fsrs");
 const DATABASE = 'lamplit-reader-v1';
-const fresh = () => ({ version: 1, revision: 0, cards: {}, flags: {}, reviews: [], retention: 0.9, reading: null, bookmarks: {}, layers: { pattern: true, grammar: true, chunk: true, word: false, connective: false, genre: true }, welcomeDismissed: false, session: null, readerSize: 20 });
+const fresh = () => ({ version: 2, lessons: {}, revision: 0, cards: {}, flags: {}, reviews: [], retention: 0.9, reading: null, bookmarks: {}, layers: { pattern: true, grammar: true, chunk: true, word: false, connective: false, genre: true }, welcomeDismissed: false, session: null, readerSize: 20 });
 function normalize(data) {
     if (!data)
         return fresh();
     const d = data;
-    if (d.version !== 1 || typeof d.cards !== 'object' || !Array.isArray(d.reviews))
+    // 注意 typeof null === 'object'：不加 null 检查的话，cards:null 会通过结构校验
+    const structural = typeof d.cards === 'object' && d.cards !== null && Array.isArray(d.reviews);
+    // v1 → v2：只补字段，不伪造历史。
+    // lessons 从空开始；firstReadAt 一律为 0，表示"迁移前就在读，具体时间未知"。
+    // 拿 lastReadAt 或当前时间冒充 firstReadAt 会让"连续天数"和"开始日期"当天就错。
+    if (d.version === 1) {
+        if (!structural)
+            throw new Error('本地记录的版本暂时无法读取，原数据未被覆盖。');
+        return { ...fresh(), ...d, version: 2, migratedFrom: 1, lessons: {}, layers: { ...fresh().layers, ...d.layers }, bookmarks: d.bookmarks || {} };
+    }
+    if (d.version !== 2 || !structural || typeof d.lessons !== 'object' || d.lessons === null)
         throw new Error('本地记录的版本暂时无法读取，原数据未被覆盖。');
-    return { ...fresh(), ...d, layers: { ...fresh().layers, ...d.layers }, bookmarks: d.bookmarks || {} };
+    return { ...fresh(), ...d, version: 2, layers: { ...fresh().layers, ...d.layers }, bookmarks: d.bookmarks || {}, lessons: d.lessons || {} };
 }
 function openDB() {
     return new Promise((resolve, reject) => {
@@ -1752,7 +2057,28 @@ function StoreProvider({ children }) {
         notify(marked ? '已标记为不熟悉' : '已取消不熟悉标记');
     }, [update, notify]);
     const setLayers = (0, react_1.useCallback)((patch) => update(d => { d.layers = { ...d.layers, ...patch }; }), [update]);
-    const readPosition = (0, react_1.useCallback)((lessonId, sentenceId) => update(d => { d.reading = { lessonId, sentenceId, at: Date.now() }; d.bookmarks[lessonId] = sentenceId; }), [update]);
+    // 记录阅读位置的同时累计**课程进度**。
+    // visited 用累计集合而不是"读到第几句"：读者会回看、会跳读，只记最后一句会低估覆盖。
+    // readCount 只在换课时 +1，避免每翻一句就加一次。
+    const readPosition = (0, react_1.useCallback)((lessonId, sentenceId) => update(d => {
+        const at = Date.now();
+        const switching = d.reading?.lessonId !== lessonId;
+        d.reading = { lessonId, sentenceId, at };
+        d.bookmarks[lessonId] = sentenceId;
+        const cur = d.lessons[lessonId] || { state: 'reading', firstReadAt: at, lastReadAt: at, readCount: 0, visited: [] };
+        const visited = cur.visited || [];
+        if (!visited.includes(sentenceId))
+            visited.push(sentenceId);
+        d.lessons[lessonId] = {
+            ...cur,
+            state: cur.state === 'read' ? 'read' : 'reading',
+            // 迁移来的记录 firstReadAt 是 0（不清楚何时开始），首次真正阅读时补上
+            firstReadAt: cur.firstReadAt || at,
+            lastReadAt: at,
+            readCount: cur.readCount + (switching ? 1 : 0),
+            visited,
+        };
+    }), [update]);
     const setRetention = (0, react_1.useCallback)(async (n) => {
         if (n < 0.75 || n > 0.97 || !Number.isFinite(n))
             throw new Error('保留率不在允许范围内');
@@ -1850,10 +2176,9 @@ function swallow(promise) { void promise.catch(() => { }); }
 "lib/types":function(module,exports,require){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.entityKey = exports.STATE_LABEL = exports.TIER_LABEL = exports.TYPE_ORDER = exports.TYPE_LABEL = void 0;
+exports.entityKey = exports.STATE_LABEL = exports.TYPE_ORDER = exports.TYPE_LABEL = void 0;
 exports.TYPE_LABEL = { grammar: '语法', pattern: '句型', chunk: '语块', word: '词' };
 exports.TYPE_ORDER = ['grammar', 'pattern', 'chunk', 'word'];
-exports.TIER_LABEL = { model: '范句', complex: '长难句', example: '例句' };
 exports.STATE_LABEL = { new: '新卡', learning: '学习中', review: '复习中', relearning: '重新学习' };
 const entityKey = (entity) => `${entity.kind}:${entity.id}`;
 exports.entityKey = entityKey;
@@ -2050,6 +2375,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.cardTitle = cardTitle;
 exports.default = Cards;
 const react_1 = __importStar(require("react"));
+const progress_1 = require("../lib/progress");
 const data_1 = require("../lib/data");
 const store_1 = require("../lib/store");
 const navigation_1 = require("../lib/navigation");
@@ -2075,17 +2401,8 @@ function Cards() {
     const todayLogs = logs.filter(x => (0, fsrs_1.localDay)(x.at) === today);
     const retentionLogs = logs.filter(x => x.previousState === 'review');
     const actualRetention = retentionLogs.length ? Math.round(100 * retentionLogs.filter(x => x.grade > 1).length / retentionLogs.length) : null;
-    const streak = (0, react_1.useMemo)(() => {
-        const days = new Set(logs.map(x => (0, fsrs_1.localDay)(x.at)));
-        let n = 0, d = new Date(now);
-        if (!days.has((0, fsrs_1.localDay)(+d)))
-            d.setDate(d.getDate() - 1);
-        while (days.has((0, fsrs_1.localDay)(+d))) {
-            n++;
-            d.setDate(d.getDate() - 1);
-        }
-        return n;
-    }, [logs, today]);
+    // 旧实现只统计 reviews 的日期——只读课文不复习的日子不算数。streakOf 把阅读记录一并计入。
+    const streak = (0, react_1.useMemo)(() => (0, progress_1.streakOf)(s.data, now), [s.data, now]);
     const kindOf = (card) => card.entity.kind === 'kp' ? c.kp(card.entity.id)?.type || 'word' : card.entity.kind;
     const lessonIds = (card) => card.entity.kind === 'kp' ? c.kp(card.entity.id)?.lessonIds || [] : card.entity.kind === 'lesson' ? [card.entity.id] : [card.entity.id.split('-s')[0]];
     const list = all.filter(card => (type === 'all' || kindOf(card) === type) && (mastery === 'all' || (mastery === 'paused' ? card.paused : mastery === 'due' ? !card.paused && card.due <= now : card.state === mastery)) && (lessonFilter === 'all' || lessonIds(card).includes(lessonFilter)) && (cluster === 'all' || lessonIds(card).some(id => c.lessonSummary(id)?.clusterIds.includes(cluster))) && (!query || cardTitle(card, c, sentences).toLowerCase().includes(query.toLowerCase()) || card.entity.kind === 'kp' && c.kp(card.entity.id)?.meaning.includes(query))).sort((a, b) => a.paused === b.paused ? a.due - b.due : Number(a.paused) - Number(b.paused));
@@ -2400,16 +2717,13 @@ const Icon_1 = require("../components/Icon");
 function IndexPage() {
     const c = (0, data_1.useCorpus)(), nav = (0, navigation_1.useNavigation)();
     const [type, setType] = (0, react_1.useState)('all'), [sort, setSort] = (0, react_1.useState)('degree'), [query, setQuery] = (0, react_1.useState)(''), [book, setBook] = (0, react_1.useState)(0), [page, setPage] = (0, react_1.useState)(1);
-    const sentences = (0, data_1.useAsync)(() => type === 'model' || type === 'complex' || type === 'example' ? c.sentences() : Promise.resolve([]), [type]);
     (0, react_1.useEffect)(() => setPage(1), [type, sort, query, book]);
     const list = (0, react_1.useMemo)(() => {
         if (type === 'lesson')
             return c.catalog.lessons.filter(l => (!book || l.book === book) && (!query || (0, search_1.matchScore)(l.title + ' ' + l.titleZh + ' ' + l.label, l.scene, query) > 0)).map(l => ({ entity: { kind: 'lesson', id: l.id }, title: l.title, meaning: l.titleZh || l.scene, meta: l.label, number: l.sentenceCount, numberLabel: '句', kind: 'lesson' }));
-        if (['model', 'complex', 'example'].includes(type))
-            return (sentences.data || []).filter(s => s.tier === type && (!book || c.lessonSummary(s.lessonId)?.book === book) && (!query || (0, search_1.matchScore)(s.text, '', query) > 0)).map(s => ({ entity: { kind: 'sentence', id: s.id }, title: s.text, meaning: c.lessonSummary(s.lessonId)?.title || '', meta: c.lessonSummary(s.lessonId)?.label || '', number: s.wc, numberLabel: '词', kind: 'sentence' }));
         return c.catalog.kps.filter(k => (type === 'all' || k.type === type) && (!book || k.lessonIds.some(l => c.lessonSummary(l)?.book === book)) && (!query || (0, search_1.matchScore)(k.name, k.meaning, query) > 0)).sort((a, b) => sort === 'name' ? a.name.localeCompare(b.name, 'zh') : sort === 'lessons' ? b.lessonIds.length - a.lessonIds.length : sort === 'type' ? types_1.TYPE_ORDER.indexOf(a.type) - types_1.TYPE_ORDER.indexOf(b.type) || b.degree - a.degree : b.degree - a.degree).map(k => ({ entity: { kind: 'kp', id: k.id }, title: k.name, meaning: k.meaning, meta: k.lessonIds.length + ' 篇课文', number: k.frequency, numberLabel: '次', kind: k.type }));
-    }, [c, type, sort, query, book, sentences.data]);
-    const filters = [['all', '全部知识'], ...types_1.TYPE_ORDER.map(t => [t, types_1.TYPE_LABEL[t]]), ['lesson', '课文'], ['model', '范句'], ['complex', '长难句'], ['example', '例句池']];
+    }, [c, type, sort, query, book]);
+    const filters = [['all', '全部知识'], ...types_1.TYPE_ORDER.map(t => [t, types_1.TYPE_LABEL[t]]), ['lesson', '课文']];
     return react_1.default.createElement("div", { className: "index-page" },
         react_1.default.createElement("div", { className: "page-heading" },
             react_1.default.createElement("div", { className: "eyebrow" }, "\u77E5\u8BC6\u7D22\u5F15"),
@@ -2435,7 +2749,7 @@ function IndexPage() {
                 react_1.default.createElement("span", { className: "muted small" },
                     list.length.toLocaleString(),
                     " \u9879")),
-            sentences.loading && ['model', 'complex', 'example'].includes(type) ? react_1.default.createElement(Common_1.Loader, null) : sentences.error ? react_1.default.createElement(Common_1.ErrorState, { text: sentences.error, onRetry: sentences.retry }) : list.length ? react_1.default.createElement("div", { className: "knowledge-table" },
+            list.length ? react_1.default.createElement("div", { className: "knowledge-table" },
                 react_1.default.createElement("div", { className: "table-head" },
                     react_1.default.createElement("span", null, "\u77E5\u8BC6\u4E0E\u8868\u8FBE"),
                     react_1.default.createElement("span", null, "\u51FA\u5904"),
@@ -2496,16 +2810,24 @@ exports.default = Learn;
 const react_1 = __importStar(require("react"));
 const data_1 = require("../lib/data");
 const navigation_1 = require("../lib/navigation");
+const store_1 = require("../lib/store");
 const Common_1 = require("../components/Common");
 const Icon_1 = require("../components/Icon");
 const button_1 = require("../components/ui/button");
 function Learn({ id }) {
-    const c = (0, data_1.useCorpus)(), nav = (0, navigation_1.useNavigation)();
+    const c = (0, data_1.useCorpus)(), nav = (0, navigation_1.useNavigation)(), store = (0, store_1.useStore)();
     const [book, setBook] = (0, react_1.useState)(0), [page, setPage] = (0, react_1.useState)(1);
     const cluster = c.catalog.clusters.find(x => x.id === id);
     const selected = id && cluster ? cluster.id : 'all';
     (0, react_1.useEffect)(() => { setPage(1); }, [book, id]);
     const stages = ['生存', '日常', '叙事', '读写', '思辨'];
+    // 阶梯进度：五个阶段各有多少课、读过多少。**显示事实而不是百分比**——
+    // 阶段之间的课数差别很大，一个"37%"会让人以为进度均匀。
+    const ladder = stages.map((st) => {
+        const ids = c.catalog.clusters.filter((x) => x.stage === st).flatMap((x) => x.lessonIds);
+        const read = ids.filter((id) => (store.data.lessons?.[id]?.lastReadAt || 0) > 0).length;
+        return { stage: st, total: ids.length, read };
+    });
     const sorted = [...c.catalog.clusters].sort((a, b) => stages.indexOf(a.stage) - stages.indexOf(b.stage) || b.lessonIds.length - a.lessonIds.length);
     const lessons = c.catalog.lessons.filter(l => (selected === 'all' || cluster.lessonIds.includes(l.id)) && (!book || l.book === book));
     return react_1.default.createElement("div", { className: "learn-page" },
@@ -2515,6 +2837,15 @@ function Learn({ id }) {
                 "\u4E0D\u53EA\u8BFB\u61C2\uFF0C",
                 react_1.default.createElement("em", null, "\u66F4\u80FD\u8868\u8FBE\u3002")),
             react_1.default.createElement("p", null, "\u9009\u4E00\u4E2A\u4F60\u60F3\u505A\u5230\u7684\u4E8B\uFF0C\u8BA9\u8BFE\u6587\u6210\u4E3A\u4E00\u6761\u6709\u65B9\u5411\u7684\u8DEF\u5F84\u3002")),
+        react_1.default.createElement("ol", { className: "stage-ladder", "aria-label": "\u4E94\u4E2A\u9636\u6BB5\u7684\u8FDB\u5EA6" }, ladder.map((x, i) => react_1.default.createElement("li", { key: x.stage, className: x.read === x.total && x.total ? 'done' : x.read ? 'active' : '' },
+            react_1.default.createElement("span", { className: "stage-index mono" }, String(i + 1).padStart(2, '0')),
+            react_1.default.createElement("span", { className: "stage-name" }, x.stage),
+            react_1.default.createElement("span", { className: "stage-count mono" },
+                x.read,
+                " / ",
+                x.total),
+            react_1.default.createElement("span", { className: "stage-bar" },
+                react_1.default.createElement("i", { style: { width: (x.total ? Math.round(100 * x.read / x.total) : 0) + '%' } }))))),
         react_1.default.createElement("div", { className: "mobile-path-picker" },
             react_1.default.createElement("label", { htmlFor: "path-select" }, "\u60F3\u7EC3\u4E60\u54EA\u4E00\u79CD\u8868\u8FBE\uFF1F"),
             react_1.default.createElement("select", { id: "path-select", value: selected, onChange: e => nav.navigate("learn", e.target.value === "all" ? undefined : e.target.value) },
@@ -2547,6 +2878,148 @@ function Learn({ id }) {
                 react_1.default.createElement(Common_1.BookFilter, { value: book, onChange: setBook }),
                 lessons.length ? react_1.default.createElement("div", { className: "lesson-grid" }, lessons.slice((page - 1) * 12, page * 12).map((l, i) => react_1.default.createElement(Common_1.LessonCard, { key: l.id, lesson: l, sequence: selected === 'all' ? undefined : (page - 1) * 12 + i, onLesson: id => nav.openEntity({ kind: 'lesson', id }), onKP: id => nav.openEntity({ kind: 'kp', id }) }))) : react_1.default.createElement(Common_1.EmptyState, { title: "\u8FD9\u518C\u8FD8\u6CA1\u6709\u5BF9\u5E94\u8BFE\u6587", text: "\u6362\u4E00\u518C\uFF0C\u6216\u770B\u770B\u8FD9\u6761\u8DEF\u5F84\u7684\u5168\u90E8\u8BFE\u6587\u3002", action: react_1.default.createElement(button_1.Button, { onClick: () => setBook(0) }, "\u67E5\u770B\u5168\u90E8") }),
                 react_1.default.createElement(Common_1.Pagination, { page: page, pages: Math.ceil(lessons.length / 12), total: lessons.length, onPage: n => { setPage(n); document.querySelector('.path-content')?.scrollIntoView({ block: 'start' }); } }))));
+}
+
+},
+"pages/Quiz":function(module,exports,require){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Quiz;
+const react_1 = __importStar(require("react"));
+const data_1 = require("../lib/data");
+const navigation_1 = require("../lib/navigation");
+const Common_1 = require("../components/Common");
+const Icon_1 = require("../components/Icon");
+const button_1 = require("../components/ui/button");
+/**
+ * 精读收尾测验。
+ *
+ * 题目来自 `catalog.quiz`——在构建期已过五条机械校验（scripts/quiz.mjs），
+ * 而且**只考该课 teachingFocus 覆盖的知识点**。
+ *
+ * 刻意不做的事：
+ *   - 不记录成绩到 UserData。现在没有可靠的口径说"这一课的掌握度"，
+ *     记一个半成品数字比不记更糟（见 progress.ts 对三条轴的说明）。
+ *   - 不做计分排名。做错了就当场看解析，这是学习工具不是考试。
+ */
+function Quiz({ id }) {
+    const c = (0, data_1.useCorpus)(), nav = (0, navigation_1.useNavigation)();
+    const lesson = id ? c.lessonSummary(id) : null;
+    const items = (0, react_1.useMemo)(() => (id ? c.quizOf(id) : []), [c, id]);
+    const [at, setAt] = (0, react_1.useState)(0);
+    const [picked, setPicked] = (0, react_1.useState)(null);
+    const [wrongIds, setWrongIds] = (0, react_1.useState)([]);
+    const [done, setDone] = (0, react_1.useState)(false);
+    if (!lesson)
+        return react_1.default.createElement(Common_1.EmptyState, { title: "\u6CA1\u6709\u627E\u5230\u8FD9\u4E00\u8BFE", action: react_1.default.createElement(button_1.Button, { onClick: () => nav.navigate('today', undefined, undefined) }, "\u56DE\u5230\u4ECA\u5929") });
+    if (!items.length)
+        return react_1.default.createElement("div", { className: "quiz-page" },
+            react_1.default.createElement("div", { className: "page-heading" },
+                react_1.default.createElement("div", { className: "eyebrow" }, "\u6536\u5C3E\u6D4B\u9A8C"),
+                react_1.default.createElement("h1", null, lesson.title)),
+            react_1.default.createElement(Common_1.EmptyState, { title: "\u8FD9\u4E00\u8BFE\u6682\u65F6\u6CA1\u6709\u9898\u76EE", text: "\u9898\u5E93\u53EA\u8986\u76D6\u6709 teachingFocus \u7684\u8BFE\u6587\u3002\u53EF\u4EE5\u5148\u53BB\u8BFB\uFF0C\u6216\u6362\u4E00\u8BFE\u3002", action: react_1.default.createElement(button_1.Button, { onClick: () => nav.read(lesson.id) }, "\u56DE\u5230\u8FD9\u4E00\u8BFE") }));
+    const q = items[at];
+    const kp = c.kp(q.kpId);
+    const answered = picked !== null;
+    const correct = answered && picked === q.answerIndex;
+    const next = () => {
+        if (at + 1 >= items.length) {
+            setDone(true);
+            return;
+        }
+        setAt(at + 1);
+        setPicked(null);
+    };
+    if (done) {
+        const right = items.length - wrongIds.length;
+        return react_1.default.createElement("div", { className: "quiz-page" },
+            react_1.default.createElement("div", { className: "quiz-done" },
+                react_1.default.createElement("div", { className: "eyebrow" }, "\u8FD9\u4E00\u8BFE\u7EC3\u5B8C\u4E86"),
+                react_1.default.createElement("strong", { className: "quiz-score" },
+                    right,
+                    react_1.default.createElement("small", null,
+                        " / ",
+                        items.length)),
+                react_1.default.createElement("p", { className: "muted" }, wrongIds.length ? '错过的题下面再走一遍。' : '全部答对。'),
+                wrongIds.length > 0 && react_1.default.createElement("ul", { className: "quiz-missed" }, wrongIds.map((wid) => { const it = items.find((x) => x.id === wid); return react_1.default.createElement("li", { key: wid },
+                    react_1.default.createElement("span", { className: "mono" }, it.blanked || it.answer),
+                    it.blanked && react_1.default.createElement("span", { className: "muted" },
+                        " \u2014 ",
+                        it.answer)); })),
+                react_1.default.createElement("div", { className: "quiz-actions" },
+                    react_1.default.createElement(button_1.Button, { variant: "outline", onClick: () => { setAt(0); setPicked(null); setWrongIds([]); setDone(false); } },
+                        react_1.default.createElement(Icon_1.Icon, { name: "reset", size: 16 }),
+                        "\u518D\u505A\u4E00\u904D"),
+                    react_1.default.createElement(button_1.Button, { onClick: () => nav.read(lesson.id) },
+                        react_1.default.createElement(Icon_1.Icon, { name: "book", size: 16 }),
+                        "\u56DE\u5230\u8FD9\u4E00\u8BFE"))));
+    }
+    return react_1.default.createElement("div", { className: "quiz-page" },
+        react_1.default.createElement("div", { className: "page-heading" },
+            react_1.default.createElement("div", { className: "eyebrow" },
+                "\u6536\u5C3E\u6D4B\u9A8C \u00B7 ",
+                lesson.label),
+            react_1.default.createElement("h1", null, lesson.title)),
+        react_1.default.createElement("div", { className: "quiz-progress" },
+            react_1.default.createElement("i", { style: { width: Math.round((100 * at) / items.length) + '%' } }),
+            react_1.default.createElement("span", { className: "mono" },
+                at + 1,
+                " / ",
+                items.length)),
+        react_1.default.createElement("section", { className: "quiz-card" },
+            react_1.default.createElement("p", { className: "quiz-prompt" }, q.kind === 'blank' ? '空里那个表达是什么意思？' : '这一句用了哪个结构？'),
+            react_1.default.createElement("blockquote", { lang: "en", className: "quiz-stem" }, q.stem),
+            react_1.default.createElement("div", { className: "quiz-options" }, q.options.map((opt, i) => {
+                const state = !answered ? '' : i === q.answerIndex ? 'right' : i === picked ? 'wrong' : 'dim';
+                return react_1.default.createElement("button", { key: i, className: 'quiz-option ' + state, disabled: answered, onClick: () => { setPicked(i); if (i !== q.answerIndex)
+                        setWrongIds((w) => w.concat(q.id)); } },
+                    react_1.default.createElement("span", { className: "quiz-option-mark mono" }, String.fromCharCode(65 + i)),
+                    react_1.default.createElement("span", null, opt),
+                    answered && i === q.answerIndex && react_1.default.createElement(Icon_1.Icon, { name: "check", size: 16 }),
+                    answered && i === picked && i !== q.answerIndex && react_1.default.createElement(Icon_1.Icon, { name: "close", size: 16 }));
+            })),
+            answered && react_1.default.createElement("div", { className: "quiz-explain" },
+                react_1.default.createElement("span", { className: 'quiz-verdict ' + (correct ? 'right' : 'wrong') }, correct ? '答对了' : '再看一眼'),
+                kp && react_1.default.createElement("button", { className: "quiz-kp", onClick: () => nav.openEntity({ kind: 'kp', id: kp.id }) },
+                    kp.name,
+                    kp.enName ? ` · ${kp.enName}` : ''),
+                kp?.formula && react_1.default.createElement("p", { className: "quiz-formula" }, kp.formula),
+                react_1.default.createElement(button_1.Button, { onClick: next },
+                    at + 1 >= items.length ? '看结果' : '下一题',
+                    react_1.default.createElement(Icon_1.Icon, { name: "next", size: 15 })))));
 }
 
 },
@@ -2599,6 +3072,7 @@ const Icon_1 = require("../components/Icon");
 const Details_1 = require("../components/Details");
 const Common_1 = require("../components/Common");
 const HighlightedText_1 = require("../components/HighlightedText");
+const sense_1 = require("../lib/sense");
 function Reader({ id, params }) {
     const c = (0, data_1.useCorpus)(), nav = (0, navigation_1.useNavigation)();
     const lid = id || c.catalog.defaultLesson;
@@ -2615,9 +3089,14 @@ function ReadingDesk({ lesson, sid, kid, fromReview }) {
     const [selected, setSelected] = (0, react_1.useState)(sid || s.data.bookmarks[lesson.id] || lesson.sentences[0]?.id), [activeKP, setActiveKP] = (0, react_1.useState)(kid), [detail, setDetail] = (0, react_1.useState)(null), [sheet, setSheet] = (0, react_1.useState)(false), [capsules, setCapsules] = (0, react_1.useState)(false), [layerOpen, setLayerOpen] = (0, react_1.useState)(false), [expanded, setExpanded] = (0, react_1.useState)([]);
     const [width, setWidth] = (0, react_1.useState)(window.innerWidth);
     const scrollTimer = (0, react_1.useRef)();
+    // 挂载 effect 会排一个 80ms 定时器去定位初始句。如果用户在这 80ms 内点了某一句，
+    // 那个定时器会把选中态覆盖回第一句——手机上（加载慢）几乎必然踩中。
+    // 用这个标记让定时器在用户已经手动选过之后不再动手。
+    const userPicked = (0, react_1.useRef)(false);
     (0, react_1.useEffect)(() => { const resize = () => setWidth(window.innerWidth); window.addEventListener('resize', resize); return () => window.removeEventListener('resize', resize); }, []);
     const locate = (0, react_1.useCallback)((sentenceId, animate = true) => { setSelected(sentenceId); const el = document.getElementById('sentence-' + sentenceId); el?.scrollIntoView({ behavior: animate && !matchMedia('(prefers-reduced-motion: reduce)').matches ? 'smooth' : 'auto', block: 'center' }); (0, store_1.swallow)(s.readPosition(lesson.id, sentenceId)); }, [lesson.id, s.readPosition]);
     (0, react_1.useEffect)(() => {
+        userPicked.current = false;
         const first = kid ? lesson.sentences.find(x => x.hits.some(h => h[0] === kid)) : undefined;
         const target = sid || first?.id || s.data.bookmarks[lesson.id] || lesson.sentences[0]?.id;
         setActiveKP(kid);
@@ -2625,6 +3104,8 @@ function ReadingDesk({ lesson, sid, kid, fromReview }) {
         if (target) {
             const shouldScroll = !!(sid || first?.id || s.data.bookmarks[lesson.id]);
             const timer = setTimeout(() => {
+                if (userPicked.current)
+                    return;
                 if (shouldScroll)
                     locate(target, false);
                 else {
@@ -2666,6 +3147,7 @@ function ReadingDesk({ lesson, sid, kid, fromReview }) {
         }
     };
     const chooseKP = (id) => {
+        userPicked.current = true;
         setActiveKP(id);
         const first = lesson.sentences.find(x => x.hits.some(h => h[0] === id));
         if (first)
@@ -2699,7 +3181,7 @@ function ReadingDesk({ lesson, sid, kid, fromReview }) {
         react_1.default.createElement("button", { className: "back-to-sentence", onClick: () => setDetail(null) },
             react_1.default.createElement(Icon_1.Icon, { name: "back", size: 15 }),
             "\u56DE\u5230\u5F53\u524D\u53E5"),
-        react_1.default.createElement(Details_1.EntityDetail, { entity: detail, onOpen: open, context: { lessonId: lesson.id, sentenceId: sentence.id } })) : react_1.default.createElement(Details_1.SentenceDetailsBody, { sentence: sentence, onOpen: open });
+        react_1.default.createElement(Details_1.EntityDetail, { entity: detail, onOpen: open, context: { lessonId: lesson.id, sentenceId: sentence.id, sense: (0, sense_1.contextSense)(lesson, sentence, detail.id) } })) : react_1.default.createElement(Details_1.SentenceDetailsBody, { sentence: sentence, onOpen: open });
     const readerNav = { ...nav, read: (lid, at, kp) => {
             setSheet(false);
             setCapsules(false);
@@ -2784,8 +3266,9 @@ function ReadingDesk({ lesson, sid, kid, fromReview }) {
                                 react_1.default.createElement(Icon_1.Icon, { name: "arrow", size: 14 }))),
                         react_1.default.createElement(button_1.Button, { variant: "ghost", size: "icon", "aria-label": "\u53D6\u6D88\u77E5\u8BC6\u70B9\u5B9A\u4F4D", onClick: () => setActiveKP(undefined) },
                             react_1.default.createElement(Icon_1.Icon, { name: "close", size: 14 }))),
-                    react_1.default.createElement("div", { className: "reading-text", style: { '--reading-size': s.data.readerSize + 'px' } }, lesson.sentences.map((x, i) => react_1.default.createElement("div", { key: x.id, id: 'sentence-' + x.id, "data-sid": x.id, className: (0, utils_1.cn)('sentence-row', s.data.layers.pattern && 'sentence-' + x.tier, selected === x.id && 'current', activeKP && x.hits.some(h => h[0] === activeKP) && 'kp-located'), role: "group", "aria-label": `第 ${i + 1} 句，${types_1.TIER_LABEL[x.tier]}` },
+                    react_1.default.createElement("div", { className: "reading-text", style: { '--reading-size': s.data.readerSize + 'px' } }, lesson.sentences.map((x, i) => react_1.default.createElement("div", { key: x.id, id: 'sentence-' + x.id, "data-sid": x.id, className: (0, utils_1.cn)('sentence-row', selected === x.id && 'current', activeKP && x.hits.some(h => h[0] === activeKP) && 'kp-located'), role: "group", "aria-label": `第 ${i + 1} 句` },
                         react_1.default.createElement("button", { className: "sentence-number mono", "aria-label": `查看第 ${i + 1} 句详情`, onClick: () => {
+                                userPicked.current = true;
                                 setSelected(x.id);
                                 setDetail(null);
                                 (0, store_1.swallow)(s.readPosition(lesson.id, x.id));
@@ -3026,4 +3509,165 @@ function CardFront({ card }) {
         react_1.default.createElement("p", { className: "card-prompt" }, item.instruction));
 }
 
-}};const cache={};function resolve(base,ref){if(!ref.startsWith("."))return ref;const parts=base.split("/");parts.pop();for(const p of ref.split("/")){if(p==="."||!p)continue;if(p==="..")parts.pop();else parts.push(p);}return parts.join("/").replace(/\.tsx?$/,"");}function load(id){if(id==="react")return window.__LAMPlIT_REACT__;if(id==="react-dom/client"||id==="react-dom")return window.__LAMPlIT_REACT_DOM__;if(id.endsWith(".css"))return {};if(id==="@antv/g6")throw new Error("Optional AntV engine not included in the offline inspection build");if(cache[id])return cache[id].exports;if(!modules[id])throw new Error("Missing module "+id);const mod={exports:{}};cache[id]=mod;modules[id](mod,mod.exports,ref=>load(resolve(id,ref)));return mod.exports;}load("main");})();
+},
+"pages/Today":function(module,exports,require){
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Today;
+const react_1 = __importStar(require("react"));
+const data_1 = require("../lib/data");
+const store_1 = require("../lib/store");
+const navigation_1 = require("../lib/navigation");
+const fsrs_1 = require("../lib/fsrs");
+const progress_1 = require("../lib/progress");
+const Icon_1 = require("../components/Icon");
+const button_1 = require("../components/ui/button");
+/**
+ * 今日页。
+ *
+ * 这一页只回答四个问题，顺序固定：
+ *   继续读什么 → 有多少要复习 → 攒下了多少 → 今天想做什么
+ *
+ * 三条进度轴**分开显示，不合成一个百分比**（见 progress.ts 的说明）：
+ * 「覆盖高 / 沉淀低」和「覆盖低 / 掌握高」是两种完全不同的状态，
+ * 合成一个数字会把这层信息抹掉。
+ */
+function Today() {
+    const c = (0, data_1.useCorpus)(), s = (0, store_1.useStore)(), nav = (0, navigation_1.useNavigation)();
+    const [now, setNow] = (0, react_1.useState)(Date.now());
+    (0, react_1.useEffect)(() => { const t = setInterval(() => setNow(Date.now()), 30000); return () => clearInterval(t); }, []);
+    const due = (0, react_1.useMemo)(() => (0, fsrs_1.dueCards)(s.data.cards, now).length, [s.data.cards, now]);
+    const reading = s.data.reading;
+    const lesson = reading ? c.lessonSummary(reading.lessonId) : null;
+    const total = c.catalog.lessons.length;
+    const cov = (0, progress_1.coverageOf)(s.data, total);
+    const ret = (0, progress_1.retentionOf)(s.data);
+    const mas = (0, progress_1.masteryOf)(s.data);
+    const streak = (0, progress_1.streakOf)(s.data, now);
+    const visited = reading ? (s.data.lessons?.[reading.lessonId]?.visited?.length || 0) : 0;
+    const totalSentences = lesson?.sentenceCount || 0;
+    const pct = totalSentences ? Math.round((100 * Math.min(visited, totalSentences)) / totalSentences) : 0;
+    const migrating = s.data.migratedFrom === 1;
+    return react_1.default.createElement("div", { className: "today-page" },
+        react_1.default.createElement("div", { className: "page-heading" },
+            react_1.default.createElement("div", { className: "eyebrow" }, "\u4ECA\u5929"),
+            react_1.default.createElement("h1", null,
+                "\u8BFB\u4E00\u70B9\uFF0C",
+                react_1.default.createElement("em", null, "\u7559\u4E0B\u4E00\u70B9\u3002")),
+            react_1.default.createElement("p", null, streak > 0 ? `已经连续 ${streak} 天打开它了。` : '今天从任何一课开始都可以。')),
+        react_1.default.createElement("section", { className: "today-block today-resume" }, lesson && reading ? react_1.default.createElement(react_1.default.Fragment, null,
+            react_1.default.createElement("div", { className: "today-block-head" },
+                react_1.default.createElement("span", { className: "eyebrow" }, "\u7EE7\u7EED\u8BFB"),
+                react_1.default.createElement("span", { className: "mono" }, lesson.label)),
+            react_1.default.createElement("h2", null, lesson.title),
+            lesson.titleZh && react_1.default.createElement("p", { className: "muted" }, lesson.titleZh),
+            react_1.default.createElement("div", { className: "today-progress" },
+                react_1.default.createElement("div", { className: "today-progress-bar" },
+                    react_1.default.createElement("i", { style: { width: pct + '%' } })),
+                react_1.default.createElement("span", { className: "mono" },
+                    visited,
+                    "/",
+                    totalSentences,
+                    " \u53E5")),
+            react_1.default.createElement(button_1.Button, { onClick: () => nav.read(reading.lessonId, reading.sentenceId) },
+                react_1.default.createElement(Icon_1.Icon, { name: "book", size: 16 }),
+                "\u4ECE\u4E0A\u6B21\u505C\u4E0B\u7684\u4E00\u53E5\u7EE7\u7EED")) : react_1.default.createElement(react_1.default.Fragment, null,
+            react_1.default.createElement("div", { className: "today-block-head" },
+                react_1.default.createElement("span", { className: "eyebrow" }, "\u5F00\u59CB\u8BFB")),
+            react_1.default.createElement("h2", null, "\u8FD8\u6CA1\u6709\u9605\u8BFB\u8BB0\u5F55"),
+            react_1.default.createElement("p", { className: "muted" }, "\u6311\u4E00\u8BFE\u5F00\u59CB\uFF0C\u8BFB\u5230\u54EA\u4E00\u53E5\u90FD\u4F1A\u81EA\u52A8\u8BB0\u4F4F\u3002"),
+            react_1.default.createElement(button_1.Button, { onClick: () => nav.read(c.catalog.defaultLesson) },
+                react_1.default.createElement(Icon_1.Icon, { name: "book", size: 16 }),
+                "\u4ECE\u7B2C\u4E00\u8BFE\u5F00\u59CB"))),
+        react_1.default.createElement("div", { className: "today-row" },
+            react_1.default.createElement("section", { className: "today-block today-due" },
+                react_1.default.createElement("div", { className: "today-block-head" },
+                    react_1.default.createElement("span", { className: "eyebrow" }, "\u5F85\u590D\u4E60")),
+                react_1.default.createElement("strong", { className: "today-number" }, due),
+                react_1.default.createElement("p", { className: "muted" }, due ? '张卡片到期' : '暂时没有到期的卡片'),
+                react_1.default.createElement(button_1.Button, { variant: "outline", onClick: () => nav.navigate('cards', undefined, undefined), disabled: !due },
+                    react_1.default.createElement(Icon_1.Icon, { name: "cards", size: 16 }),
+                    due ? '现在复习' : '去攒卡片')),
+            react_1.default.createElement("section", { className: "today-block today-axes" },
+                react_1.default.createElement("div", { className: "today-block-head" },
+                    react_1.default.createElement("span", { className: "eyebrow" }, "\u6512\u4E0B\u4E86\u591A\u5C11")),
+                react_1.default.createElement("dl", { className: "axis-list" },
+                    react_1.default.createElement("div", null,
+                        react_1.default.createElement("dt", null, "\u8986\u76D6"),
+                        react_1.default.createElement("dd", null,
+                            cov.lessonsRead,
+                            react_1.default.createElement("small", null,
+                                " / ",
+                                cov.lessonsTotal,
+                                " \u8BFE")),
+                        react_1.default.createElement("span", { className: "axis-note" }, "\u6709\u9605\u8BFB\u8BB0\u5F55\u7684\u8BFE")),
+                    react_1.default.createElement("div", null,
+                        react_1.default.createElement("dt", null, "\u6C89\u6DC0"),
+                        react_1.default.createElement("dd", null,
+                            ret.cards,
+                            react_1.default.createElement("small", null,
+                                " \u5F20\u5361 \u00B7 ",
+                                ret.inReview,
+                                " \u5F20\u8FDB\u5165\u590D\u4E60")),
+                        react_1.default.createElement("span", { className: "axis-note" },
+                            "\u5176\u4E2D ",
+                            ret.mature,
+                            " \u5F20\u5DF2\u8BB0\u4F4F")),
+                    react_1.default.createElement("div", null,
+                        react_1.default.createElement("dt", null, "\u638C\u63E1"),
+                        react_1.default.createElement("dd", null,
+                            mas.rate === null ? '—' : mas.rate + '%',
+                            react_1.default.createElement("small", null, mas.rate === null ? '' : ` · ${mas.attempts} 次复习期内回忆`)),
+                        react_1.default.createElement("span", { className: "axis-note" }, mas.rate === null ? '还没有复习记录' : '复习期内的回忆成功率'))),
+                migrating && react_1.default.createElement("p", { className: "today-note" },
+                    react_1.default.createElement(Icon_1.Icon, { name: "warning", size: 13 }),
+                    "\u5386\u53F2\u9605\u8BFB\u8BB0\u5F55\u7684\u65F6\u95F4\u4E0D\u53EF\u8003\uFF0C\u8986\u76D6\u4E0E\u8FDE\u7EED\u5929\u6570\u4ECE\u672C\u6B21\u8FC1\u79FB\u540E\u5F00\u59CB\u7EDF\u8BA1\u3002"))),
+        react_1.default.createElement("section", { className: "today-block today-actions" },
+            react_1.default.createElement("div", { className: "today-block-head" },
+                react_1.default.createElement("span", { className: "eyebrow" }, "\u6216\u8005")),
+            react_1.default.createElement("div", { className: "today-action-grid" },
+                react_1.default.createElement("button", { onClick: () => nav.navigate('learn', undefined, undefined) },
+                    react_1.default.createElement(Icon_1.Icon, { name: "route", size: 18 }),
+                    react_1.default.createElement("span", null, "\u63A5\u7740\u4E0A\u6B21\u7684\u8FDB\u5EA6\u8FDE\u5B66")),
+                react_1.default.createElement("button", { onClick: () => nav.navigate('index', undefined, undefined) },
+                    react_1.default.createElement(Icon_1.Icon, { name: "list", size: 18 }),
+                    react_1.default.createElement("span", null, "\u627E\u4E00\u4E2A\u8BCD\u6216\u4E00\u79CD\u8868\u8FBE")),
+                react_1.default.createElement("button", { onClick: () => nav.navigate('atlas', c.catalog.defaultKP) },
+                    react_1.default.createElement(Icon_1.Icon, { name: "network", size: 18 }),
+                    react_1.default.createElement("span", null, "\u770B\u770B\u77E5\u8BC6\u4E4B\u95F4\u7684\u5173\u7CFB")))));
+}
+
+}};const cache={};function resolve(base,ref){if(!ref.startsWith('.'))return ref;const parts=base.split('/');parts.pop();for(const p of ref.split('/')){if(p==='.'||!p)continue;if(p==='..')parts.pop();else parts.push(p);}return parts.join('/').replace(/\.tsx?$/,'');}function load(id){if(id==='react')return window.__LAMPlIT_REACT__;if(id==='react-dom/client'||id==='react-dom')return window.__LAMPlIT_REACT_DOM__;if(id.endsWith('.css'))return {};if(id==='@antv/g6')throw new Error('AntV engine is not included in the no-install preview');if(cache[id])return cache[id].exports;if(!modules[id])throw new Error('Missing module '+id);const mod={exports:{}};cache[id]=mod;modules[id](mod,mod.exports,ref=>load(resolve(id,ref)));return mod.exports;}load('main');})();
