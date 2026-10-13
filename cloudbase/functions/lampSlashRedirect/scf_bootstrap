@@ -1,0 +1,3 @@
+#!/bin/bash
+set -e
+exec /var/lang/node20/bin/node index.js

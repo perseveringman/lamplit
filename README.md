@@ -34,6 +34,12 @@ npm run preview
 
 `npm run build` 先运行严格 TypeScript 项目检查，再运行 Vite。产物会写入 `dist/`，**当前压缩包没有虚构的 dist**。`base: './'` 和 hash 路由允许部署到普通静态目录，不需要后端重写规则。
 
+### 部署注意事项
+
+Shadow Language 主站发布到静态托管根路径 `/` 时不要使用 `--prune`：它会删除本次构建产物中不存在的远端文件，可能连带删除独立发布在 `/lamp` 下的 Lamplit 文件。Lamplit 应单独部署到 `lamp` 子路径。
+
+线上 `/lamp` 由 CloudBase HTTP 云函数 `lampSlashRedirect` 返回 308 到 `/lamp/`；`/lamp/` 映射到 `staticstore` 并启用完整路径透传，使 `assets/`、`data/` 继续从 `lamp` 对象目录读取。调整网关时保留这两条路由和路径透传设置。函数源码位于 `cloudbase/functions/lampSlashRedirect/`。
+
 源码采用 React 18 + TypeScript + Vite + Tailwind 4，组件源文件位于 shadcn/ui 约定的 `src/components/ui/`。Button / Input / Badge / Card 是本地定制适配，包含 `components.json`、语义主题 tokens 和组件变体。Dialog 特意采用原生 `<dialog>`，并非原封不动的 Radix Dialog；这样离线预览也具有模态焦点约束。没有伪造 `shadcn/ui` npm 包依赖。
 
 正式星图在 `KnowledgeGraph.tsx` 动态加载 **`@antv/g6`**。加载失败时保留可交互的 SVG 降级图；手机始终使用按类型分组的邻域列表。**本地免安装预览不包含 G6 包。**

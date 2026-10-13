@@ -3721,7 +3721,7 @@ strong {
     font-size: 29px;
   }
 }
-/* Phone: all six destinations remain reachable, and the text never competes with detail panels. */
+/* Phone: all destinations remain reachable, and the text never competes with detail panels. */
 @media(max-width:639px) {
   :root {
     font-size: 14px;
@@ -3763,7 +3763,8 @@ strong {
     align-items: center;
     justify-content: center;
     gap: 5px;
-    width: calc(100% / 6);
+    width: auto;
+    flex: 1;
     min-height: 56px;
     padding: 5px 0;
     color: #6f88a0;
